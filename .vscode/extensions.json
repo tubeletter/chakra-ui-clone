@@ -1,0 +1,24 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "aaron-bond.better-comments",
+    "streetsidesoftware.code-spell-checker",
+    "naumovs.color-highlight",
+    "vivaxy.vscode-conventional-commits",
+    "dbaeumer.vscode-eslint",
+    "figma.figma-vscode-extension",
+    "ybaumes.highlight-trailing-white-spaces",
+    "wix.vscode-import-cost",
+    "skyran.js-jsx-snippets",
+    "ritwickdey.liveserver",
+    "pkief.material-icon-theme",
+    "esbenp.prettier-vscode",
+    "mskelton.react-emotion-snippets",
+    "mde.select-highlight-minimap",
+    "stylelint.vscode-stylelint",
+    "styled-components.vscode-styled-components",
+    "wallabyjs.console-ninja",
+    "tonybaloney.vscode-pets",
+    "kisstkondoros.vscode-gutter-preview"
+  ]
+}

@@ -23,6 +23,7 @@ module.exports = {
   ignorePatterns: [
     // Ignore dotfiles
     ".*.js",
+    "*.module.css",
     "node_modules/",
     "dist/",
   ],

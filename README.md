@@ -1,81 +1,41 @@
-# Turborepo starter
+## Getting Start
 
-This is an official starter Turborepo.
+### 설치
 
-## Using this example
+- VSCode의 **Recommended Extension들 설치**(Prettier, ESLint, StyleLint 등)
+- 패키지 매니져 pnpm 설치(이미 설치가 됐다면 pass!)
+- pnpm version은 **_최소 8 이상_** 필요
 
-Run the following command:
-
-```sh
-npx create-turbo@latest
+```bash
+wget -qO- https://get.pnpm.io/install.sh | sh -
 ```
 
-## What's inside?
+- 디펜던시 설치
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```bash
+pnpm install
 ```
 
-### Develop
+- 프로젝트에서 추가 패키지 설치 필요시
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```bash
+pnpm install <패키지명> --filter <프로젝트명>
 ```
 
-### Remote Caching
+- VSCode Extension > 이동 후 추천 확장팩들 설치
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+### 스토리북
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+##### 스토리북 서버 띄우기
 
-```
-cd my-turborepo
-npx turbo login
-```
+- SASS 프로젝트
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
+```bash
+pnpm storybook:sass
 ```
 
-## Useful Links
+- Styled Components 프로젝트
 
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+```bash
+pnpm storybook:styled
+```

@@ -4,12 +4,17 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "storybook": "turbo storybook",
+    "storybook:styled": "turbo run storybook --filter team-styled",
+    "storybook:sass": "turbo run storybook --filter team-sass",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "stylelint": "^15.10.1",
+    "stylelint-config": "workspace:*",
     "prettier": "^3.1.1",
     "turbo": "latest"
   },

@@ -1,0 +1,10 @@
+.test {
+  position: relative;
+  background-color: red;
+  color: yellowgreen;
+  z-index: 1;
+}
+
+.test2 {
+  background-color: blue;
+}
