@@ -1,8 +1,8 @@
 .test {
   position: relative;
-  background-color: red;
-  color: yellowgreen;
   z-index: 1;
+  color: yellowgreen;
+  background-color: red;
 }
 
 .test2 {
