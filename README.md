@@ -1,7 +1,7 @@
 ## Getting Start
 
 ### 설치
-- 
+- //
 - VSCode의 **Recommended Extension들 설치**(Prettier, ESLint, StyleLint 등)
 - 패키지 매니져 pnpm 설치(이미 설치가 됐다면 pass!)
 - pnpm version은 **_최소 8 이상_** 필요
