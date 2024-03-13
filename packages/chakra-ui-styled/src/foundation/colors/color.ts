@@ -4,6 +4,7 @@ export const Colors = {
   whiteAlpha50: 'rgba(255, 255, 255, 0.4)',
   blackAlpha50: 'rgba(0, 0, 0, 0.4)',
   gray50: '#F7FAFC',
+  gray200: '#E2E8F0',
   red50: '#FFF5F5',
   orange50: '#FFFAF0',
   yellow50: '#FFFFF0',
