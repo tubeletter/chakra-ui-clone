@@ -23,23 +23,23 @@ export const customView = {
     }
   },
   lg: {
-    name: 'lg - min-width : 962px',
+    name: 'lg - min-width : 992px',
     styles: {
-      width: '768px',
+      width: '992px',
       height: '500px'
     }
   },
   xl: {
     name: 'xl - min-width : 1280px',
     styles: {
-      width: '768px',
+      width: '1280px',
       height: '500px'
     }
   },
   '2xl': {
     name: '2xl - min-width : 1536px',
     styles: {
-      width: '768px',
+      width: '1536px',
       height: '500px'
     }
   }
