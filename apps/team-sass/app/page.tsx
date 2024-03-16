@@ -1,6 +1,5 @@
-"use client";
-import { Test } from '@chakra/ui-styled/test'
-
+'use client';
+import { Test } from '@chakra/ui-sass/test';
 
 export default function Page(): JSX.Element {
   return (

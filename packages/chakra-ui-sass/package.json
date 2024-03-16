@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./test": "./src/test/Test.tsx"
+    "./test": "./src/test/Test.tsx",
+    "./foundation.scss": "./src/foundation/foundation.scss"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

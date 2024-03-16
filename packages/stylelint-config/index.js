@@ -13,6 +13,7 @@ module.exports = {
     'value-keyword-case': null,
     'property-no-vendor-prefix': null,
     'value-no-vendor-prefix': null,
-    'no-empty-source': null
+    'no-empty-source': null,
+    'import-notation': null
   }
 };

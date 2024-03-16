@@ -1,0 +1,8 @@
+/* stylelint-disable CssSyntaxError */
+@import './containers-variables';
+
+:root {
+  @each $key, $value in $containers {
+    --containers-#{$key}: #{$value};
+  }
+}
