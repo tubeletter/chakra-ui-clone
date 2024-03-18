@@ -1,0 +1,21 @@
+@import '@chakra/ui-sass/foundation.scss';
+
+.sass2 {
+  background-color: tomato;
+
+  @include container-sm {
+    background-color: blue;
+  }
+
+  @include container-md {
+    background-color: tomato;
+  }
+
+  @include container-lg {
+    background-color: yellowgreen;
+  }
+
+  @include container-xl {
+    background-color: darkgoldenrod;
+  }
+}

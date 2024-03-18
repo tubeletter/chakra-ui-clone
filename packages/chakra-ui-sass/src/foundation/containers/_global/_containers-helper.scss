@@ -2,7 +2,7 @@
 /* stylelint-disable at-rule-no-unknown */
 /* stylelint-disable at-rule-empty-line-before */
 /* stylelint-disable CssSyntaxError */
-@import './containers-variables';
+@import '../containers-variables';
 
 @each $key, $value in $containers {
   .containers-#{$key} {

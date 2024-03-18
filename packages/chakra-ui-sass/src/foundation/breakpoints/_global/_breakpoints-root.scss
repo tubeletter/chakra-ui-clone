@@ -1,5 +1,5 @@
 /* stylelint-disable CssSyntaxError */
-@import './breakpoints-variables';
+@import '../breakpoints-variables';
 
 :root {
   @each $key, $value in $breakpoints {

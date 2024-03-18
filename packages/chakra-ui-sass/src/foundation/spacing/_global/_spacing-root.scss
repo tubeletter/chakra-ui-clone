@@ -1,5 +1,5 @@
 /* stylelint-disable CssSyntaxError */
-@import './spacing-variables';
+@import '../spacing-variables';
 
 :root {
   @each $key, $value in $spacing {
