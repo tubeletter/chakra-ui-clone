@@ -1,0 +1,40 @@
+/* stylelint-disable media-query-no-invalid */
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable at-rule-empty-line-before */
+/* stylelint-disable CssSyntaxError */
+@import '../containers-variables';
+
+@each $key, $value in $containers {
+  .containers-#{$key} {
+    width: var(--containers-#{$key});
+  }
+
+  .containers-#{$key}-center {
+    width: var(--containers-#{$key});
+    margin: 0 auto;
+  }
+}
+
+@mixin container-sm {
+  @media (min-width: #{map-get($containers, 'sm')}) {
+    @content;
+  }
+}
+
+@mixin container-md {
+  @media (min-width: #{map-get($containers, 'md')}) {
+    @content;
+  }
+}
+
+@mixin container-lg {
+  @media (min-width: #{map-get($containers, 'lg')}) {
+    @content;
+  }
+}
+
+@mixin container-xl {
+  @media (min-width: #{map-get($containers, 'xl')}) {
+    @content;
+  }
+}
