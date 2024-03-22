@@ -1,33 +1,25 @@
-import styled from 'styled-components';
-import { Colors } from './color';
-import { ColorsType } from './color.types';
+import Colors from './Colors';
+import { colorPalette } from './colorPalette';
+
 export default {
-  title: 'chakra-ui-styled/foundation/colors',
-  parameters: {
-    viewport: { defaultViewport: 'mobile_360' }
-  }
+  title: 'chakra-ui-styled/foundation/Colors',
+  component: Colors,
+  argTypes: {},
+  parameter: {}
 };
 
-const ColorBox = styled.div<{ bgColor: string }>`
-  width: 120px;
-  height: 120px;
-  background-color: ${({ bgColor }) => bgColor};
-  border: 1px solid #f6f6f6;
-  border-radius: 8px;
-`;
-
-export const Test2 = () => {
+export const Color = () => {
   return (
-    <div style={{ display: 'flex', gap: '8px', flexDirection: 'column' }}>
-      {Object.keys(Colors).map((value) => {
+    <>
+      {Object.keys(colorPalette).map((v, i) => {
         return (
-          <div>
-            <div>{value}</div>
-            <ColorBox bgColor={Colors[value as keyof ColorsType]} />
+          <div key={i}>
+            <p>{v}</p>
+            {}
           </div>
         );
       })}
-    </div>
+    </>
   );
 };
-Test2.storyName = 'Colors';
+Color.storyName = 'Colors';

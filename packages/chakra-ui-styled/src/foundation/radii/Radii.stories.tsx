@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors } from '../colors/color';
+import { Colors } from '../colors/colorPalette';
 import { Radii } from './radii';
 import { RadiiType } from './radii.types';
 export default {
@@ -15,7 +15,9 @@ const RadiiBox = styled.div<{ radius: number }>`
   background-color: #fff;
   border: 1px solid ${Colors.gray200};
   border-radius: ${({ radius }) => radius}rem;
-  box-shadow: 0px 1px 2px 0px #0000000F, 0px 1px 3px 0px #0000001A;
+  box-shadow:
+    0px 1px 2px 0px #0000000f,
+    0px 1px 3px 0px #0000001a;
 `;
 
 export const Test = () => {
