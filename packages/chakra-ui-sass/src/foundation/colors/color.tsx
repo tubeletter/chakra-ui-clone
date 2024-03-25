@@ -1,4 +1,4 @@
-import styles from './color.module.scss';
+import styles from '../storybook.module.scss';
 
 const colorDepth = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 const colorAlpha = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -17,18 +17,21 @@ export const Colors = ({ title = '', color = '', isAlpha = false, isOnly = false
 
   return (
     <>
-      {title !== '' && <h2 className={styles.title}>{title + alpha}</h2>}
+      {title !== '' && <h3 className="font-sm-lg">{title + alpha}</h3>}
       {color !== '' && (
         <ul className={styles.color_list}>
           {isType.map((depth: any, index: any) => {
-            let colorClass = isOnly !== true ? color + depth : depth.trim();
+            let colorType = colorSplit[index];
+            let colorName = isOnly !== true ? color + ' ' + depth : depth.trim();
+            let colorClass = isOnly !== true ? `${color}-${depth}` : colorType?.trim();
+            console.log(depth);
 
             return (
               <li key={index}>
                 <div className={styles.color_chip}>
-                  <span className={`${styles.color} ${styles[colorClass]}`} id="color"></span>
+                  <span className={`${styles.color} bg-${colorClass}`}></span>
                   <span>
-                    <p className={styles.name}>{colorClass}</p>
+                    <p className={styles.name}>{colorName}</p>
                   </span>
                 </div>
               </li>

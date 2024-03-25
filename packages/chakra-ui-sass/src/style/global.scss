@@ -2,8 +2,12 @@
 @import '../foundation/spacing/_global/spacing-root';
 @import '../foundation/breakpoints/_global/breakpoints-root';
 @import '../foundation/containers/_global/containers-root';
+@import '../foundation/typography/_global/typography-root';
+@import '../foundation/colors/_global/color-root';
 
 // helper class
 @import '../foundation/spacing/_global/spacing-helper';
 @import '../foundation/breakpoints/_global/breakpoints-helper';
 @import '../foundation/containers/_global/containers-helper';
+@import '../foundation/typography/_global/typography-helper';
+@import '../foundation/colors/_global/color-helper';

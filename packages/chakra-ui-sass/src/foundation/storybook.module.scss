@@ -1,0 +1,66 @@
+@import '../foundation/colors/color-variables';
+
+* {
+  box-sizing: border-box;
+}
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.storybook_content {
+  padding: 56px 64px;
+
+  h2,
+  h3,
+  h4 {
+    margin-top: 48px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.typography_area {
+  p {
+    margin: 24px 0 0;
+  }
+}
+
+.color_palette {
+  max-width: 922px;
+
+  .color_list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      flex: 1 1 30%;
+
+      .color_chip {
+        font-size: 14px;
+
+        .color {
+          display: block;
+          width: 48px;
+          height: 48px;
+          border-radius: 4px;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .name {
+          font-weight: bold;
+          color: $black;
+        }
+
+        .hax {
+          margin-top: 4px;
+          // color: $gray500;
+        }
+      }
+    }
+  }
+}

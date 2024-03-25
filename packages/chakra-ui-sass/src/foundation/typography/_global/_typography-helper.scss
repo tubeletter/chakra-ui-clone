@@ -1,0 +1,26 @@
+@import '../typography-variables';
+@import '../typography-mixins';
+
+@each $map, $value in $typography-heading-large {
+  .font-lg-#{$map} {
+    font-size: #{map-get($value, font-size)};
+    line-height: #{map-get($value, line-height)};
+    @include font-setting($typography-font, map-get($typography-weight, large));
+  }
+}
+
+@each $map, $value in $typography-heading-small {
+  .font-sm-#{$map} {
+    font-size: #{map-get($value, font-size)};
+    line-height: #{map-get($value, line-height)};
+    @include font-setting($typography-font, map-get($typography-weight, small));
+  }
+}
+
+@each $map, $value in $typography-text {
+  .font-txt-#{$map} {
+    font-size: #{map-get($value, font-size)};
+    line-height: #{map-get($value, line-height)};
+    @include font-setting($typography-font, map-get($typography-weight, text));
+  }
+}
