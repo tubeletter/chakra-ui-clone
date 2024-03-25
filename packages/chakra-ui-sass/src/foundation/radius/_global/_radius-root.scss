@@ -1,0 +1,8 @@
+/* stylelint-disable CssSyntaxError */
+@import '../radius-variables';
+
+:root {
+  @each $key, $value in $radius {
+    --radius-#{$key}: #{$value};
+  }
+}
