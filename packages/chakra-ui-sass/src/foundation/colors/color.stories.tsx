@@ -1,4 +1,4 @@
-import style from './color.module.scss';
+import styles from '../storybook.module.scss';
 import { Colors } from './color';
 
 export default {
@@ -7,7 +7,8 @@ export default {
 
 export const ColorType = () => {
   return (
-    <div className={style.color_palette}>
+    <div className={`${styles.storybook_content} ${styles.color_palette}`}>
+      <h2 className="font-lg-lg">Color</h2>
       <Colors title="White & Black" color="white, black" isOnly />
       <Colors title="Black" color="black" isAlpha />
       <Colors title="White" color="white" isAlpha />

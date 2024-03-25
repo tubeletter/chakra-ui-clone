@@ -1,0 +1,54 @@
+@import '../color-variables';
+
+:root {
+  --color-black: $black;
+  --color-white: $white;
+
+  @each $key, $value in $color-black {
+    --color-black-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-white {
+    --color-white-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-gray {
+    --color-gray-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-red {
+    --color-red-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-orange {
+    --color-orange-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-yellow {
+    --color-yellow-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-green {
+    --color-green-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-teal {
+    --color-teal-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-blue {
+    --color-blue-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-cyan {
+    --color-cyan-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-purple {
+    --color-purple-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $color-pink {
+    --color-pink-#{$key}: #{$value};
+  }
+}
