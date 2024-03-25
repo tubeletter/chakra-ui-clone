@@ -1,12 +1,13 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import { Test } from "@chakra/ui-sass/test";
-
+import { ThemeProvider } from 'styled-components';
+import themes from '@chakra/ui-styled/theme';
+import { Test } from '@chakra/ui-styled/test';
 
 export default function Page(): JSX.Element {
   return (
-    <main className="">
-      <Test />
-    </main>
+    <ThemeProvider theme={themes}>
+      <main className="">
+        <Test />
+      </main>
+    </ThemeProvider>
   );
 }

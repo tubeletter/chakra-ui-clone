@@ -1,11 +1,8 @@
 import type { StorybookConfig } from '@storybook/nextjs';
 
 import { join, dirname } from 'path';
+import path from 'path';
 
-/**
- * This function is used to resolve the absolute path of a package.
- * It is needed in projects that use Yarn PnP or are set up within a monorepo.
- */
 function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, 'package.json')));
 }
@@ -27,6 +24,30 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag'
-  }
+  },
+  //경로설정라인
+ /*  webpackFinal: async (config) => {
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@chakra/ui-styled': path.resolve(__dirname, '../../../packages/chakra-ui-styled/src')
+      };
+    }
+    return config;
+  } */
+  webpackFinal: async (config:any) => {
+    config.resolve.modules = [
+      path.resolve(__dirname, ".."),
+      "node_modules",
+      "styles",
+    ];
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      components: path.resolve(__dirname, "../components"),
+      assets: path.resolve(__dirname, "../assets"),
+    };
+    return config;
+  },
+  //경로설정라인
 };
 export default config;

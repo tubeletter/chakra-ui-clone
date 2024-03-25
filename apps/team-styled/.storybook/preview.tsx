@@ -1,5 +1,8 @@
+import React, { useContext } from 'react';
 import type { Preview } from '@storybook/react';
-
+import { ThemeProvider } from 'styled-components';
+import themes from '../../../packages/chakra-ui-styled/src/theme/Theme';
+// import themes from '@/';
 export const customView = {
   base: {
     name: 'base - min-width : 0px',
@@ -44,7 +47,6 @@ export const customView = {
     }
   }
 };
-
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -59,5 +61,13 @@ const preview: Preview = {
     }
   }
 };
-
+export const decorators = [
+  (Story, context) => (
+    <>
+      <ThemeProvider theme={themes}>
+        <Story {...context} />
+      </ThemeProvider>
+    </>
+  )
+];
 export default preview;

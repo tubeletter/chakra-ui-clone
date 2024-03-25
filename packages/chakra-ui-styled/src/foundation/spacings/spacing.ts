@@ -1,4 +1,6 @@
-export const Spacings = {
+import { SpacingsType } from './spacing.types';
+
+const Spacings: SpacingsType = {
   0: '0px',
   px: '1px',
   1: '0.25rem',
@@ -30,3 +32,4 @@ export const Spacings = {
   80: '20rem',
   96: '24rem'
 };
+export default Spacings;

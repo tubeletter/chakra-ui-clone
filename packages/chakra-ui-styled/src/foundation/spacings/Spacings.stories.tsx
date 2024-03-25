@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import { Spacings } from './spacing';
-import { SpacingsType } from './spacing.types';
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
+/* import { Spacings } from './spacing';
+import { SpacingsType } from './spacing.types'; */
 
 export default {
   title: 'chakra-ui-styled/foundation/spacings',
@@ -9,7 +10,7 @@ export default {
   }
 };
 
-const SpacingBox = styled.div<{ spacing: string }>`
+const SpacingBox = styled.div<{ spacing: any }>`
   width: ${({ spacing }) => spacing};
   height: 15px;
   background-color: #fed7d7;
@@ -35,6 +36,8 @@ const TableBox = styled.table`
 `;
 
 export const SpacingIndex = () => {
+  const themes = useContext(ThemeContext);
+  // console.log(themes?.spacing);
   return (
     <>
       <h2>Spacing</h2>
@@ -44,7 +47,19 @@ export const SpacingIndex = () => {
           <th>Spacing</th>
           <th>value</th>
         </tr>
-        {Object.keys(Spacings).map((value) => {
+
+        {Object.keys(themes?.spacing).map((value) => {
+          return (
+            <tr>
+              <td>{value}</td>
+              <td>{themes?.spacing[value]}</td>
+              <td>
+                <SpacingBox spacing={themes?.spacing[value]} />
+              </td>
+            </tr>
+          );
+        })}
+        {/*  {Object.keys(theme.colors).map((value) => {
           return (
             <tr>
               <td>{value}</td>
@@ -54,7 +69,7 @@ export const SpacingIndex = () => {
               </td>
             </tr>
           );
-        })}
+        })} */}
       </TableBox>
     </>
   );
