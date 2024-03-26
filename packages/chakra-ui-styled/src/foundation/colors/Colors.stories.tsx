@@ -14,8 +14,14 @@ export const Color = () => {
       {Object.keys(colorPalette).map((v, i) => {
         return (
           <div key={i}>
-            <p>{v}</p>
-            {}
+            {Object.keys(colorPalette[v as keyof typeof colorPalette]!).map((v2, i2) => {
+              const code = v + '.' + v2;
+              return (
+                <>
+                  <Colors colorCode={code} key={i2} color={v} number={v2} />
+                </>
+              );
+            })}
           </div>
         );
       })}
