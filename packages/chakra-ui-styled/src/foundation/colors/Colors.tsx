@@ -33,6 +33,7 @@ const Colors = ({ colorCode, color, number }: colorProps) => {
   let bgc = colorPalette[color as keyof typeof colorPalette][number as keyof (typeof colorPalette)[number]];
   const ColorElement = styled.div`
     background-color: ${bgc};
+
     width: 48px;
     height: 48px;
     border-radius: 4px;
