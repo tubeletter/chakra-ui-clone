@@ -1,4 +1,6 @@
+import React from 'react';
 import type { Preview } from '@storybook/react';
+import { ChakraThemeProvider } from '@chakra/ui-styled/ChakraThemeProvider';
 
 export const customView = {
   base: {
@@ -57,7 +59,14 @@ const preview: Preview = {
     viewport: {
       viewports: customView
     }
-  }
+  },
+  decorators: [
+    (Story) => (
+      <ChakraThemeProvider>
+        <Story />
+      </ChakraThemeProvider>
+    )
+  ]
 };
 
 export default preview;
