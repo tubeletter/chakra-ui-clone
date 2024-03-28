@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors } from '../colors/color';
+import { Colors } from '../colors/colorPalette';
 import { Radii } from './radii';
 import { RadiiType } from './radii.types';
 import { Shadows } from '../shadows/shadow';
