@@ -29,8 +29,7 @@ const Colors = ({ colorCode, color, number }: colorProps) => {
 
   // color 이름이 black , white 일 경우 bgc 가 colorPalette.black.black;
   // 그 외 경우 colorPalette.색상[50]
-
-  let bgc = colorPalette[color as keyof typeof colorPalette][number as keyof (typeof colorPalette)[number]];
+  let bgc: string = colorPalette[color as keyof typeof colorPalette][number as keyof (typeof colorPalette)[number]];
   const ColorElement = styled.div`
     background-color: ${bgc};
 
