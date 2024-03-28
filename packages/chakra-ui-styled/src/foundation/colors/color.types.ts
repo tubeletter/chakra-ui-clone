@@ -1,16 +1,13 @@
-export interface ColorsType {
+export type colorType = {
+  [key: string]: string | { [key: string]: string };
+};
+export type colorProps = {
+  colorCode: string;
+  color?: string;
+  number?: string;
+};
+
+export interface IColors {
   black: string;
-  white: string;
-  whiteAlpha50: string;
-  blackAlpha50: string;
-  gray50: string;
-  red50: string;
-  orange50: string;
-  yellow50: string;
-  green50: string;
-  teal50: string;
-  blue50: string;
-  cyan50: string;
-  purple50: string;
-  pink50: string;
+  red: string;
 }
