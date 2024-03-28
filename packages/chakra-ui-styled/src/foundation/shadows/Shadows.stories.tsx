@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors } from '../colors/color';
+import { colorPalette } from '../colors/colorPalette';
 import { Radii } from '../radii/radii';
 import { Shadows } from './shadow';
 import { ShadowsType } from './shadows.types';
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 const ShadowBox = styled.div<{ shadows: string }>`
   width: 80px; height: 80px;
   background-color: #fff;
-  border: 1px solid ${Colors.gray200};
+  border: 1px solid ${colorPalette.gray[200]};
   border-radius: ${Radii.base}rem;
   box-shadow: ${({ shadows }) => shadows};
 `;
@@ -33,9 +33,6 @@ export const Test = () => {
           </div>
         );
       })}
-      {/* outline을 색상을 선택할 수 있도록 설정하고 싶음,
-       color값 리스트 최종 확정되면 반영하기
-       커스텀 컬러도 입력가능하게 input넣기 */}
     </Wrapper>
 
   );

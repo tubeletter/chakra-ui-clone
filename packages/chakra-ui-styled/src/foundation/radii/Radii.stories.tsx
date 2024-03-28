@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors } from '../colors/colorPalette';
+import { colorPalette } from '../colors/colorPalette';
 import { Radii } from './radii';
 import { RadiiType } from './radii.types';
 import { Shadows } from '../shadows/shadow';
@@ -20,7 +20,7 @@ const RadiiBox = styled.div<{ radius: number }>`
   width: 120px;
   height: 120px;
   background-color: #fff;
-  border: 1px solid ${Colors.gray200};
+  border: 1px solid ${colorPalette.gray[200]};
   border-radius: ${({ radius }) => radius}rem;
   box-shadow: ${Shadows.base};
 `;
