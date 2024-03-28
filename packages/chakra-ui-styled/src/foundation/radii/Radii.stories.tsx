@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Colors } from '../colors/colorPalette';
 import { Radii } from './radii';
 import { RadiiType } from './radii.types';
+import { Shadows } from '../shadows/shadow';
+
 export default {
   title: 'chakra-ui-styled/foundation/radii',
   parameters: {
@@ -9,20 +11,23 @@ export default {
   }
 };
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px 20px;
+`;
 const RadiiBox = styled.div<{ radius: number }>`
   width: 120px;
   height: 120px;
   background-color: #fff;
   border: 1px solid ${Colors.gray200};
   border-radius: ${({ radius }) => radius}rem;
-  box-shadow:
-    0px 1px 2px 0px #0000000f,
-    0px 1px 3px 0px #0000001a;
+  box-shadow: ${Shadows.base};
 `;
 
 export const Test = () => {
   return (
-    <div style={{ display: 'flex', gap: '20px 20px', flexFlow: 'row wrap' }}>
+    <Wrapper>
       {Object.keys(Radii).map((value) => {
         return (
           <div>
@@ -31,7 +36,7 @@ export const Test = () => {
           </div>
         );
       })}
-    </div>
+    </Wrapper>
   );
 };
 Test.storyName = 'Radii';
