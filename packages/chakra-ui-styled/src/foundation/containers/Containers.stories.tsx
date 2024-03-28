@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Containers } from './container';
 import { ContainersType } from './container.types';
 import { Radii } from '../radii/radii';
-import { Colors } from '../colors/color';
+import { colorPalette } from '../colors/colorPalette';
 import { Shadows } from '../shadows/shadow';
 
 export default {
@@ -22,7 +22,7 @@ const Container = styled.div<{ max: string }>`
   max-width: ${({ max }) => max};
   height: 320px;
   background-color: #fff;
-  border: 1px solid ${Colors.gray200};
+  border: 1px solid ${colorPalette.gray[200]};
   border-radius: ${Radii.base};
   box-shadow: ${Shadows.base};
 `;
