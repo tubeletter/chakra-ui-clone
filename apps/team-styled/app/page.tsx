@@ -1,12 +1,16 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import { Test } from "@chakra/ui-sass/test";
+'use client';
 
+import { StyledTest } from './StyledTest';
+import { Test } from '@chakra/ui-sass/test';
+import { ChakraThemeProvider } from '@chakra/ui-styled/ChakraThemeProvider';
 
 export default function Page(): JSX.Element {
   return (
     <main className="">
-      <Test />
+      <ChakraThemeProvider>
+        <StyledTest>안녕하세요.</StyledTest>
+        <Test />
+      </ChakraThemeProvider>
     </main>
   );
 }

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./test": "./src/test/Test.tsx"
+    "./test": "./src/test/Test.tsx",
+    "./ChakraThemeProvider": "./src/styles/ChakraThemeProvider.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

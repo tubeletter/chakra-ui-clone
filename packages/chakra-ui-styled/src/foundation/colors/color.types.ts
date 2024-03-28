@@ -6,3 +6,8 @@ export type colorProps = {
   color?: string;
   number?: string;
 };
+
+export interface IColors {
+  black: string;
+  red: string;
+}

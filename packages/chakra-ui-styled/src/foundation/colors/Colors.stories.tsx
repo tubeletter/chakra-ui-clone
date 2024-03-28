@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import Colors from './Colors';
 import { colorPalette } from './colorPalette';
 
@@ -8,9 +9,14 @@ export default {
   parameter: {}
 };
 
+const StyledTest = styled.div`
+  color: ${({ theme }) => theme.colors.red};
+`;
+
 export const Color = () => {
   return (
     <>
+      <StyledTest>안녕하세요</StyledTest>
       {Object.keys(colorPalette).map((v, i) => {
         return (
           <div key={i}>

@@ -1,4 +1,9 @@
-import { colorType } from './color.types';
+import { colorType, IColors } from './color.types';
+
+export const colorPalette2: IColors = {
+  black: '#000',
+  red: 'red'
+};
 
 export const colorPalette: colorType = {
   black: {
