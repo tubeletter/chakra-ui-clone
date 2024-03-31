@@ -1,9 +1,0 @@
-/* stylelint-disable CssSyntaxError */
-@import '../radius-variables';
-
-/** Radius 관련 클래스 **/
-@each $key, $value in $radius {
-  .border-radius-#{$key} {
-    border-radius: var(--radius-#{$key});
-  }
-}

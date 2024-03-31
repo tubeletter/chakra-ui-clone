@@ -1,7 +1,7 @@
 import style from './storybook.module.scss';
 
 export default {
-  title: 'chakra-ui-sass/foundation'
+  title: 'chakra-ui-sass/Foundation/Breakpoints'
 };
 
 const breakPointKey = ['sm', 'md', 'lg', 'xl', '2xl'];

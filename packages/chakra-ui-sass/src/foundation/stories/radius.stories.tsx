@@ -1,5 +1,5 @@
 export default {
-  title: 'chakra-ui-sass/components/Theme'
+  title: 'chakra-ui-sass/Foundation/Radius'
 };
 
 const radiusKey = ['none', 'sm', 'base', 'lg', 'xl', '2xl', 'full'];

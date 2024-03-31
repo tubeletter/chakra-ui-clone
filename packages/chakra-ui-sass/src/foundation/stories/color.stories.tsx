@@ -2,7 +2,7 @@ import styles from './storybook.module.scss';
 import { Colors } from './color';
 
 export default {
-  title: 'chakra-ui-sass/foundation'
+  title: 'chakra-ui-sass/Foundation/Colors'
 };
 
 export const ColorType = () => {

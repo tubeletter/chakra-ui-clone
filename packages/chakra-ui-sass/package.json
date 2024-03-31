@@ -5,9 +5,7 @@
   "exports": {
     "./test": "./src/test/Test.tsx",
     "./foundation.scss": "./src/foundation/foundation.scss",
-    "./foundation3.scss": "./src/foundation3/foundation.scss",
-    "./global.scss": "./src/style/global.scss",
-    "./global3.scss": "./src/style/global3.scss"
+    "./global.scss": "./src/style/global.scss"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

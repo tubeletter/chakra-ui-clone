@@ -1,7 +1,7 @@
 import style from './storybook.module.scss';
 
 export default {
-  title: 'chakra-ui-sass/foundation'
+  title: 'chakra-ui-sass/Foundation/Spacing'
 };
 
 const spacingKey = [

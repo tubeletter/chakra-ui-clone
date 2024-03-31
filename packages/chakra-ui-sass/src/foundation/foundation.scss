@@ -1,9 +1,6 @@
-@import './spacing/spacing';
-@import './breakpoints/breakpoints';
-@import './containers/containers';
-@import './radius/radius';
-@import './typography/typography';
+@import './mixins/mixins';
+@import './variables/variables';
 
-.sass {
-  background-color: red;
+.sass3 {
+  background-color: wheat;
 }

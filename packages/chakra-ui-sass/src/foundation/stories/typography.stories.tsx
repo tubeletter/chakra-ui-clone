@@ -2,7 +2,7 @@ import { Typography } from './Typography';
 import styles from './storybook.module.scss';
 
 export default {
-  title: 'chakra-ui-sass/foundation'
+  title: 'chakra-ui-sass/Foundation/Typography'
 };
 
 export const TypographyType = () => {

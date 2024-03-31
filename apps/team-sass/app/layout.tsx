@@ -1,4 +1,4 @@
-import '@chakra/ui-sass/global3.scss';
+import '@chakra/ui-sass/global.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
