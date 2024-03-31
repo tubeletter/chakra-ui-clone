@@ -1,0 +1,22 @@
+@import '../variables/typography-variables';
+
+:root {
+  @each $key, $value in $typography-weight {
+    --font-#{$key}: #{$value};
+  }
+
+  @each $map, $value in $typography-heading-large {
+    --font-lg-#{$map}: #{map-get($value, font-size)};
+    --font-lg-#{$map}-line-height: #{map-get($value, line-height)};
+  }
+
+  @each $map, $value in $typography-heading-small {
+    --font-sm-#{$map}: #{map-get($value, font-size)};
+    --font-sm-#{$map}-line-height: #{map-get($value, line-height)};
+  }
+
+  @each $map, $value in $typography-text {
+    --font-txt-#{$map}: #{map-get($value, font-size)};
+    --font-txt-#{$map}-line-height: #{map-get($value, line-height)};
+  }
+}
