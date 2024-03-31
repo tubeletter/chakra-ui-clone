@@ -1,0 +1,6 @@
+@import '../variables/typography-variables';
+
+@mixin font-setting($family, $weight) {
+  font-family: $family;
+  font-weight: $weight;
+}

@@ -1,0 +1,77 @@
+/* stylelint-disable CssSyntaxError */
+@import '../variables/spacing-variables';
+
+/** Spacing 관련 클래스 **/
+@each $key, $value in $spacing {
+  .m-#{$key} {
+    margin: var(--spacing-#{$key});
+  }
+
+  .my-#{$key} {
+    margin-top: var(--spacing-#{$key});
+    margin-bottom: var(--spacing-#{$key});
+  }
+
+  .mx-#{$key} {
+    margin-right: var(--spacing-#{$key});
+    margin-left: var(--spacing-#{$key});
+  }
+
+  .mt-#{$key} {
+    margin-top: var(--spacing-#{$key});
+  }
+
+  .mb-#{$key} {
+    margin-bottom: var(--spacing-#{$key});
+  }
+
+  .ms-#{$key} {
+    margin-left: var(--spacing-#{$key});
+  }
+
+  .me-#{$key} {
+    margin-right: var(--spacing-#{$key});
+  }
+
+  .p-#{$key} {
+    padding: var(--spacing-#{$key});
+  }
+
+  .py-#{$key} {
+    padding-top: var(--spacing-#{$key});
+    padding-bottom: var(--spacing-#{$key});
+  }
+
+  .px-#{$key} {
+    padding-right: var(--spacing-#{$key});
+    padding-left: var(--spacing-#{$key});
+  }
+
+  .pt-#{$key} {
+    padding-top: var(--spacing-#{$key});
+  }
+
+  .pb-#{$key} {
+    padding-bottom: var(--spacing-#{$key});
+  }
+
+  .ps-#{$key} {
+    padding-left: var(--spacing-#{$key});
+  }
+
+  .pe-#{$key} {
+    padding-right: var(--spacing-#{$key});
+  }
+
+  .gap-#{$key} {
+    gap: var(--spacing-#{$key});
+  }
+
+  .row-gap-#{$key} {
+    row-gap: var(--spacing-#{$key});
+  }
+
+  .column-gap-#{$key} {
+    column-gap: var(--spacing-#{$key});
+  }
+}
