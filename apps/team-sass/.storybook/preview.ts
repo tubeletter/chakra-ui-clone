@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-import '@chakra/ui-sass/global.scss';
+import '@chakra/ui-sass/global3.scss';
 
 const preview: Preview = {
   parameters: {

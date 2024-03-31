@@ -1,0 +1,121 @@
+// $typography-heading: 4xl, 3xl, 2xl, xl, lg, md, sm, xs;
+// $typography-text: 6xl, 5xl, 4xl, 3xl, 2xl, xl, lg, md, sm, xs;
+$typography-font: 'Inter';
+$typography-weight: (
+  large: 700,
+  small: 700,
+  text: 400
+);
+
+$typography-heading-large: (
+  4xl: (
+    font-size: 72px,
+    line-height: 72px
+  ),
+  3xl: (
+    font-size: 60px,
+    line-height: 60px
+  ),
+  2xl: (
+    font-size: 48px,
+    line-height: 48px
+  ),
+  xl: (
+    font-size: 36px,
+    line-height: 43.2px
+  ),
+  lg: (
+    font-size: 30px,
+    line-height: 36px
+  ),
+  md: (
+    font-size: 20px,
+    line-height: 24px
+  ),
+  sm: (
+    font-size: 16px,
+    line-height: 19.2px
+  ),
+  xs: (
+    font-size: 14px,
+    line-height: 16.8px
+  )
+);
+
+$typography-heading-small: (
+  4xl: (
+    font-size: 60px,
+    line-height: 60px
+  ),
+  3xl: (
+    font-size: 48px,
+    line-height: 48px
+  ),
+  2xl: (
+    font-size: 36px,
+    line-height: 43.2px
+  ),
+  xl: (
+    font-size: 30px,
+    line-height: 39.9px
+  ),
+  lg: (
+    font-size: 24px,
+    line-height: 31.92px
+  ),
+  md: (
+    font-size: 20px,
+    line-height: 24px
+  ),
+  sm: (
+    font-size: 16px,
+    line-height: 19.2px
+  ),
+  xs: (
+    font-size: 14px,
+    line-height: 16.8px
+  )
+);
+
+$typography-text: (
+  6xl: (
+    font-size: 60px,
+    line-height: 90px
+  ),
+  5xl: (
+    font-size: 48px,
+    line-height: 72px
+  ),
+  4xl: (
+    font-size: 36px,
+    line-height: 54px
+  ),
+  3xl: (
+    font-size: 30px,
+    line-height: 45px
+  ),
+  2xl: (
+    font-size: 24px,
+    line-height: 36px
+  ),
+  xl: (
+    font-size: 20px,
+    line-height: 30px
+  ),
+  lg: (
+    font-size: 18px,
+    line-height: 27px
+  ),
+  md: (
+    font-size: 16px,
+    line-height: 24px
+  ),
+  sm: (
+    font-size: 14px,
+    line-height: 21px
+  ),
+  xs: (
+    font-size: 12px,
+    line-height: 18px
+  )
+);

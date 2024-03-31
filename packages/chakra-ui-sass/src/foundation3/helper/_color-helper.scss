@@ -1,0 +1,122 @@
+@import '../variables/color-variables';
+
+.bg-black {
+  background-color: $black;
+}
+.text-black {
+  color: $black;
+}
+.bg-white {
+  background-color: $white;
+}
+.text-white {
+  color: $white;
+}
+
+@each $map, $value in $color-black {
+  .bg-black-#{$map} {
+    background-color: #{$value};
+  }
+  .text-black-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-white {
+  .bg-white-#{$map} {
+    background-color: #{$value};
+  }
+  .text-white-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-gray {
+  .bg-gray-#{$map} {
+    background-color: #{$value};
+  }
+  .text-gray-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-red {
+  .bg-red-#{$map} {
+    background-color: #{$value};
+  }
+  .text-red-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-orange {
+  .bg-orange-#{$map} {
+    background-color: #{$value};
+  }
+  .text-orange-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-yellow {
+  .bg-yellow-#{$map} {
+    background-color: #{$value};
+  }
+  .text-yellow-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-green {
+  .bg-green-#{$map} {
+    background-color: #{$value};
+  }
+  .text-green-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-teal {
+  .bg-teal-#{$map} {
+    background-color: #{$value};
+  }
+  .text-teal-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-blue {
+  .bg-blue-#{$map} {
+    background-color: #{$value};
+  }
+  .text-blue-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-cyan {
+  .bg-cyan-#{$map} {
+    background-color: #{$value};
+  }
+  .text-cyan-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-purple {
+  .bg-purple-#{$map} {
+    background-color: #{$value};
+  }
+  .text-purple-#{$map} {
+    color: #{$value};
+  }
+}
+
+@each $map, $value in $color-pink {
+  .bg-pink-#{$map} {
+    background-color: #{$value};
+  }
+  .text-pink-#{$map} {
+    color: #{$value};
+  }
+}
