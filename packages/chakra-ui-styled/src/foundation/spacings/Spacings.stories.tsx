@@ -29,7 +29,7 @@ const TableBox = styled.table`
   & th,
   & td {
     height: 38px;
-    padding-right: 40px;
+    padding-right: ${({ theme }) => theme.spacing[10]};
     padding-left: 20px;
   }
 `;

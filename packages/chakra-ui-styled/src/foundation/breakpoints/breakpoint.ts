@@ -1,6 +1,4 @@
-import { BreakpointsType } from './breakpoint.types';
-
-export const BreakpointsSizes: BreakpointsType = {
+export const BreakpointsSizes = {
   base: '0px',
   sm: '480px',
   md: '768px',

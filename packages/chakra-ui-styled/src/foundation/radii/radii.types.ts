@@ -1,11 +1,11 @@
 export interface RadiiType {
-  none: string;
-  sm: string;
-  base: string;
-  md: string;
-  lg: string;
-  xl: string;
-  ["2xl"]: string;
-  ["3xl"]: string;
-  full: string;
+  none: number;
+  sm: number;
+  base: number;
+  md: number;
+  lg: number;
+  xl: number;
+  ['2xl']: number;
+  ['3xl']: number;
+  full: number;
 }

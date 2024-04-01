@@ -16,22 +16,22 @@ const BreakpointBox = styled.div`
   height: 100px;
   margin: 1rem 0;
   border-radius: 1rem;
-  ${Breakpoints.base} {
+  ${({ theme }) => theme.breakpoint.base} {
     background-color: red;
   }
-  ${Breakpoints.sm} {
+  ${({ theme }) => theme.breakpoint.sm} {
     background-color: orange;
   }
-  ${Breakpoints.md} {
+  ${({ theme }) => theme.breakpoint.md} {
     background-color: green;
   }
-  ${Breakpoints.lg} {
+  ${({ theme }) => theme.breakpoint.lg} {
     background-color: blue;
   }
-  ${Breakpoints.xl} {
+  ${({ theme }) => theme.breakpoint.xl} {
     background-color: navy;
   }
-  ${Breakpoints['2xl']} {
+  ${({ theme }) => theme.breakpoint['2xl']} {
     background-color: purple;
   }
 `;
