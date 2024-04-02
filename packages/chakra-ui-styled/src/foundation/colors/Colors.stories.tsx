@@ -10,7 +10,7 @@ export default {
 };
 
 const StyledTest = styled.div`
-  color: ${({ theme }) => theme.colors.red};
+  color: ${({ theme }) => theme.color.blackAlpha[100]};
 `;
 
 export const Color = () => {
