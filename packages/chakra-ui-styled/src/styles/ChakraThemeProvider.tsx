@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
-import { colorPalette2 } from '../foundation/colors/colorPalette';
-import { IColors } from '../foundation/colors/color.types';
+
+import { colorPalette } from '../foundation/colors/colorPalette';
+import { colorTypeProps } from '../foundation/colors/color.types';
 
 import Breakpoints from '../foundation/breakpoints/breakpoint';
 import { BreakpointsType } from '../foundation/breakpoints/breakpoint.types';
@@ -14,12 +15,18 @@ import { ShadowsType } from '../foundation/shadows/shadows.types';
 import { RadiiType } from '../foundation/radii/radii.types';
 import { Radii } from '../foundation/radii/radii';
 
+import { large, small, text } from '../foundation/typography/typography';
+import { TypographyType } from '../foundation/typography/typography.types';
+
+import { Containers } from '../foundation/containers/container';
+import { ContainersType } from '../foundation/containers/container.types';
+
 export const ChakraThemeProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider
       theme={{
-        colors: {
-          ...colorPalette2
+        color: {
+          ...colorPalette
         },
         breakpoint: {
           ...Breakpoints
@@ -32,6 +39,14 @@ export const ChakraThemeProvider = ({ children }: { children: React.ReactNode })
         },
         radii: {
           ...Radii
+        },
+        typo: {
+          large,
+          small,
+          text
+        },
+        container: {
+          ...Containers
         }
       }}
     >
@@ -42,10 +57,12 @@ export const ChakraThemeProvider = ({ children }: { children: React.ReactNode })
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colors: IColors;
+    color: colorTypeProps;
     breakpoint: BreakpointsType;
     spacing: SpacingsType;
     shadow: ShadowsType;
     radii: RadiiType;
+    typo: TypographyType;
+    container: ContainersType;
   }
 }

@@ -8,17 +8,19 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  margin-left: 16px;
-  height: 48px;
   display: flex;
-  align-items: center;
   gap: 16px;
-  p:first-child {
+  align-items: center;
+  height: 48px;
+  margin-left: 16px;
+
+  & p:first-child {
     font-weight: 700;
   }
-  p:last-child {
-    font-weight: 400;
+
+  & p:last-child {
     font-size: 14px;
+    font-weight: 400;
   }
 `;
 
@@ -31,10 +33,9 @@ const Colors = ({ colorCode, color, number }: colorProps) => {
   // 그 외 경우 colorPalette.색상[50]
   let bgc: string = colorPalette[color as keyof typeof colorPalette][number as keyof (typeof colorPalette)[number]];
   const ColorElement = styled.div`
-    background-color: ${bgc};
-
     width: 48px;
     height: 48px;
+    background-color: ${bgc};
     border-radius: 4px;
   `;
   return (

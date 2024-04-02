@@ -5,10 +5,16 @@ export type HeadingProps = {
   size: 'large' | 'small';
 };
 export type TextProps = {
-  value?: '6xl' | '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+  value: '6xl' | '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
   children?: React.ReactNode;
 };
 export type TypographyProps = {
   [key: string]: string | { [key: string]: string };
 };
+export interface TypographyType {
+  large: TypographyProps;
+  small: TypographyProps;
+  text: TypographyProps;
+}
+
 export type StylingProps = { [key: string]: string };
