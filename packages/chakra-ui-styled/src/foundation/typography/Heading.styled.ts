@@ -8,13 +8,13 @@ export const Heading = styled.h1<HeadingProps>`
       ? `
   font-weight:${large.fontWeight};
   font-family:${large.fontFamily};
-  line-height:${(large[value] as StylingProps).lineHeight}
+  line-height:${(large[value] as StylingProps).lineHeight};
   font-size:${(large[value] as StylingProps).fontSize}
   `
       : `
       font-Weight:${small.fontWeight};
       font-family:${small.fontFamily};
-      line-height:${(small[value] as StylingProps).lineHeight}
+      line-height:${(small[value] as StylingProps).lineHeight};
       font-size:${(small[value] as StylingProps).fontSize}
       `}
 `;

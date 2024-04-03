@@ -21,38 +21,34 @@ import { TypographyType } from '../foundation/typography/typography.types';
 import { Containers } from '../foundation/containers/container';
 import { ContainersType } from '../foundation/containers/container.types';
 
+export const theme = {
+  color: {
+    ...colorPalette
+  },
+  breakpoint: {
+    ...Breakpoints
+  },
+  spacing: {
+    ...Spacings
+  },
+  shadow: {
+    ...Shadows
+  },
+  radii: {
+    ...Radii
+  },
+  typo: {
+    large,
+    small,
+    text
+  },
+  container: {
+    ...Containers
+  }
+};
+
 export const ChakraThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <ThemeProvider
-      theme={{
-        color: {
-          ...colorPalette
-        },
-        breakpoint: {
-          ...Breakpoints
-        },
-        spacing: {
-          ...Spacings
-        },
-        shadow: {
-          ...Shadows
-        },
-        radii: {
-          ...Radii
-        },
-        typo: {
-          large,
-          small,
-          text
-        },
-        container: {
-          ...Containers
-        }
-      }}
-    >
-      {children}
-    </ThemeProvider>
-  );
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
 declare module 'styled-components' {
