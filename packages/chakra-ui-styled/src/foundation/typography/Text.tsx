@@ -1,14 +1,12 @@
-import styled from 'styled-components';
 import { TextProps } from './typography.types';
-
-const TextElement = styled.p``;
+import * as S from './Text.styled';
 
 export const TextComponent = ({ value }: TextProps) => {
   const text = 'In love with Chakra';
   return (
     <>
       <p>{value}</p>
-      <TextElement>{text}</TextElement>
+      <S.TextComponent value={value}>{text}</S.TextComponent>
     </>
   );
 };
