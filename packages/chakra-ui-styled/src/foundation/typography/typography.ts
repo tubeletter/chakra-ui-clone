@@ -2,7 +2,7 @@ import { TypographyProps } from './typography.types';
 
 export const large: TypographyProps = {
   fontWeight: '700',
-  fontFamily: 'Inter',
+  fontFamily: 'Pretendard Variable',
   '4xl': {
     fontSize: '72px',
     lineHeight: '72px'
@@ -38,7 +38,7 @@ export const large: TypographyProps = {
 };
 export const small: TypographyProps = {
   fontWeight: '700',
-  fontFamily: 'Inter',
+  fontFamily: 'Pretendard Variable',
   '4xl': {
     fontSize: '60px',
     lineHeight: '60px'
@@ -72,10 +72,9 @@ export const small: TypographyProps = {
     lineHeight: '16.8px'
   }
 };
-
 export const text: TypographyProps = {
   fontWeight: '400',
-  fontFamily: 'Inter',
+  fontFamily: 'Pretendard Variable',
   '6xl': {
     fontSize: '60px',
     lineHeight: '90px'
@@ -117,4 +116,3 @@ export const text: TypographyProps = {
     lineHeight: '18px'
   }
 };
-

@@ -1,14 +1,13 @@
 'use client';
 
 import { StyledTest } from './StyledTest';
-import { Test } from '@chakra/ui-sass/test';
+import { Test } from '@chakra/ui-styled/test';
 import { ChakraThemeProvider } from '@chakra/ui-styled/ChakraThemeProvider';
 
 export default function Page(): JSX.Element {
   return (
-    <main className="">
+    <main>
       <ChakraThemeProvider>
-        <StyledTest>안녕하세요.</StyledTest>
         <Test />
       </ChakraThemeProvider>
     </main>

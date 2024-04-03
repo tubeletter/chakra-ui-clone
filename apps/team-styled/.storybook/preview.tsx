@@ -1,6 +1,8 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
 import { ChakraThemeProvider } from '@chakra/ui-styled/ChakraThemeProvider';
+import { Pretendard } from '../app/font';
+import './../app/globals.css';
 
 export const customView = {
   base: {
@@ -62,7 +64,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <ChakraThemeProvider>
+      <ChakraThemeProvider className={`${Pretendard.variable}`}>
         <Story />
       </ChakraThemeProvider>
     )
