@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { text } from './typography';
 import { StylingProps, TextProps } from './typography.types';
 
-export const Heading = styled.h1<TextProps>`
+export const TextComponent = styled.p<TextProps>`
   ${({ value }) =>
     value &&
     `
