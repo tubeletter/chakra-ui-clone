@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 import { TextComponent } from '../../foundation/typography/Text.styled';
 
-interface ButtonProps {
+export interface ButtonProps {
   size: 'lg' | 'md' | 'sm' | 'xs';
   colorScheme: 'blue' | 'gray' | 'teal' | 'red' | 'orange' | 'yellow' | 'pink' | 'purple' | 'green';
-  outlineStyle?: boolean;
+  variant?: 'solid' | 'outline';
   leftIcon?: string;
   rightIcon?: string;
   text: string;
@@ -12,8 +12,7 @@ interface ButtonProps {
 
 // @todo icon dummy 추후 수정
 interface IconBaseProps {
-  size?: string;
-  color?: string;
+  size: string;
 }
 const IconDummy = ({ size }: IconBaseProps) => {
   return (
@@ -26,32 +25,131 @@ const IconDummy = ({ size }: IconBaseProps) => {
   );
 };
 
-const getColor = (colorScheme: string) => css`
-  ${({ theme }) => {
-    switch (colorScheme) {
-      case 'blue':
-        return theme.color.blue[500];
-      case 'gray':
-        return theme.color.gray[100];
-      case 'teal':
-        return theme.color.teal[500];
-      case 'red':
-        return theme.color.red[500];
-      case 'orange':
-        return theme.color.orange[500];
-      case 'yellow':
-        return theme.color.yellow[400];
-      case 'pink':
-        return theme.color.pink[500];
-      case 'purple':
-        return theme.color.purple[500];
-      case 'green':
-        return theme.color.green[500];
-      default:
-        return theme.color.blue[500];
-    }
-  }}
-`;
+const getColor = (colorScheme: string) => {
+  // css`${({ theme }) => {
+  switch (colorScheme) {
+    case 'blue':
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.blue[500]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.blue[400]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.blue[600]}
+        `
+      };
+    case 'gray':
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.gray[100]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.gray[50]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.gray[200]}
+        `
+      };
+    case 'teal':
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.teal[500]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.teal[400]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.teal[600]}
+        `
+      };
+    case 'red':
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.red[500]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.red[400]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.red[600]}
+        `
+      };
+    case 'orange':
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.orange[500]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.orange[400]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.orange[600]}
+        `
+      };
+    case 'yellow':
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.yellow[400]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.yellow[300]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.yellow[500]}
+        `
+      };
+    case 'pink':
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.pink[500]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.pink[400]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.pink[600]}
+        `
+      };
+    case 'purple':
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.purple[500]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.purple[400]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.purple[600]}
+        `
+      };
+    case 'green':
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.green[500]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.green[400]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.green[600]}
+        `
+      };
+    default:
+      return {
+        enabled: css`
+          ${({ theme }) => theme.color.blue[500]}
+        `,
+        hover: css`
+          ${({ theme }) => theme.color.blue[400]}
+        `,
+        active: css`
+          ${({ theme }) => theme.color.blue[600]}
+        `
+      };
+  }
+};
 
 const getButtonSize = (size: string) => css`
   ${({ theme }) => {
@@ -88,32 +186,54 @@ const iconSize = {
 };
 
 const StyleButton = styled.button<ButtonProps>`
-  ${({ theme, outlineStyle, colorScheme }) => css`
+  ${({ theme, variant, colorScheme }) => css`
     display: flex;
     column-gap: ${theme.spacing[2]};
     align-items: center;
     justify-content: center;
-    border: 1px solid ${getColor(colorScheme)};
+    border: 1px solid ${getColor(colorScheme).enabled};
     border-radius: ${theme.radii.md}rem;
 
-    ${outlineStyle
+    ${variant === 'outline'
       ? css`
-          color: ${colorScheme === 'gray' ? theme.color.gray[800] : getColor(colorScheme)};
+          color: ${colorScheme === 'gray' ? theme.color.gray[800] : getColor(colorScheme).enabled};
           background-color: ${theme.color.white.white};
+
+          &:hover {
+            color: ${colorScheme === 'gray' ? theme.color.gray[800] : getColor(colorScheme).hover};
+            border-color: ${getColor(colorScheme).hover};
+          }
+
+          &:active {
+            color: ${colorScheme === 'gray' ? theme.color.gray[800] : getColor(colorScheme).hover};
+            border-color: ${getColor(colorScheme).active};
+          }
         `
-      : css`
-          color: ${colorScheme === 'gray' || colorScheme === 'yellow'
-            ? theme.color.gray[800]
-            : theme.color.white.white};
-          background-color: ${getColor(colorScheme)};
-        `}
+      : variant === 'solid'
+        ? css`
+            color: ${colorScheme === 'gray' || colorScheme === 'yellow'
+              ? theme.color.gray[800]
+              : theme.color.white.white};
+            background-color: ${getColor(colorScheme).enabled};
+
+            &:hover {
+              background-color: ${getColor(colorScheme).hover};
+              border-color: ${getColor(colorScheme).hover};
+            }
+
+            &:active {
+              background-color: ${getColor(colorScheme).active};
+              border-color: ${getColor(colorScheme).active};
+            }
+          `
+        : null}
   `}
   ${({ size }) => getButtonSize(size)}
 `;
 
-const Button = ({ size = 'md', outlineStyle = false, colorScheme, leftIcon, rightIcon, text }: ButtonProps) => {
+const Button = ({ size = 'md', variant = 'solid', colorScheme, leftIcon, rightIcon, text }: ButtonProps) => {
   return (
-    <StyleButton type="button" size={size} colorScheme={colorScheme} outlineStyle={outlineStyle} text="">
+    <StyleButton type="button" size={size} colorScheme={colorScheme} variant={variant} text="">
       {leftIcon && <IconDummy size={iconSize[size]} />}
       <TextComponent value={size}>{text}</TextComponent>
       {rightIcon && <IconDummy size={iconSize[size]} />}
