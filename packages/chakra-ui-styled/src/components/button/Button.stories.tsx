@@ -1,24 +1,43 @@
 import styled from 'styled-components';
-import Button from './Button';
+import Button, { ButtonProps } from './Button';
 
 export default {
   title: 'chakra-ui-styled/components/button',
-  parameters: {
-    viewport: {}
+  component: Button,
+  parameters: { controls: { expanded: true } },
+
+  argTypes: {
+    text: { control: { type: 'text' } },
+    size: { control: { type: 'select' } },
+    colorScheme: { control: { type: 'select' } },
+    variant: { control: { type: 'radio' } },
+    leftIcon: { control: { type: 'text' } },
+    rightIcon: { control: { type: 'text' } }
+  },
+  args: {
+    text: '안녕',
+    size: 'lg',
+    leftIcon: 'react',
+    rightIcon: 'react',
+    colorScheme: 'blue',
+    variant: 'solid'
   }
 };
+
 const BtnBox = styled.div`
   display: flex;
   gap: 16px;
   align-items: center;
 `;
-
-export const ButtonIndex = () => {
+export const ButtonIndex = (args: ButtonProps) => {
   const btnText: string = 'Button';
   return (
     <div style={{ display: 'flex', gap: '8px', flexDirection: 'column' }}>
       <h2>Button</h2>
 
+      <div>
+        <Button {...args} />
+      </div>
       <BtnBox>
         <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" colorScheme="blue" text={btnText} />
         <Button leftIcon="CkReact" rightIcon="CkReact" size="md" colorScheme="blue" text={btnText} />
@@ -27,10 +46,10 @@ export const ButtonIndex = () => {
       </BtnBox>
 
       <BtnBox>
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" outlineStyle colorScheme="blue" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" outlineStyle colorScheme="blue" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" outlineStyle colorScheme="blue" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" outlineStyle colorScheme="blue" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" variant="outline" colorScheme="blue" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" variant="outline" colorScheme="blue" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="blue" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="blue" text={btnText} />
       </BtnBox>
 
       <BtnBox>
@@ -41,10 +60,10 @@ export const ButtonIndex = () => {
       </BtnBox>
 
       <BtnBox>
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" outlineStyle colorScheme="gray" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" outlineStyle colorScheme="gray" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" outlineStyle colorScheme="gray" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" outlineStyle colorScheme="gray" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" variant="outline" colorScheme="gray" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" variant="outline" colorScheme="gray" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="gray" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="gray" text={btnText} />
       </BtnBox>
 
       <BtnBox>
@@ -55,10 +74,10 @@ export const ButtonIndex = () => {
       </BtnBox>
 
       <BtnBox>
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" outlineStyle colorScheme="teal" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" outlineStyle colorScheme="teal" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" outlineStyle colorScheme="teal" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" outlineStyle colorScheme="teal" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" variant="outline" colorScheme="teal" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" variant="outline" colorScheme="teal" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="teal" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="teal" text={btnText} />
       </BtnBox>
 
       <BtnBox>
@@ -69,10 +88,10 @@ export const ButtonIndex = () => {
       </BtnBox>
 
       <BtnBox>
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" outlineStyle colorScheme="red" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" outlineStyle colorScheme="red" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" outlineStyle colorScheme="red" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" outlineStyle colorScheme="red" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" variant="outline" colorScheme="red" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" variant="outline" colorScheme="red" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="red" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="red" text={btnText} />
       </BtnBox>
 
       <BtnBox>
@@ -83,10 +102,38 @@ export const ButtonIndex = () => {
       </BtnBox>
 
       <BtnBox>
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" outlineStyle colorScheme="orange" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" outlineStyle colorScheme="orange" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" outlineStyle colorScheme="orange" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" outlineStyle colorScheme="orange" text={btnText} />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="lg"
+          variant="outline"
+          colorScheme="orange"
+          text={btnText}
+        />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="md"
+          variant="outline"
+          colorScheme="orange"
+          text={btnText}
+        />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="sm"
+          variant="outline"
+          colorScheme="orange"
+          text={btnText}
+        />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="xs"
+          variant="outline"
+          colorScheme="orange"
+          text={btnText}
+        />
       </BtnBox>
 
       <BtnBox>
@@ -97,10 +144,38 @@ export const ButtonIndex = () => {
       </BtnBox>
 
       <BtnBox>
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" outlineStyle colorScheme="yellow" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" outlineStyle colorScheme="yellow" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" outlineStyle colorScheme="yellow" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" outlineStyle colorScheme="yellow" text={btnText} />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="lg"
+          variant="outline"
+          colorScheme="yellow"
+          text={btnText}
+        />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="md"
+          variant="outline"
+          colorScheme="yellow"
+          text={btnText}
+        />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="sm"
+          variant="outline"
+          colorScheme="yellow"
+          text={btnText}
+        />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="xs"
+          variant="outline"
+          colorScheme="yellow"
+          text={btnText}
+        />
       </BtnBox>
 
       <BtnBox>
@@ -111,10 +186,10 @@ export const ButtonIndex = () => {
       </BtnBox>
 
       <BtnBox>
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" outlineStyle colorScheme="pink" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" outlineStyle colorScheme="pink" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" outlineStyle colorScheme="pink" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" outlineStyle colorScheme="pink" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" variant="outline" colorScheme="pink" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" variant="outline" colorScheme="pink" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="pink" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="pink" text={btnText} />
       </BtnBox>
 
       <BtnBox>
@@ -125,10 +200,38 @@ export const ButtonIndex = () => {
       </BtnBox>
 
       <BtnBox>
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" outlineStyle colorScheme="purple" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" outlineStyle colorScheme="purple" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" outlineStyle colorScheme="purple" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" outlineStyle colorScheme="purple" text={btnText} />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="lg"
+          variant="outline"
+          colorScheme="purple"
+          text={btnText}
+        />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="md"
+          variant="outline"
+          colorScheme="purple"
+          text={btnText}
+        />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="sm"
+          variant="outline"
+          colorScheme="purple"
+          text={btnText}
+        />
+        <Button
+          leftIcon="CkReact"
+          rightIcon="CkReact"
+          size="xs"
+          variant="outline"
+          colorScheme="purple"
+          text={btnText}
+        />
       </BtnBox>
 
       <BtnBox>
@@ -139,10 +242,10 @@ export const ButtonIndex = () => {
       </BtnBox>
 
       <BtnBox>
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" outlineStyle colorScheme="green" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" outlineStyle colorScheme="green" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" outlineStyle colorScheme="green" text={btnText} />
-        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" outlineStyle colorScheme="green" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" variant="outline" colorScheme="green" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" variant="outline" colorScheme="green" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="green" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="green" text={btnText} />
       </BtnBox>
     </div>
   );
