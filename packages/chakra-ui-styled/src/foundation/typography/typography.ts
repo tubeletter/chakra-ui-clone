@@ -74,7 +74,7 @@ export const small: HeadingTypoProps = {
 
 export const text: TypographyProps = {
   fontFamily: 'Pretendard Variable',
-  sbComponent: {
+  storybook: {
     fontWeight: '400',
     '6xl': {
       fontSize: '60px',
