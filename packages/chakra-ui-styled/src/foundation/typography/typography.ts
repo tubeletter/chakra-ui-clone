@@ -1,6 +1,6 @@
-import { TypographyProps } from './typography.types';
+import { HeadingTypoProps, TypographyProps } from './typography.types';
 
-export const large: TypographyProps = {
+export const large: HeadingTypoProps = {
   fontWeight: '700',
   fontFamily: 'Pretendard Variable',
   '4xl': {
@@ -36,7 +36,7 @@ export const large: TypographyProps = {
     lineHeight: '16.8px'
   }
 };
-export const small: TypographyProps = {
+export const small: HeadingTypoProps = {
   fontWeight: '700',
   fontFamily: 'Pretendard Variable',
   '4xl': {
@@ -73,46 +73,267 @@ export const small: TypographyProps = {
   }
 };
 export const text: TypographyProps = {
-  fontWeight: '400',
   fontFamily: 'Pretendard Variable',
-  '6xl': {
-    fontSize: '60px',
-    lineHeight: '90px'
+  sbComponent: {
+    fontWeight: '400',
+    '6xl': {
+      fontSize: '60px',
+      lineHeight: '90px'
+    },
+    '5xl': {
+      fontSize: '48px',
+      lineHeight: '72px'
+    },
+    '4xl': {
+      fontSize: '36px',
+      lineHeight: '54px'
+    },
+    '3xl': {
+      fontSize: '30px',
+      lineHeight: '45px'
+    },
+    '2xl': {
+      fontSize: '24px',
+      lineHeight: '36px'
+    },
+    xl: {
+      fontSize: '20px',
+      lineHeight: '30px'
+    },
+    lg: {
+      fontSize: '18px',
+      lineHeight: '27px'
+    },
+    md: {
+      fontSize: '16px',
+      lineHeight: '24px'
+    },
+    sm: {
+      fontSize: '14px',
+      lineHeight: '21px'
+    },
+    xs: {
+      fontSize: '12px',
+      lineHeight: '18px'
+    }
   },
-  '5xl': {
-    fontSize: '48px',
-    lineHeight: '72px'
+  regular: {
+    fontWeight: '400',
+    '6xl': {
+      fontSize: '60px',
+      lineHeight: '90px'
+    },
+    '5xl': {
+      fontSize: '48px',
+      lineHeight: '72px'
+    },
+    '4xl': {
+      fontSize: '36px',
+      lineHeight: '54px'
+    },
+    '3xl': {
+      fontSize: '30px',
+      lineHeight: '45px'
+    },
+    '2xl': {
+      fontSize: '24px',
+      lineHeight: '36px'
+    },
+    xl: {
+      fontSize: '20px',
+      lineHeight: '30px'
+    },
+    lg: {
+      fontSize: '18px',
+      lineHeight: '27px'
+    },
+    md: {
+      fontSize: '16px',
+      lineHeight: '24px'
+    },
+    sm: {
+      fontSize: '14px',
+      lineHeight: '21px'
+    },
+    xs: {
+      fontSize: '12px',
+      lineHeight: '18px'
+    }
   },
-  '4xl': {
-    fontSize: '36px',
-    lineHeight: '54px'
+  medium: {
+    fontWeight: '500',
+    fontFamily: 'Pretendard Variable',
+    '6xl': {
+      fontSize: '60px',
+      lineHeight: '90px'
+    },
+    '5xl': {
+      fontSize: '48px',
+      lineHeight: '72px'
+    },
+    '4xl': {
+      fontSize: '36px',
+      lineHeight: '54px'
+    },
+    '3xl': {
+      fontSize: '30px',
+      lineHeight: '45px'
+    },
+    '2xl': {
+      fontSize: '24px',
+      lineHeight: '36px'
+    },
+    xl: {
+      fontSize: '20px',
+      lineHeight: '30px'
+    },
+    lg: {
+      fontSize: '18px',
+      lineHeight: '27px'
+    },
+    md: {
+      fontSize: '16px',
+      lineHeight: '24px'
+    },
+    sm: {
+      fontSize: '14px',
+      lineHeight: '21px'
+    },
+    xs: {
+      fontSize: '12px',
+      lineHeight: '18px'
+    }
   },
-  '3xl': {
-    fontSize: '30px',
-    lineHeight: '45px'
+  semibold: {
+    fontWeight: '600',
+    fontFamily: 'Pretendard Variable',
+    '6xl': {
+      fontSize: '60px',
+      lineHeight: '90px'
+    },
+    '5xl': {
+      fontSize: '48px',
+      lineHeight: '72px'
+    },
+    '4xl': {
+      fontSize: '36px',
+      lineHeight: '54px'
+    },
+    '3xl': {
+      fontSize: '30px',
+      lineHeight: '45px'
+    },
+    '2xl': {
+      fontSize: '24px',
+      lineHeight: '36px'
+    },
+    xl: {
+      fontSize: '20px',
+      lineHeight: '30px'
+    },
+    lg: {
+      fontSize: '18px',
+      lineHeight: '27px'
+    },
+    md: {
+      fontSize: '16px',
+      lineHeight: '24px'
+    },
+    sm: {
+      fontSize: '14px',
+      lineHeight: '21px'
+    },
+    xs: {
+      fontSize: '12px',
+      lineHeight: '18px'
+    }
   },
-  '2xl': {
-    fontSize: '24px',
-    lineHeight: '36px'
+  Bold: {
+    fontWeight: '700',
+    fontFamily: 'Pretendard Variable',
+    '6xl': {
+      fontSize: '60px',
+      lineHeight: '90px'
+    },
+    '5xl': {
+      fontSize: '48px',
+      lineHeight: '72px'
+    },
+    '4xl': {
+      fontSize: '36px',
+      lineHeight: '54px'
+    },
+    '3xl': {
+      fontSize: '30px',
+      lineHeight: '45px'
+    },
+    '2xl': {
+      fontSize: '24px',
+      lineHeight: '36px'
+    },
+    xl: {
+      fontSize: '20px',
+      lineHeight: '30px'
+    },
+    lg: {
+      fontSize: '18px',
+      lineHeight: '27px'
+    },
+    md: {
+      fontSize: '16px',
+      lineHeight: '24px'
+    },
+    sm: {
+      fontSize: '14px',
+      lineHeight: '21px'
+    },
+    xs: {
+      fontSize: '12px',
+      lineHeight: '18px'
+    }
   },
-  xl: {
-    fontSize: '20px',
-    lineHeight: '30px'
-  },
-  lg: {
-    fontSize: '18px',
-    lineHeight: '27px'
-  },
-  md: {
-    fontSize: '16px',
-    lineHeight: '24px'
-  },
-  sm: {
-    fontSize: '14px',
-    lineHeight: '21px'
-  },
-  xs: {
-    fontSize: '12px',
-    lineHeight: '18px'
+  extraBold: {
+    fontWeight: '800',
+    fontFamily: 'Pretendard Variable',
+    '6xl': {
+      fontSize: '60px',
+      lineHeight: '90px'
+    },
+    '5xl': {
+      fontSize: '48px',
+      lineHeight: '72px'
+    },
+    '4xl': {
+      fontSize: '36px',
+      lineHeight: '54px'
+    },
+    '3xl': {
+      fontSize: '30px',
+      lineHeight: '45px'
+    },
+    '2xl': {
+      fontSize: '24px',
+      lineHeight: '36px'
+    },
+    xl: {
+      fontSize: '20px',
+      lineHeight: '30px'
+    },
+    lg: {
+      fontSize: '18px',
+      lineHeight: '27px'
+    },
+    md: {
+      fontSize: '16px',
+      lineHeight: '24px'
+    },
+    sm: {
+      fontSize: '14px',
+      lineHeight: '21px'
+    },
+    xs: {
+      fontSize: '12px',
+      lineHeight: '18px'
+    }
   }
 };

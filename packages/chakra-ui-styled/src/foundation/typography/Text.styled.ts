@@ -3,12 +3,18 @@ import { text } from './typography';
 import { StylingProps, TextProps } from './typography.types';
 
 export const TextComponent = styled.p<TextProps>`
-  ${({ value }) =>
+  ${({ value, size }) =>
     value &&
     `
-  font-weight: ${text.fontWeight};
+  font-weight: ${text.sbComponent!.fontWeight};
   font-family: ${text.fontFamily};
-  line-height: ${(text[value] as StylingProps).lineHeight};
-  font-size: ${(text[value] as StylingProps).fontSize};
-  `}
+font-size:
+  `};
 `;
+
+//  storyBookComponent: {
+//     fontWeight: '400',
+//     '6xl': {
+//       fontSize: '60px',
+//       lineHeight: '90px'
+//     },

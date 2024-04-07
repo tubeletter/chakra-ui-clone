@@ -7,9 +7,24 @@ export type HeadingProps = {
 export type TextProps = {
   value: '6xl' | '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
   children?: React.ReactNode;
+  size: 'regular' | 'medium' | 'semibold' | 'bold' | 'extraBold';
+};
+export type HeadingTypoProps = {
+  [key: string]: string | [key: string] | { [key: string]: string };
 };
 export type TypographyProps = {
-  [key: string]: string | { [key: string]: string };
+  fontFamily: string;
+  [key: string]:
+    | string
+    | {
+        fontWeight: string;
+        [key: string]:
+          | string
+          | {
+              fontSize: string;
+              lineHeight: string;
+            };
+      };
 };
 export interface TypographyType {
   large: TypographyProps;
