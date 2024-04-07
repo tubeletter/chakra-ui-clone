@@ -10,16 +10,16 @@ export default {
 export const Texts = () => {
   return (
     <div>
-      <TextComponent value="6xl" />
-      <TextComponent value="5xl" />
-      <TextComponent value="4xl" />
-      <TextComponent value="3xl" />
-      <TextComponent value="2xl" />
-      <TextComponent value="xl" />
-      <TextComponent value="lg" />
-      <TextComponent value="md" />
-      <TextComponent value="sm" />
-      <TextComponent value="xs" />
+      <TextComponent value="6xl" size="storybook" />
+      <TextComponent value="5xl" size="storybook" />
+      <TextComponent value="4xl" size="storybook" />
+      <TextComponent value="3xl" size="storybook" />
+      <TextComponent value="2xl" size="storybook" />
+      <TextComponent value="xl" size="storybook" />
+      <TextComponent value="lg" size="storybook" />
+      <TextComponent value="md" size="storybook" />
+      <TextComponent value="sm" size="storybook" />
+      <TextComponent value="xs" size="storybook" />
     </div>
   );
 };

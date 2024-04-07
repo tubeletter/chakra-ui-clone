@@ -54,12 +54,14 @@ export const TextComponent = ({ value, size }: TextProps) => {
       </>
     );
   }
-  return (
-    <>
-      <p>{value}</p>
-      <S.TextComponent size={size} value={value}>
-        {text}
-      </S.TextComponent>
-    </>
-  );
+  if (size === 'storybook') {
+    return (
+      <>
+        <p>{value}</p>
+        <S.TextComponent size={size} value={value}>
+          {text}
+        </S.TextComponent>
+      </>
+    );
+  }
 };
