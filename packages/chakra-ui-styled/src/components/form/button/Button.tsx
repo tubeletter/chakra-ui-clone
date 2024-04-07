@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { TextComponent } from '../../foundation/typography/Text.styled';
+import { TextComponent } from '../../../foundation/typography/Text.styled';
 
 export interface ButtonProps {
   size: 'lg' | 'md' | 'sm' | 'xs';
@@ -212,8 +212,8 @@ const StyleButton = styled.button<ButtonProps>`
       : variant === 'solid'
         ? css`
             color: ${colorScheme === 'gray' || colorScheme === 'yellow'
-              ? theme.color.gray[800]
-              : theme.color.white.white};
+            ? theme.color.gray[800]
+            : theme.color.white.white};
             background-color: ${getColor(colorScheme).enabled};
 
             &:hover {

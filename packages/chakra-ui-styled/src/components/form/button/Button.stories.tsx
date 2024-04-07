@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Button, { ButtonProps } from './Button';
 
 export default {
-  title: 'chakra-ui-styled/components/button',
+  title: 'chakra-ui-styled/components/form/button',
   component: Button,
   parameters: { controls: { expanded: true } },
 
@@ -33,11 +33,14 @@ export const ButtonIndex = (args: ButtonProps) => {
   const btnText: string = 'Button';
   return (
     <div style={{ display: 'flex', gap: '8px', flexDirection: 'column' }}>
-      <h2>Button</h2>
+      <h1>Button</h1>
 
+      <h2>Button Demo</h2>
       <div>
         <Button {...args} />
       </div>
+
+      <h2>Button Index</h2>
       <BtnBox>
         <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" colorScheme="blue" text={btnText} />
         <Button leftIcon="CkReact" rightIcon="CkReact" size="md" colorScheme="blue" text={btnText} />
