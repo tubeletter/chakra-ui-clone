@@ -20,20 +20,20 @@ export default {
     colorScheme: 'blue',
     isChecked: true,
     isDisabled: false,
-    isIndeterminate: false
+    isIndeterminate: true
   }
 };
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 20px;
 `;
 const CheckboxGroup = styled.div`
   display: flex;
   flex-flow: row wrap;
-  flex: 1 0 30%;
-  gap: 20px 20px;
+  flex: 1 1 30%;
+  gap: 5px 0px;
 `;
 const colorSchemeIndex = ['blue', 'teal', 'green', 'cyan', 'purple', 'pink']
 
@@ -42,6 +42,7 @@ export const CheckboxIndex = (args: CheckboxProps) => {
   return (
     <Wrapper>
       <h1>Checkbox</h1>
+
       <h2>Checkbox Demo</h2>
       <div>
         <Checkbox {...args} />
@@ -174,7 +175,6 @@ export const CheckboxIndex = (args: CheckboxProps) => {
         <Checkbox size="md" colorScheme="pink" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
         <Checkbox size="lg" colorScheme="pink" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
       </CheckboxGroup>
-
     </Wrapper>
   );
 };
