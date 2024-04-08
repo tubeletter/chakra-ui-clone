@@ -1,8 +1,8 @@
 @import '../variables/color-variables';
 
 :root {
-  --color-black: $black;
-  --color-white: $white;
+  --color-black: #{$black};
+  --color-white: #{$white};
 
   @each $key, $value in $color-black {
     --color-black-#{$key}: #{$value};
