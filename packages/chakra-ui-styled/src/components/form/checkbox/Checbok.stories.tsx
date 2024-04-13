@@ -15,7 +15,7 @@ export default {
     isDisabled: { control: { type: 'boolean' } },
   },
   args: {
-    text: '체크대상텍스트',
+    text: '선택대상',
     size: 'md',
     colorScheme: 'blue',
     isChecked: true,
@@ -35,8 +35,6 @@ const CheckboxGroup = styled.div`
   flex: 1 1 30%;
   gap: 5px 0px;
 `;
-const colorSchemeIndex = ['blue', 'teal', 'green', 'cyan', 'purple', 'pink']
-
 export const CheckboxIndex = (args: CheckboxProps) => {
   const chkText: string = 'Checkbox Label';
   return (
