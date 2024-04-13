@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Button, { ButtonProps } from './Button';
 
 export default {
-  title: 'chakra-ui-styled/components/button',
+  title: 'chakra-ui-styled/components/form/button',
   component: Button,
   parameters: { controls: { expanded: true } },
 
@@ -23,7 +23,11 @@ export default {
     variant: 'solid'
   }
 };
-
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
 const BtnBox = styled.div`
   display: flex;
   gap: 16px;
@@ -32,12 +36,15 @@ const BtnBox = styled.div`
 export const ButtonIndex = (args: ButtonProps) => {
   const btnText: string = 'Button';
   return (
-    <div style={{ display: 'flex', gap: '8px', flexDirection: 'column' }}>
-      <h2>Button</h2>
+    <Wrapper>
+      <h1>Button</h1>
 
+      <h2>Button Demo</h2>
       <div>
         <Button {...args} />
       </div>
+
+      <h2>Button Index</h2>
       <BtnBox>
         <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" colorScheme="blue" text={btnText} />
         <Button leftIcon="CkReact" rightIcon="CkReact" size="md" colorScheme="blue" text={btnText} />
@@ -102,38 +109,10 @@ export const ButtonIndex = (args: ButtonProps) => {
       </BtnBox>
 
       <BtnBox>
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="lg"
-          variant="outline"
-          colorScheme="orange"
-          text={btnText}
-        />
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="md"
-          variant="outline"
-          colorScheme="orange"
-          text={btnText}
-        />
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="sm"
-          variant="outline"
-          colorScheme="orange"
-          text={btnText}
-        />
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="xs"
-          variant="outline"
-          colorScheme="orange"
-          text={btnText}
-        />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" variant="outline" colorScheme="orange" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" variant="outline" colorScheme="orange" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="orange" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="orange" text={btnText} />
       </BtnBox>
 
       <BtnBox>
@@ -144,38 +123,10 @@ export const ButtonIndex = (args: ButtonProps) => {
       </BtnBox>
 
       <BtnBox>
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="lg"
-          variant="outline"
-          colorScheme="yellow"
-          text={btnText}
-        />
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="md"
-          variant="outline"
-          colorScheme="yellow"
-          text={btnText}
-        />
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="sm"
-          variant="outline"
-          colorScheme="yellow"
-          text={btnText}
-        />
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="xs"
-          variant="outline"
-          colorScheme="yellow"
-          text={btnText}
-        />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" variant="outline" colorScheme="yellow" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" variant="outline" colorScheme="yellow" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="yellow" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="yellow" text={btnText} />
       </BtnBox>
 
       <BtnBox>
@@ -200,38 +151,10 @@ export const ButtonIndex = (args: ButtonProps) => {
       </BtnBox>
 
       <BtnBox>
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="lg"
-          variant="outline"
-          colorScheme="purple"
-          text={btnText}
-        />
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="md"
-          variant="outline"
-          colorScheme="purple"
-          text={btnText}
-        />
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="sm"
-          variant="outline"
-          colorScheme="purple"
-          text={btnText}
-        />
-        <Button
-          leftIcon="CkReact"
-          rightIcon="CkReact"
-          size="xs"
-          variant="outline"
-          colorScheme="purple"
-          text={btnText}
-        />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="lg" variant="outline" colorScheme="purple" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="md" variant="outline" colorScheme="purple" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="purple" text={btnText} />
+        <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="purple" text={btnText} />
       </BtnBox>
 
       <BtnBox>
@@ -247,7 +170,7 @@ export const ButtonIndex = (args: ButtonProps) => {
         <Button leftIcon="CkReact" rightIcon="CkReact" size="sm" variant="outline" colorScheme="green" text={btnText} />
         <Button leftIcon="CkReact" rightIcon="CkReact" size="xs" variant="outline" colorScheme="green" text={btnText} />
       </BtnBox>
-    </div>
+    </Wrapper>
   );
 };
 ButtonIndex.storyName = 'Button';
