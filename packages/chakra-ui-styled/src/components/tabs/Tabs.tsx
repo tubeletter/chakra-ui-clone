@@ -1,3 +1,5 @@
+const Container = styled.div``;
+
 const Tabs = () => {
   return <></>;
 };
