@@ -95,6 +95,9 @@ ${({ theme }) => css`
   color: ${theme.color.white.white};
 `}}`;
 
+// TODO
+// size = sm md lg  프롭스로 전달 후
+// {({size))=> size === 'sm' && } 식으로 작업하여 동적 작업하기.
 const Tab = () => {
   //rounded = fsz  semibold 그외 medium
 
