@@ -6,7 +6,7 @@ export interface HeadingProps {
   size: '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
 }
 
-const StyleHeading = styled.h1<HeadingProps>`
+export const StyleHeading = styled.h1<HeadingProps>`
   ${({ theme, size }) => css`
     ${theme.typo.fontFamily};
     ${theme.breakpoint.base} {
