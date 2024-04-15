@@ -22,7 +22,7 @@ const getFontWeight = (weight: string) => css`
   }}
 `;
 
-const StyleText = styled.p<TextProps>`
+export const StyleText = styled.p<TextProps>`
   ${({ theme, size, weight }) => css`
     ${theme.typo.fontFamily};
     font-size: ${theme.typo.text[size].fontSize};
