@@ -33,16 +33,16 @@ export const Texts = (args: TextProps) => {
       </div>
       <h2>2. Texts Size Demo</h2>
       <div>
-        <TextComponent size="6xl" children={text} />
-        <TextComponent size="5xl" children={text} />
-        <TextComponent size="4xl" children={text} />
-        <TextComponent size="3xl" children={text} />
-        <TextComponent size="2xl" children={text} />
-        <TextComponent size="xl" children={text} />
-        <TextComponent size="lg" children={text} />
-        <TextComponent size="md" children={text} />
-        <TextComponent size="sm" children={text} />
-        <TextComponent size="xs" children={text} />
+        <TextComponent size="6xl">{text}</TextComponent>
+        <TextComponent size="5xl">{text}</TextComponent>
+        <TextComponent size="4xl">{text}</TextComponent>
+        <TextComponent size="3xl">{text}</TextComponent>
+        <TextComponent size="2xl">{text}</TextComponent>
+        <TextComponent size="xl">{text}</TextComponent>
+        <TextComponent size="lg">{text}</TextComponent>
+        <TextComponent size="md">{text}</TextComponent>
+        <TextComponent size="sm">{text}</TextComponent>
+        <TextComponent size="xs">{text}</TextComponent>
       </div>
     </Wrapper>
   );
