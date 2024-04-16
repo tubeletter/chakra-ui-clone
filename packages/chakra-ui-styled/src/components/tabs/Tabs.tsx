@@ -1,15 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Tab from './tab/Tab';
 
 const Container = styled.div`
-  display: flex;
+  ${({ theme }) => css`
+    display: flex;
+    > div {
+      border-bottom: 2px solid ${theme.color.gray[200]};
+    }
+  `}
 `;
 const Tabs = () => {
   return (
     <Container>
-      <Tab size="sm" style="unstyled" active={true}></Tab>
-      <Tab size="sm" style="unstyled" active={false}></Tab>
-      <Tab size="sm" style="unstyled" active={false}></Tab>
+      <h2>Unstyled_Tabs</h2>
+      <Tab size="sm" style="unstyled" active={true} />
+      <Tab size="sm" style="unstyled" active={false} />
+      <Tab size="sm" style="unstyled" active={false} />
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { sizeType } from './tab.types';
+import { sizeType, tabType } from './tab.types';
 
 export const sizeStyles = {
   sm: css`
@@ -47,9 +47,9 @@ export const styles = {
 
 const TabBtn = styled.div<{ size: sizeType; style: keyof typeof styles; active: Boolean }>`
   if(active) {
-    ${({ size }) => sizeStyles[size]}
     ${({ style }) => styles[style]}
   }
+  ${({ size }) => sizeStyles[size]}
 `;
 
 // TODO
