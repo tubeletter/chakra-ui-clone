@@ -15,7 +15,7 @@ import { ShadowsType } from '../foundation/shadows/shadows.types';
 import { RadiiType } from '../foundation/radii/radii.types';
 import { Radii } from '../foundation/radii/radii';
 
-import { large, small, text } from '../foundation/typography/typography';
+import { large, small, text, fontFamily, fontWeight } from '../foundation/typography/typography';
 import { TypographyType } from '../foundation/typography/typography.types';
 
 import { Containers } from '../foundation/containers/container';
@@ -40,7 +40,9 @@ export const theme = {
   typo: {
     large,
     small,
-    text
+    text,
+    fontFamily,
+    fontWeight
   },
   container: {
     ...Containers
