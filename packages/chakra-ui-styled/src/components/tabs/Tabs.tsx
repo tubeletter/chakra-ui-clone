@@ -1,10 +1,17 @@
 import styled from 'styled-components';
+import Tab from './tab/Tab';
 
 const Container = styled.div`
   display: flex;
 `;
 const Tabs = () => {
-  return <></>;
+  return (
+    <Container>
+      <Tab size="sm" style="unstyled" active={true}></Tab>
+      <Tab size="sm" style="unstyled" active={false}></Tab>
+      <Tab size="sm" style="unstyled" active={false}></Tab>
+    </Container>
+  );
 };
 
 // tab atoms 종류

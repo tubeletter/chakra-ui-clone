@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { sizeType } from './tab.types';
 
-const sizeStyles = {
+export const sizeStyles = {
   sm: css`
     padding: ${({ theme }) => theme.spacings[4]} ${({ theme }) => theme.spacings[1]};
     background-color: transparent;
@@ -16,7 +16,7 @@ const sizeStyles = {
   `
 };
 
-const styles = {
+export const styles = {
   unstyled: css`
     border: none;
     background-color: transparent;
@@ -45,15 +45,17 @@ const styles = {
   `
 };
 
-const TabBtn = styled.div<{ size: sizeType; style: keyof typeof styles }>`
-  ${({ size }) => sizeStyles[size]}
-  ${({ style }) => styles[style]}
+const TabBtn = styled.div<{ size: sizeType; style: keyof typeof styles; active: Boolean }>`
+  if(active) {
+    ${({ size }) => sizeStyles[size]}
+    ${({ style }) => styles[style]}
+  }
 `;
 
 // TODO
 // size = sm md lg  프롭스로 전달 후
 // {({size))=> size === 'sm' && } 식으로 작업하여 동적 작업하기.
-const Tab = ({ size, style }: { size: sizeType; style: keyof typeof styles }) => {
+const Tab = ({ size, style, active }: tabType) => {
   //rounded = fsz  semibold 그외 medium
 
   const text = 'Tabs';
@@ -61,7 +63,7 @@ const Tab = ({ size, style }: { size: sizeType; style: keyof typeof styles }) =>
     <>
       <div>
         {/*<TabBtn size="sm" style="unstyled">*/}
-        <TabBtn size={size} style={style}>
+        <TabBtn size={size} style={style} active={active}>
           {text}
         </TabBtn>
       </div>
