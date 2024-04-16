@@ -1,20 +1,18 @@
-import styled from 'styled-components';
-import { large, small } from './typography';
-import { HeadingProps, StylingProps } from './typography.types';
+import styled, { css } from 'styled-components';
+import { HeadingProps } from './Heading';
 
-export const Heading = styled.h1<HeadingProps>`
-  ${({ size, value }) =>
-    size === 'large'
-      ? `
-  font-weight:${large.fontWeight};
-  font-family:${large.fontFamily};
-  line-height:${(large[value] as StylingProps).lineHeight};
-  font-size:${(large[value] as StylingProps).fontSize}
-  `
-      : `
-      font-Weight:${small.fontWeight};
-      font-family:${small.fontFamily};
-      line-height:${(small[value] as StylingProps).lineHeight};
-      font-size:${(small[value] as StylingProps).fontSize}
-      `}
+export const StyleHeading = styled.h1<HeadingProps>`
+  ${({ theme, size, weight }) => css`
+    ${theme.typo.fontFamily};
+    ${theme.breakpoint.base} {
+      font-size: ${theme.typo.small[size].fontSize};
+      font-weight: ${weight ? theme.typo.fontWeight[weight] : theme.typo.small[size].fontWeight};
+      line-height: ${theme.typo.small[size].lineHeight};
+    }
+    ${theme.breakpoint.lg} {
+      font-size: ${theme.typo.large[size].fontSize};
+      font-weight: ${weight ? theme.typo.fontWeight[weight] : theme.typo.large[size].fontWeight};
+      line-height: ${theme.typo.large[size].lineHeight};
+    }
+  `};
 `;
