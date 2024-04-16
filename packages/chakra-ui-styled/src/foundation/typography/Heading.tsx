@@ -1,14 +1,18 @@
-import { HeadingProps } from './typography.types';
 import * as S from './Heading.styled';
 
-export const Heading = ({ as, value, size }: HeadingProps) => {
-  const text = 'In love with Chakra 〉';
+export interface HeadingProps {
+  as?: React.ElementType;
+  children?: React.ReactNode;
+  size: '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+  weight?: 'bold' | 'semibold' | 'medium' | 'normal';
+}
+
+export const Heading = ({ as, size, weight, children }: HeadingProps) => {
   return (
     <>
-      <p>{value}</p>
-      <S.Heading value={value} size={size} as={as}>
-        {text}
-      </S.Heading>
+      <S.StyleHeading as={as} size={size} weight={weight}>
+        {children}
+      </S.StyleHeading>
     </>
   );
 };
