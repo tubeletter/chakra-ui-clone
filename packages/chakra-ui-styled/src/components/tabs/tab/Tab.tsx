@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { sizeType, tabType } from './tab.types';
+import { tabType } from './tab.types';
 
 export const sizeStyles = {
   sm: css`
@@ -45,20 +45,19 @@ export const styles = {
   `
 };
 
-const TabBtn = styled.div<{ size: sizeType; style: keyof typeof styles; active: Boolean }>`
+const TabBtn = styled.div<tabType>`
   if(active) {
     ${({ style }) => styles[style]}
   }
-  ${({ size }) => sizeStyles[size]}
+  ${({ size }) => sizeStyles[size]!}
 `;
 
 // TODO
 // size = sm md lg  프롭스로 전달 후
 // {({size))=> size === 'sm' && } 식으로 작업하여 동적 작업하기.
-const Tab = ({ size, style, active }: tabType) => {
+const Tab = ({ size, style, active, text = 'Tabs' }: tabType) => {
   //rounded = fsz  semibold 그외 medium
 
-  const text = 'Tabs';
   return (
     <>
       <div>

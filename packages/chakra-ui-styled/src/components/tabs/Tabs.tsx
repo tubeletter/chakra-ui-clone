@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import Tab from './tab/Tab';
+import { tabType } from './tab/tab.types';
 
 const Container = styled.div`
   ${({ theme }) => css`
@@ -9,13 +10,16 @@ const Container = styled.div`
     }
   `}
 `;
-const Tabs = () => {
+// active 를 기본값 null false, true 면 true;
+const Tabs = ({ size, style, active, text }: tabType) => {
   return (
     <Container>
-      <h2>Unstyled_Tabs</h2>
-      <Tab size="sm" style="unstyled" active={true} />
-      <Tab size="sm" style="unstyled" active={false} />
-      <Tab size="sm" style="unstyled" active={false} />
+      <h2>
+        size:{size} style:{style}
+      </h2>
+      <Tab text={text} size={size} style={style} active={active} />
+      <Tab text={text} size={size} style={style} active={active} />
+      <Tab text={text} size={size} style={style} active={active} />
     </Container>
   );
 };
