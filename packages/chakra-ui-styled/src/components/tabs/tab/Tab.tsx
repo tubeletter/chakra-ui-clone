@@ -49,7 +49,7 @@ const TabBtn = styled.div<tabType>`
   if(active) {
     ${({ style }) => styles[style]}
   }
-  ${({ size }) => sizeStyles[size]!}
+  ${({ size }) => sizeStyles[size]}
 `;
 
 // TODO
