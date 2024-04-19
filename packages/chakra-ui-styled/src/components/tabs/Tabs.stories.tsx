@@ -11,7 +11,7 @@ export default {
         type: 'select'
       }
     },
-    style: {
+    styleType: {
       control: {
         type: 'select'
       }
@@ -23,7 +23,7 @@ export default {
     },
     arg: {
       size: 'lg',
-      style: 'unstyled',
+      styleType: 'unstyled',
       active: true,
       text: 'Tabs'
     }
@@ -35,13 +35,13 @@ export const TabsComponent = (args: tabType) => {
       <h2>Tabs Demo</h2>
       <Tabs {...args} />
       <h2>unstyled Tabs lg</h2>
-      <Tabs size="lg" style="unstyled" active={true} text="Tabs" />
-      <Tabs size="lg" style="unstyled" active={false} text="Tabs" />
-      <Tabs size="lg" style="unstyled" active={false} text="Tabs" />
+      <Tabs size="lg" styleType="unstyled" active={true} text="Tabs" />
+      <Tabs size="lg" styleType="unstyled" active={false} text="Tabs" />
+      <Tabs size="lg" styleType="unstyled" active={false} text="Tabs" />
       <h2>unstyled Tabs md</h2>
-      <Tabs size="md" style="unstyled" active={true} text="Tabs" />
-      <Tabs size="md" style="unstyled" active={false} text="Tabs" />
-      <Tabs size="md" style="unstyled" active={false} text="Tabs" />
+      <Tabs size="md" styleType="unstyled" active={true} text="Tabs" />
+      <Tabs size="md" styleType="unstyled" active={false} text="Tabs" />
+      <Tabs size="md" styleType="unstyled" active={false} text="Tabs" />
     </div>
   );
 };

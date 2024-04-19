@@ -5,21 +5,22 @@ import { tabType } from './tab/tab.types';
 const Container = styled.div`
   ${({ theme }) => css`
     display: flex;
+
     > div {
       border-bottom: 2px solid ${theme.color.gray[200]};
     }
   `}
 `;
 // active 를 기본값 null false, true 면 true;
-const Tabs = ({ size, style, active, text }: tabType) => {
+const Tabs = ({ size, styleType, active, text }: tabType) => {
   return (
     <Container>
       <h2>
-        size:{size} style:{style}
+        size:{size} style:{styleType}
       </h2>
-      <Tab text={text} size={size} style={style} active={active} />
-      <Tab text={text} size={size} style={style} active={active} />
-      <Tab text={text} size={size} style={style} active={active} />
+      <Tab text={text} size={size} styleType={styleType} active={active} />
+      <Tab text={text} size={size} styleType={styleType} active={active} />
+      <Tab text={text} size={size} styleType={styleType} active={active} />
     </Container>
   );
 };

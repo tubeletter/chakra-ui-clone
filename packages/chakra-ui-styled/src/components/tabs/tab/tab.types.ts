@@ -1,8 +1,6 @@
-import { styles } from './Tab';
-export type sizeType = 'sm' | 'md' | 'lg';
-export type tabType = {
+export interface tabType {
   text?: string;
-  size: sizeType;
-  style: keyof typeof styles;
+  size: 'sm' | 'md' | 'lg';
+  styleType: 'unstyled' | 'line' | 'enclosed' | 'softRounded' | 'solidRounded';
   active: Boolean;
-};
+}
