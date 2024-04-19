@@ -5,9 +5,13 @@ import { tabType } from './tab/tab.types';
 const Container = styled.div`
   ${({ theme }) => css`
     display: flex;
-
     > div {
       border-bottom: 2px solid ${theme.color.gray[200]};
+    }
+    h2 {
+      span {
+        font-weight: 400;
+      }
     }
   `}
 `;
@@ -15,12 +19,9 @@ const Container = styled.div`
 const Tabs = ({ size, styleType, active, text }: tabType) => {
   return (
     <Container>
-      <h2>
-        size:{size} style:{styleType}
-      </h2>
       <Tab text={text} size={size} styleType={styleType} active={active} />
-      <Tab text={text} size={size} styleType={styleType} active={active} />
-      <Tab text={text} size={size} styleType={styleType} active={active} />
+      <Tab text={text} size={size} styleType={styleType} active={false} />
+      <Tab text={text} size={size} styleType={styleType} active={false} />
     </Container>
   );
 };

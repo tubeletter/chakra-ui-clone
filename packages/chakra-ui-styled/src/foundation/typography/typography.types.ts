@@ -17,4 +17,4 @@ export interface TypographyType {
   text: TypographyProps;
 }
 
-export type StylingProps = { [key: string]: string };
+export type sStylingProps = { [key: string]: string };
