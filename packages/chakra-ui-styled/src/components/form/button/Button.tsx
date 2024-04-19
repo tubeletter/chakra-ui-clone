@@ -1,5 +1,5 @@
 import { StyleText } from '../../../foundation/typography/Text.styled';
-import * as S from './Button.styled';
+import { StyleButton } from './Button.styled';
 
 export interface ButtonProps {
   as?: React.ElementType;
@@ -10,6 +10,9 @@ export interface ButtonProps {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 }
+const setIcon = (icon: React.ReactNode) => {
+  return <figure className="icon">{icon}</figure>;
+};
 
 const Button = ({
   as = 'button',
@@ -21,15 +24,15 @@ const Button = ({
   children
 }: ButtonProps) => {
   return (
-    <S.StyleButton as={as} size={size} colorScheme={colorScheme} variant={variant}>
-      {leftIcon && <figure className="icon">{leftIcon}</figure>}
+    <StyleButton as={as} size={size} colorScheme={colorScheme} variant={variant}>
+      {leftIcon && setIcon(leftIcon)}
       {children && (
         <StyleText size={size} weight="semibold">
           {children}
         </StyleText>
       )}
-      {rightIcon && <figure className="icon">{rightIcon}</figure>}
-    </S.StyleButton>
+      {rightIcon && setIcon(rightIcon)}
+    </StyleButton>
   );
 };
 export default Button;
