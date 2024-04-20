@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Radio, { RadioProps } from './Radio';
+import Radio, { RadioProps, colorSchemeType } from './Radio';
 
 
 export default {
@@ -36,6 +36,7 @@ const RadioGroup = styled.div`
 `;
 export const RadioIndex = (args: RadioProps) => {
   const radioText: string = 'Radio Label';
+  const colorArr: colorSchemeType[] = ['blue', 'teal', 'green', 'cyan', 'purple', 'pink'];
   return (
     <Wrapper>
       <h1>Radio</h1>
@@ -46,108 +47,25 @@ export const RadioIndex = (args: RadioProps) => {
       </div>
 
       <h2>Radio Index</h2>
-      <RadioGroup>
-        <Radio size="sm" colorScheme="blue" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="blue" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="blue" defaultChecked={false} isDisabled={false} text={radioText} />
+      {colorArr.map((color) => (
+        <RadioGroup>
+          <Radio size="sm" colorScheme={color} defaultChecked={false} isDisabled={false} text={radioText} />
+          <Radio size="md" colorScheme={color} defaultChecked={false} isDisabled={false} text={radioText} />
+          <Radio size="lg" colorScheme={color} defaultChecked={false} isDisabled={false} text={radioText} />
 
-        <Radio size="sm" colorScheme="blue" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="blue" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="blue" defaultChecked={true} isDisabled={false} text={radioText} />
+          <Radio size="sm" colorScheme={color} defaultChecked={true} isDisabled={false} text={radioText} />
+          <Radio size="md" colorScheme={color} defaultChecked={true} isDisabled={false} text={radioText} />
+          <Radio size="lg" colorScheme={color} defaultChecked={true} isDisabled={false} text={radioText} />
 
-        <Radio size="sm" colorScheme="blue" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="blue" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="blue" defaultChecked={false} isDisabled={true} text={radioText} />
+          <Radio size="sm" colorScheme={color} defaultChecked={false} isDisabled={true} text={radioText} />
+          <Radio size="md" colorScheme={color} defaultChecked={false} isDisabled={true} text={radioText} />
+          <Radio size="lg" colorScheme={color} defaultChecked={false} isDisabled={true} text={radioText} />
 
-        <Radio size="sm" colorScheme="blue" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="blue" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="blue" defaultChecked={true} isDisabled={true} text={radioText} />
-      </RadioGroup>
-      <RadioGroup>
-        <Radio size="sm" colorScheme="teal" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="teal" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="teal" defaultChecked={false} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="teal" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="teal" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="teal" defaultChecked={true} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="teal" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="teal" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="teal" defaultChecked={false} isDisabled={true} text={radioText} />
-
-        <Radio size="sm" colorScheme="teal" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="teal" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="teal" defaultChecked={true} isDisabled={true} text={radioText} />
-      </RadioGroup>
-      <RadioGroup>
-        <Radio size="sm" colorScheme="green" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="green" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="green" defaultChecked={false} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="green" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="green" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="green" defaultChecked={true} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="green" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="green" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="green" defaultChecked={false} isDisabled={true} text={radioText} />
-
-        <Radio size="sm" colorScheme="green" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="green" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="green" defaultChecked={true} isDisabled={true} text={radioText} />
-      </RadioGroup>
-      <RadioGroup>
-        <Radio size="sm" colorScheme="cyan" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="cyan" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="cyan" defaultChecked={false} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="cyan" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="cyan" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="cyan" defaultChecked={true} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="cyan" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="cyan" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="cyan" defaultChecked={false} isDisabled={true} text={radioText} />
-
-        <Radio size="sm" colorScheme="cyan" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="cyan" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="cyan" defaultChecked={true} isDisabled={true} text={radioText} />
-      </RadioGroup>
-      <RadioGroup>
-        <Radio size="sm" colorScheme="purple" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="purple" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="purple" defaultChecked={false} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="purple" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="purple" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="purple" defaultChecked={true} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="purple" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="purple" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="purple" defaultChecked={false} isDisabled={true} text={radioText} />
-
-        <Radio size="sm" colorScheme="purple" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="purple" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="purple" defaultChecked={true} isDisabled={true} text={radioText} />
-      </RadioGroup>
-      <RadioGroup>
-        <Radio size="sm" colorScheme="pink" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="pink" defaultChecked={false} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="pink" defaultChecked={false} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="pink" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="md" colorScheme="pink" defaultChecked={true} isDisabled={false} text={radioText} />
-        <Radio size="lg" colorScheme="pink" defaultChecked={true} isDisabled={false} text={radioText} />
-
-        <Radio size="sm" colorScheme="pink" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="pink" defaultChecked={false} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="pink" defaultChecked={false} isDisabled={true} text={radioText} />
-
-        <Radio size="sm" colorScheme="pink" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="md" colorScheme="pink" defaultChecked={true} isDisabled={true} text={radioText} />
-        <Radio size="lg" colorScheme="pink" defaultChecked={true} isDisabled={true} text={radioText} />
-      </RadioGroup>
+          <Radio size="sm" colorScheme={color} defaultChecked={true} isDisabled={true} text={radioText} />
+          <Radio size="md" colorScheme={color} defaultChecked={true} isDisabled={true} text={radioText} />
+          <Radio size="lg" colorScheme={color} defaultChecked={true} isDisabled={true} text={radioText} />
+        </RadioGroup>
+      ))}
     </Wrapper>
   );
 };

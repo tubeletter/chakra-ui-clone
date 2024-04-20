@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components';
 
+export type colorSchemeType = 'blue' | 'teal' | 'green' | 'cyan' | 'purple' | 'pink';
 export interface RadioProps {
   size: 'sm' | 'md' | 'lg';
-  colorScheme: 'blue' | 'teal' | 'green' | 'cyan' | 'purple' | 'pink';
+  colorScheme: colorSchemeType;
   defaultChecked?: boolean;
   isDisabled?: boolean;
   text: string;
