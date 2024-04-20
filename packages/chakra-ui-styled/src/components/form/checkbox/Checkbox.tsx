@@ -6,7 +6,6 @@ export interface CheckboxProps {
   isChecked?: boolean;
   isDisabled?: boolean;
   isIndeterminate?: boolean;
-  // Indeterminate는 체크를 했다는 전제조건에서만 나올 수 있음, isDisabled가 true이면 Indeterminate는 자동으로 해제, 우선 배제하고 작업진행
   text: string;
 }
 const checkboxSize = { sm: 12, md: 16, lg: 20, };
@@ -55,10 +54,6 @@ const CheckboxForm = styled.input.attrs({ type: "checkbox" })`
   cursor: pointer;
   height: 0;
   width: 0;
-  
-  &:checked:indeterminate ~ span::after {
-    display: flex;
-  }
 `;
 const Label = styled.label<CheckboxProps>`
   flex: 1 0 30%;
@@ -86,9 +81,6 @@ const Label = styled.label<CheckboxProps>`
       top: inherit;
       left: 50%;
       transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
     // label에서 CheckboxProps적용시
     ${({ isChecked, isDisabled, isIndeterminate, colorScheme, theme }) => css`
