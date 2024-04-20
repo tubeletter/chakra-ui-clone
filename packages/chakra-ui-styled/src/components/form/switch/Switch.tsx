@@ -19,7 +19,7 @@ const SwitchForm = styled.input.attrs({ type: "Radio" })`
   height: 0;
 `;
 const Label = styled.label<SwitchProps>`
-  flex: 1 0 30%;
+  flex: 1 1 30%;
   display: flex;
   align-items: center;
   gap: 13px;

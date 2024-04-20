@@ -12,21 +12,6 @@ export interface RadioProps {
 }
 const RadioSize = { sm: 12, md: 16, lg: 20, };
 const borderSize = { sm: 4, md: 5, lg: 6 };
-// label 사이즈 설정 했을 때 label의 왼쪽여백 조정
-const getLabelPadding = (size: string) => css`
-  ${({ theme }) => {
-    switch (size) {
-      case 'sm':
-        return theme.spacing[5];
-      case 'md':
-        return theme.spacing[6];
-      case 'lg':
-        return theme.spacing[7];
-      default:
-        return theme.spacing[6];
-    }
-  }}
-`;
 const RadioForm = styled.input.attrs({ type: "Radio" })`
   position: absolute;
   opacity: 0;
@@ -38,14 +23,9 @@ const Label = styled.label<RadioProps>`
   flex: 1 1 30%;
   display: flex;
   align-items: center;
-  position: relative;
-  padding: 0 0 0 ${({ size }) => getLabelPadding(size)};
+  gap: 8px;
 
   & span {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
     width: ${({ size }) => RadioSize[size]}px;
     height: ${({ size }) => RadioSize[size]}px;
     border-radius: 50%;

@@ -13,21 +13,6 @@ export interface CheckboxProps {
 }
 const checkboxSize = { sm: 12, md: 16, lg: 20, };
 const iconSize = { sm: 8, md: 12, lg: 16, };
-// label 사이즈 설정 했을 때 label의 왼쪽여백 조정
-const getLabelPadding = (size: string) => css`
-  ${({ theme }) => {
-    switch (size) {
-      case 'sm':
-        return theme.spacing[5];
-      case 'md':
-        return theme.spacing[6];
-      case 'lg':
-        return theme.spacing[7];
-      default:
-        return theme.spacing[6];
-    }
-  }}
-`;
 const CheckboxForm = styled.input.attrs({ type: "checkbox" })`
   position: absolute;
   opacity: 0;
@@ -39,28 +24,19 @@ const Label = styled.label<CheckboxProps>`
   flex: 1 1 30%;
   display: flex;
   align-items: center;
-  position: relative;
-  padding: 0 0 0 ${({ size }) => getLabelPadding(size)};
+  gap: 8px;
   
-
   & span {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
     width: ${({ size }) => checkboxSize[size]}px;
     height: ${({ size }) => checkboxSize[size]}px;
     border-radius: 2px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &::after { 
-      position: absolute;
       font-size: ${({ size }) => iconSize[size]}px;
-      width: inherit;
-      height: inherit;
-      top: inherit;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      line-height: 1;
     }
     ${({ isChecked, isDisabled, isIndeterminate, colorScheme, theme }) => css`
       ${isDisabled // 비활성화 기준으로 잡아 잉여코드 제거
@@ -82,13 +58,12 @@ const Label = styled.label<CheckboxProps>`
             ${isIndeterminate
             ? css` // 불확실o
               content: '-';
-              transform: translate(-50%, -60%);
+              transform: translateY(-10%);
             `
             : css` // 불확실x
               content: '✔';
             `}
             color: ${theme.color.white.white};
-            transform: translate(-50%, -60%);
           }`
         : css` // 비활성x, 동시 체크x
           border: 2px solid ${theme.color.gray[200]};
