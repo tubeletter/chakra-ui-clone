@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import Checkbox, { CheckboxProps } from './Checkbox';
-
+import Checkbox, { CheckboxProps, colorSchemeType } from './Checkbox';
 
 export default {
   title: 'chakra-ui-styled/components/form/checkbox',
@@ -37,6 +36,7 @@ const CheckboxGroup = styled.div`
 `;
 export const CheckboxIndex = (args: CheckboxProps) => {
   const chkText: string = 'Checkbox Label';
+  const colorArr: colorSchemeType[] = ['blue', 'teal', 'green', 'cyan', 'purple', 'pink'];
   return (
     <Wrapper>
       <h1>Checkbox</h1>
@@ -47,132 +47,29 @@ export const CheckboxIndex = (args: CheckboxProps) => {
       </div>
 
       <h2>Checkbox Index</h2>
-      <CheckboxGroup>
-        <Checkbox size="sm" colorScheme="blue" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="blue" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="blue" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
+      {colorArr.map((color) => (
+        <CheckboxGroup>
+          <Checkbox size="sm" colorScheme={color} isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
+          <Checkbox size="md" colorScheme={color} isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
+          <Checkbox size="lg" colorScheme={color} isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
 
-        <Checkbox size="sm" colorScheme="blue" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="blue" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="blue" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
+          <Checkbox size="sm" colorScheme={color} isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
+          <Checkbox size="md" colorScheme={color} isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
+          <Checkbox size="lg" colorScheme={color} isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
 
-        <Checkbox size="sm" colorScheme="blue" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="md" colorScheme="blue" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="lg" colorScheme="blue" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
+          <Checkbox size="sm" colorScheme={color} isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
+          <Checkbox size="md" colorScheme={color} isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
+          <Checkbox size="lg" colorScheme={color} isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
 
-        <Checkbox size="sm" colorScheme="blue" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="blue" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="blue" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
+          <Checkbox size="sm" colorScheme={color} isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
+          <Checkbox size="md" colorScheme={color} isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
+          <Checkbox size="lg" colorScheme={color} isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
 
-        <Checkbox size="sm" colorScheme="blue" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="blue" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="blue" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-      </CheckboxGroup>
-      <CheckboxGroup>
-        <Checkbox size="sm" colorScheme="teal" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="teal" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="teal" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="teal" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="teal" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="teal" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="teal" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="md" colorScheme="teal" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="lg" colorScheme="teal" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="teal" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="teal" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="teal" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="teal" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="teal" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="teal" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-      </CheckboxGroup>
-      <CheckboxGroup>
-        <Checkbox size="sm" colorScheme="green" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="green" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="green" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="green" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="green" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="green" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="green" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="md" colorScheme="green" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="lg" colorScheme="green" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="green" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="green" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="green" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="green" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="green" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="green" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-      </CheckboxGroup>
-      <CheckboxGroup>
-        <Checkbox size="sm" colorScheme="cyan" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="cyan" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="cyan" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="cyan" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="cyan" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="cyan" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="cyan" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="md" colorScheme="cyan" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="lg" colorScheme="cyan" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="cyan" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="cyan" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="cyan" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="cyan" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="cyan" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="cyan" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-      </CheckboxGroup>
-      <CheckboxGroup>
-        <Checkbox size="sm" colorScheme="purple" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="purple" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="purple" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="purple" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="purple" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="purple" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="purple" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="md" colorScheme="purple" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="lg" colorScheme="purple" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="purple" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="purple" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="purple" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="purple" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="purple" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="purple" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-      </CheckboxGroup>
-      <CheckboxGroup>
-        <Checkbox size="sm" colorScheme="pink" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="pink" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="pink" isChecked={false} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="pink" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="pink" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="pink" isChecked={true} isDisabled={false} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="pink" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="md" colorScheme="pink" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-        <Checkbox size="lg" colorScheme="pink" isChecked={true} isDisabled={false} isIndeterminate={true} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="pink" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="pink" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="pink" isChecked={false} isDisabled={true} isIndeterminate={false} text={chkText} />
-
-        <Checkbox size="sm" colorScheme="pink" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="md" colorScheme="pink" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-        <Checkbox size="lg" colorScheme="pink" isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
-      </CheckboxGroup>
+          <Checkbox size="sm" colorScheme={color} isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
+          <Checkbox size="md" colorScheme={color} isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
+          <Checkbox size="lg" colorScheme={color} isChecked={true} isDisabled={true} isIndeterminate={false} text={chkText} />
+        </CheckboxGroup>
+      ))}
     </Wrapper>
   );
 };
