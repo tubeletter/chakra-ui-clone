@@ -35,6 +35,7 @@ const TagWrap = styled.div`
     flex-direction: column;
     gap: 12px;
     align-items: center;
+    justify-content: flex-start;
   }
 `;
 
