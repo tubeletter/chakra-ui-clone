@@ -5,10 +5,12 @@ export const StyleBadge = styled.div<BadgeProps>`
   ${({ theme, variant, colorScheme }) => css`
     display: inline-flex;
     align-items: center;
+    align-self: flex-start;
     justify-content: center;
+    justify-self: flex-start;
     width: auto;
     height: 16px;
-    padding: 0 4px;
+    padding: 0 ${theme.spacing[1]};
     border-radius: ${theme.radii.sm}rem;
     ${variant === 'solid'
       ? css`
