@@ -9,12 +9,12 @@ export default {
   argTypes: {
     variant: { control: { type: 'radio' } },
     colorScheme: { control: { type: 'select' } },
-    children: { control: { type: 'text' } }
+    children: { control: { type: 'text' } },
   },
   args: {
     variant: 'solid',
     colorScheme: 'blue',
-    children: '뱃지 테스트'
+    children: '뱃지 테스트',
   }
 };
 const Wrapper = styled.div`
