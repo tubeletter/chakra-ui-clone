@@ -1,0 +1,29 @@
+.card {
+  color: var(--color-gray-800);
+  border-radius: var(--radius-lg);
+
+  &.lg {
+    padding: var(--spacing-7);
+  }
+
+  &.md {
+    padding: var(--spacing-5);
+  }
+
+  &.sm {
+    padding: var(--spacing-3);
+  }
+
+  &.elvated {
+    background-color: var(--color-white);
+    box-shadow: var(--shadows-base);
+  }
+
+  &.outline {
+    border: 1px solid var(--color-gray-200);
+  }
+
+  &.filled {
+    background-color: var(--color-gray-100);
+  }
+}
