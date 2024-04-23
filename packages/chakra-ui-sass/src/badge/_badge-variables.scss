@@ -1,0 +1,16 @@
+/** badge 관련 변수 **/
+$badge-colors: gray, blue, teal, green, red, purple, pink, orange;
+$badge-outline: (
+  border-color: 500,
+  font-color: 600
+);
+
+$badge-subtle: (
+  bg-color: 100,
+  font-color: 800
+);
+
+$badge-solid: (
+  bg-color: 500,
+  font-color: 'white'
+);

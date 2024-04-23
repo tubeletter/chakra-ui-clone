@@ -1,0 +1,13 @@
+%badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  min-height: 16px;
+  padding: 0 var(--spacing-1);
+  border-radius: var(--radius-sm);
+  margin: 0 5px;
+}
+%badge:first-of-type {
+  margin-left: 0;
+}

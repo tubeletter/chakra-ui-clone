@@ -1,0 +1,22 @@
+@import './badge-variables';
+@import './badge-extends';
+
+@each $badge-color in $badge-colors {
+  .badge-#{$badge-color} {
+    background-color: var(--color-#{$badge-color}-#{map-get($badge-solid, bg-color)});
+    color: var(--color-#{map-get($badge-solid, font-color)});
+    @extend %badge;
+  }
+
+  .badge-outline-#{$badge-color} {
+    border: 1px solid var(--color-#{$badge-color}-#{map-get($badge-outline, border-color)});
+    color: var(--color-#{$badge-color}-#{map-get($badge-outline, font-color)});
+    @extend %badge;
+  }
+
+  .badge-subtle-#{$badge-color} {
+    background-color: var(--color-#{$badge-color}-#{map-get($badge-subtle, bg-color)});
+    color: var(--color-#{$badge-color}-#{map-get($badge-subtle, font-color)});
+    @extend %badge;
+  }
+}
