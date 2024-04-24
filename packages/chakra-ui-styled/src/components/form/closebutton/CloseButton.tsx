@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { smCloseIconStyle, mdCloseIconStyle, lgCloseIconStyle } from './CloseButtonstyled';
 
 export interface CloseButtonProps {
   size: 'sm' | 'md' | 'lg';
