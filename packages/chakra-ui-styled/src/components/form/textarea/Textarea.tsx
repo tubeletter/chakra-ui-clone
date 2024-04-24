@@ -19,6 +19,7 @@ const TextareaStyle = styled.textarea<TextareaProps>`
       ? css`// 비활성o
       opacity: 0.4;
       border: 1px solid ${theme.color.gray[200]};
+      pointer-events: none;
       `
       : isInvalid
         ? css` // 활성o
