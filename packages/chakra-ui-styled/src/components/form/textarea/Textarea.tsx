@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components';
 
 export interface TextareaProps {
   isInvalid?: boolean;
-  isDisabled?: boolean;
+  disabled?: boolean;
+  readOnly?: boolean;
   placeholder: string;
 }
 const TextareaStyle = styled.textarea<TextareaProps>`
@@ -10,28 +11,32 @@ const TextareaStyle = styled.textarea<TextareaProps>`
   height: 80px;
   border-radius: 6px;
   padding: 8px 12px;
-  &:focus { 
-    outline: 1px solid ${({ theme }) => theme.color.red[500]};
+  &:focus {
+    outline: 0;
   }
-  
-  ${({ isDisabled, isInvalid, theme }) => css`
-  ${isDisabled
-      ? css`// 비활성o
-      opacity: 0.4;
-      border: 1px solid ${theme.color.gray[200]};
-      `
-      : isInvalid
-        ? css` // 활성o
-        border: 1px solid ${theme.color.red[500]};
-      `
-        : css` // 기본
-        border: 1px solid ${theme.color.gray[200]};
-      `}
-    `}
+
+  ${({ disabled, readOnly, isInvalid, theme }) => css`
+    ${disabled || readOnly
+      ? css`
+          // 비활성o
+          opacity: 0.4;
+          border: 1px solid ${theme.color.gray[200]};
+        `
+      : css`
+          // 기본
+          border: 1px solid ${theme.color.gray[200]};
+          &:focus {
+            outline: 1px solid ${theme.color.red[500]};
+          }
+          //기본 + 값이 있을때만 조건 충족 : 아웃라인 들어와야함
+          ${isInvalid &&
+          css`
+            outline: 1px solid ${theme.color.red[500]};
+          `}
+        `}
+  `}
 `;
-const Textarea = ({ placeholder = 'Hello', isDisabled = false, isInvalid = false }: TextareaProps) => {
-  return (
-    <TextareaStyle placeholder={placeholder} isDisabled={isDisabled} isInvalid={isInvalid} />
-  );
+const Textarea = ({ placeholder = 'Hello', disabled = false, readOnly = false, isInvalid = false }: TextareaProps) => {
+  return <TextareaStyle placeholder={placeholder} disabled={disabled} readOnly={readOnly} isInvalid={isInvalid} />;
 };
 export default Textarea;

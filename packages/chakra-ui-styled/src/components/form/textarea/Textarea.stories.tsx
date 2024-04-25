@@ -7,12 +7,14 @@ export default {
   parameters: { controls: { expanded: true } },
 
   argTypes: {
-    isDisabled: { control: { type: 'boolean' } },
-    isInvalid: { control: { type: 'boolean' } },
+    disabled: { control: { type: 'boolean' } },
+    readonly: { control: { type: 'boolean' } },
+    isInvalid: { control: { type: 'boolean' } }
   },
   args: {
-    isDisabled: false,
-    isInvalid: false,
+    disabled: false,
+    readonly: false,
+    isInvalid: false
   }
 };
 const Wrapper = styled.div`
@@ -32,9 +34,10 @@ export const TextareaIndex = (args: TextareaProps) => {
       </div>
 
       <h2>Textarea Index</h2>
-      <Textarea placeholder="Hello" isDisabled={false} isInvalid={false} />
-      <Textarea placeholder="Hello" isDisabled={false} isInvalid={true} />
-      <Textarea placeholder="Hello" isDisabled={true} isInvalid={false} />
+      <Textarea placeholder="Hello" isInvalid={false} />
+      <Textarea placeholder="Hello" isInvalid={true} />
+      <Textarea placeholder="Hello" readOnly={true} isInvalid={false} />
+      <Textarea placeholder="Hello" disabled={true} isInvalid={false} />
     </Wrapper>
   );
 };
