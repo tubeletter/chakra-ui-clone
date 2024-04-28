@@ -1,13 +1,11 @@
-import styled from 'styled-components';
-import { text } from './typography';
-import { StylingProps, TextProps } from './typography.types';
-export const TextComponent = styled.p<TextProps>`
-  ${({ value }) =>
-    value &&
-    `
-  font-weight: ${text.fontWeight};
-  font-family: ${text.fontFamily};
-  line-height: ${(text[value] as StylingProps).lineHeight};
-  font-size: ${(text[value] as StylingProps).fontSize};
-  `}
+import styled, { css } from 'styled-components';
+import { TextProps } from './Text';
+
+export const StyleText = styled.p<TextProps>`
+  ${({ theme, size, weight }) => css`
+    ${theme.typo.fontFamily};
+    font-size: ${theme.typo.text[size].fontSize};
+    font-weight: ${weight ? theme.typo.fontWeight[weight] : theme.typo.text[size].fontWeight};
+    line-height: ${theme.typo.text[size].lineHeight};
+  `};
 `;

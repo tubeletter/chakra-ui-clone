@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Breakpoints, { BreakpointsSizes } from './breakpoint';
 import { BreakpointsType } from './breakpoint.types';
-import { Spacings } from '../spacings/spacing';
 
 export default {
   title: 'chakra-ui-styled/foundation/breakpoints',

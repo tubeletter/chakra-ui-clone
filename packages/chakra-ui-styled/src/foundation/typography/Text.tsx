@@ -1,12 +1,17 @@
-import { TextProps } from './typography.types';
 import * as S from './Text.styled';
 
-export const TextComponent = ({ value }: TextProps) => {
-  const text = 'In love with Chakra';
+export interface TextProps {
+  children?: React.ReactNode;
+  size: '6xl' | '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+  weight?: 'bold' | 'semibold' | 'medium' | 'normal';
+}
+
+export const TextComponent = ({ size, weight, children }: TextProps) => {
   return (
     <>
-      <p>{value}</p>
-      <S.TextComponent value={value}>{text}</S.TextComponent>
+      <S.StyleText size={size} weight={weight}>
+        {children}
+      </S.StyleText>
     </>
   );
 };
