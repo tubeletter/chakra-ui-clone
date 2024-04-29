@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Textarea, { TextareaProps } from './Textarea';
+import Textarea, { TextareaProps, colorSchemeType } from './Textarea';
 
 export default {
   title: 'chakra-ui-styled/components/form/textarea',
@@ -7,13 +7,13 @@ export default {
   parameters: { controls: { expanded: true } },
 
   argTypes: {
+    colorScheme: { control: { type: 'select' } },
     disabled: { control: { type: 'boolean' } },
-    readonly: { control: { type: 'boolean' } },
     isInvalid: { control: { type: 'boolean' } }
   },
   args: {
+    colorScheme: 'blue',
     disabled: false,
-    readonly: false,
     isInvalid: false
   }
 };
@@ -22,8 +22,14 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
-
+const Stack = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 0;
+  gap: 10px;
+`;
 export const TextareaIndex = (args: TextareaProps) => {
+  const colorArr: colorSchemeType[] = ['whiteAlpha', 'blackAlpha', 'gray', 'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'cyan', 'purple', 'pink'];
   return (
     <Wrapper>
       <h1>Textarea</h1>
@@ -34,10 +40,13 @@ export const TextareaIndex = (args: TextareaProps) => {
       </div>
 
       <h2>Textarea Index</h2>
-      <Textarea placeholder="Hello" isInvalid={false} />
-      <Textarea placeholder="Hello" isInvalid={true} />
-      <Textarea placeholder="Hello" readOnly={true} isInvalid={false} />
-      <Textarea placeholder="Hello" disabled={true} isInvalid={false} />
+      {colorArr.map((color) => (
+        <Stack>
+          <Textarea placeholder="Hello" colorScheme={color} isInvalid={false} />
+          <Textarea placeholder="Hello" colorScheme={color} isInvalid={true} />
+          <Textarea placeholder="Hello" colorScheme={color} disabled={true} isInvalid={false} />
+        </Stack>
+      ))}
     </Wrapper>
   );
 };
