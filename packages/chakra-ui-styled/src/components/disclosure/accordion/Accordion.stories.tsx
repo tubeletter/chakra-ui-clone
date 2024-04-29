@@ -1,11 +1,12 @@
 import Accordion from './Accordion';
 import styled from 'styled-components';
+import { ReactNode } from 'react';
 
 export type accordionType = {
   state: boolean;
-  title: string;
-  text: string;
-  children: string;
+  title?: string;
+  text?: string;
+  children?: ReactNode;
 };
 
 export default {
@@ -30,8 +31,31 @@ export const AccordionComponent = (args: accordionType) => {
       <Container>
         <h2>Accordion Demo</h2>
         <Accordion {...args}>
-          <Accordion.Toggle title={args.title}>
-            <Accordion.Panel>{args.text}</Accordion.Panel>
+          <Accordion.Toggle title={args.title ?? 'Accordion Button'}>
+            <Accordion.Panel
+              text={
+                args.text ??
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              }
+            />
+          </Accordion.Toggle>
+        </Accordion>
+        <br />
+        <hr />
+        <br />
+        <Accordion state={false}>
+          <Accordion.Toggle title={'Accordion Button'} />
+        </Accordion>
+        <Accordion state={true}>
+          <Accordion.Toggle title={'Accordion Button'} />
+        </Accordion>
+        <Accordion state={true}>
+          <Accordion.Toggle title={'Accordion Button'}>
+            <Accordion.Panel
+              text={
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              }
+            />
           </Accordion.Toggle>
         </Accordion>
       </Container>
