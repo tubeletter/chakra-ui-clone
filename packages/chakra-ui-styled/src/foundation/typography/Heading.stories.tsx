@@ -8,7 +8,8 @@ export default {
   argTypes: {
     children: { control: { type: 'text' } },
     size: { control: { type: 'select' } },
-    weight: { control: { type: 'select' } }
+    weight: { control: { type: 'select' } },
+    lineHeight: { control: { type: 'select' } }
   },
   args: {
     children: 'Heading 컴포넌트 args 테스트',
