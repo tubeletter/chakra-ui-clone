@@ -17,9 +17,9 @@ const fontSize = {
   14: '0.875rem',
   12: '0.75rem'
 };
-const lineHeight = {
+export const lineHeight = {
   150: '1.5',
-  133: '1.3',
+  130: '1.3',
   120: '1.2',
   100: '1'
 };
@@ -49,12 +49,12 @@ export const large: HadingTypographyProps = {
   },
   xl: {
     fontSize: fontSize[36],
-    lineHeight: lineHeight[133],
+    lineHeight: lineHeight[130],
     fontWeight: fontWeight.bold
   },
   lg: {
     fontSize: fontSize[30],
-    lineHeight: lineHeight[133],
+    lineHeight: lineHeight[130],
     fontWeight: fontWeight.bold
   },
   md: {
@@ -91,12 +91,12 @@ export const small: HadingTypographyProps = {
   },
   xl: {
     fontSize: fontSize[30],
-    lineHeight: lineHeight[133],
+    lineHeight: lineHeight[130],
     fontWeight: fontWeight.bold
   },
   lg: {
     fontSize: fontSize[24],
-    lineHeight: lineHeight[133],
+    lineHeight: lineHeight[130],
     fontWeight: fontWeight.bold
   },
   md: {
@@ -163,7 +163,7 @@ export const text = {
   },
   xs: {
     fontSize: fontSize[12],
-    lineHeight: lineHeight[133],
+    lineHeight: lineHeight[130],
     fontWeight: fontWeight.normal
   }
 };
