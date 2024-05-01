@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { tabType } from './tab.types';
-import { TextComponent } from '../../../foundation/typography/Text.styled';
+import { TextComponent } from '../../../../foundation/typography/Text';
 //
 // export const sizeStyles = {
 //   sm: css`

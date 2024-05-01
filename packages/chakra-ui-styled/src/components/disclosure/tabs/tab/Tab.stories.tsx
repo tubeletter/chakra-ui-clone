@@ -1,7 +1,7 @@
 import Tab from './Tab';
 import { tabType } from './tab.types';
 import styled from 'styled-components';
-import { TextComponent } from '../../../foundation/typography/Text.styled';
+// import { TextComponent } from '../../../../foundation/typography/Text.styled';
 
 export default {
   title: 'chakra-ui-styled/components/tabs',
