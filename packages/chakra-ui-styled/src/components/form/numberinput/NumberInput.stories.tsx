@@ -60,6 +60,36 @@ export const NumberInputIndex = (args: NumberInputProps) => {
           <NumberInput size="xs" colorScheme={color} value={1} isInvalid={true}
            incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
           />
+
+          <NumberInput size="sm" colorScheme={color} value={1} isInvalid={false}
+           incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
+          />
+          <NumberInput size="sm" colorScheme={color} value={1} disabled={true} isInvalid={true}
+           incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
+          />
+          <NumberInput size="sm" colorScheme={color} value={1} isInvalid={true}
+           incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
+          />
+
+          <NumberInput size="md" colorScheme={color} value={1} isInvalid={false}
+           incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
+          />
+          <NumberInput size="md" colorScheme={color} value={1} disabled={true} isInvalid={true}
+           incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
+          />
+          <NumberInput size="md" colorScheme={color} value={1} isInvalid={true}
+           incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
+          />
+
+          <NumberInput size="lg" colorScheme={color} value={1} isInvalid={false}
+           incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
+          />
+          <NumberInput size="lg" colorScheme={color} value={1} disabled={true} isInvalid={true}
+           incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
+          />
+          <NumberInput size="lg" colorScheme={color} value={1} isInvalid={true}
+           incrementIcon={<IncrementStepperIconStyle />} decrementIcon={<DecrementStepperIconStyle />}
+          />
         </Stack>
       ))}
     </Wrapper>
