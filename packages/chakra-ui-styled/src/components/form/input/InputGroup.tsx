@@ -22,11 +22,11 @@ export const InputGroupContext = React.createContext<InputGroupType>({
 // A util function to use context with simpler syntax
 export const useInputGroupContext = () => React.useContext(InputGroupContext);
 
-const InputGroupStyle = styled.div<{ size: InputGroupSize; variant: VariantType }>`
-  ${({ size, variant }) => css`
+const InputGroupStyle = styled.div<{ props: InputGroupType }>`
+  ${({ props }) => css`
     display: flex;
     align-items: center;
-    background-color: ${size === 'xs' ? 'red' : 'black'};
+    background-color: ${props.size === 'xs' ? 'red' : 'black'};
   `}
 `;
 
@@ -34,21 +34,20 @@ const InputGroupStyle = styled.div<{ size: InputGroupSize; variant: VariantType 
 const InputGroup = ({ children, defaultValue }: { children: React.ReactNode; defaultValue: InputGroupType }) => {
   return (
     <InputGroupContext.Provider value={defaultValue}>
-      <InputGroupStyle size={defaultValue.size} variant={defaultValue.variant}>
-        {children}
-      </InputGroupStyle>
+      <InputGroupStyle props={{ ...defaultValue }}>{children}</InputGroupStyle>
     </InputGroupContext.Provider>
   );
 };
 
-interface InputType extends InputGroupType {
+type InputType = {
   type?: 'text' | 'email' | 'tel';
   name: string;
   id: string;
   placeholder?: string;
-}
+};
 const InputStyle = styled.input<{ size: InputGroupSize; variant: VariantType }>`
   ${({ size, variant }) => css`
+    flex: 1;
     background-color: transparent;
     border: 0 none;
   `}
