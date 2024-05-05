@@ -33,7 +33,32 @@ export const AlertIndex = (args: alertType) => {
         <Alert {...args} />
       </div>
       <div>
+        <h3>Info</h3>
         <Alert style="vanilla" variant="info" />
+        <Alert style="left-border" variant="info" />
+        <Alert style="top-border" variant="info" />
+        <Alert style="solid" variant="info" />
+      </div>
+      <div>
+        <h3>warning</h3>
+        <Alert style="vanilla" variant="warning" />
+        <Alert style="left-border" variant="warning" />
+        <Alert style="top-border" variant="warning" />
+        <Alert style="solid" variant="warning" />
+      </div>
+      <div>
+        <h3>error</h3>
+        <Alert style="vanilla" variant="error" />
+        <Alert style="left-border" variant="error" />
+        <Alert style="top-border" variant="error" />
+        <Alert style="solid" variant="error" />
+      </div>
+      <div>
+        <h3>success</h3>
+        <Alert style="vanilla" variant="success" />
+        <Alert style="left-border" variant="success" />
+        <Alert style="top-border" variant="success" />
+        <Alert style="solid" variant="success" />
       </div>
     </>
   );

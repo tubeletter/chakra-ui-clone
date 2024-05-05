@@ -22,9 +22,16 @@ const Container = styled.article<alertType>`
   align-items: center;
   width: 400px;
   height: 72px;
-  ${({ theme }) => css`
-    background-color: ${theme.color.blue['100']}}
-    
+  ${({ theme, variant }) => css`
+    background-color: ${variant === 'info'
+      ? theme.color.blue['100']
+      : variant === 'warning'
+        ? theme.color.orange['100']
+        : variant === 'error'
+          ? theme.color.red['100']
+          : variant === 'success'
+            ? theme.color.green['100']
+            : null};
   `};
   ${({ variant, style, theme }) => css`
     ${style === 'left-border'
@@ -45,13 +52,33 @@ const Container = styled.article<alertType>`
         `
       : style === 'top-border'
         ? css`
-            border-top-color: ${theme.color.blue['500']};
+            border-top-color:${
+              variant === 'info'
+                ? theme.color.blue['500']
+                : variant === 'warning'
+                  ? theme.color.orange['500']
+                  : variant === 'error'
+                    ? theme.color.red['500']
+                    : variant === 'success'
+                      ? theme.color.green['500']
+                      : null
+            }
             border-top-style: solid;
             border-top-width: 4px;
           `
         : style === 'solid'
           ? css`
-              background-color: ${theme.color.blue['500']};
+              background-color: ${
+                variant === 'info'
+                  ? theme.color.blue['500']
+                  : variant === 'warning'
+                    ? theme.color.orange['500']
+                    : variant === 'error'
+                      ? theme.color.red['500']
+                      : variant === 'success'
+                        ? theme.color.green['500']
+                        : null
+              }
               color: ${theme.color.white.white};
             `
           : null}
