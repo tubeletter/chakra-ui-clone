@@ -8,7 +8,7 @@ const demoText: alertType['text'] = 'This is a description.';
 const Alert = ({ style, variant, title = demoTitle, text = demoText }: alertType) => {
   return (
     <Container style={style} variant={variant}>
-      <Icon style={style} />
+      <Icon style={style} variant={variant} />
       <TextBox>
         <h5>{title}</h5>
         <p>{text}</p>
