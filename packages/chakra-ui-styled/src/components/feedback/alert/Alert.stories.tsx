@@ -1,8 +1,9 @@
 import Tabs from '../../disclosure/tabs/Tabs';
 import Alert from './Alert';
+
 export type alertType = {
-  variant: 'vanilla' | 'solid' | 'top-border' | 'left-border';
-  color: 'warning' | 'error' | 'success' | 'info';
+  style: 'vanilla' | 'solid' | 'top-border' | 'left-border';
+  variant: 'info' | 'warning' | 'error' | 'success';
   title?: string;
   text?: string;
 };
@@ -11,14 +12,14 @@ export default {
   component: Alert,
   parameter: { controls: { expanded: true } },
   argTypes: {
+    style: { control: { type: 'select' } },
     variant: { control: { type: 'select' } },
-    color: { control: { type: 'select' } },
     title: { control: { type: 'text' } },
     text: { control: { type: 'text' } }
   },
   arg: {
-    variant: 'vanilla',
-    color: 'info',
+    variant: 'info',
+    style: 'vanilla',
     title: 'Title',
     text: 'This is a description.'
   }
@@ -30,6 +31,9 @@ export const AlertIndex = (args: alertType) => {
       <div>
         <h2>Alert Demo</h2>
         <Alert {...args} />
+      </div>
+      <div>
+        <Alert style="vanilla" variant="info" />
       </div>
     </>
   );
