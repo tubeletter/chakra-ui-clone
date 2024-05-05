@@ -49,12 +49,21 @@ export const InputGroupIndex = (args: InputGroupType) => {
 
       <h2>InputGroupIndex Demo</h2>
       <div>
-        <InputGroup defaultValue={{ size: 'xs', variant: 'filled', isInvalid: false, isDisabled: false }}>
-          <InputGroup.rightAddon>$</InputGroup.rightAddon>
-          <InputGroup.input id="asd" name="asd" />
+        <InputGroup
+          defaultValue={{
+            size: 'xs',
+            variant: 'filled',
+            isInvalid: false,
+            isDisabled: false,
+            leftAddon: true,
+            rightAddon: true
+          }}
+        >
           <InputGroup.leftAddon>
             <IconDummy />
           </InputGroup.leftAddon>
+          <InputGroup.input id="asd" name="asd" />
+          <InputGroup.rightAddon>$</InputGroup.rightAddon>
         </InputGroup>
       </div>
 

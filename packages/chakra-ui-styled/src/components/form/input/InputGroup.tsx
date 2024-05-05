@@ -9,6 +9,8 @@ export type InputGroupType = {
   variant: VariantType;
   isInvalid?: boolean;
   isDisabled: boolean;
+  leftAddon: boolean;
+  rightAddon: boolean;
 };
 
 // Create context
@@ -16,16 +18,42 @@ export const InputGroupContext = React.createContext<InputGroupType>({
   size: 'xs',
   variant: 'filled',
   isInvalid: false,
-  isDisabled: false
+  isDisabled: false,
+  leftAddon: false,
+  rightAddon: false
 });
 
 // A util function to use context with simpler syntax
 export const useInputGroupContext = () => React.useContext(InputGroupContext);
 
+type inputSizeType = { [key: string]: { height: string; padding: string } };
+const InputSize: inputSizeType = {
+  xs: {
+    height: '24px',
+    padding: '8px'
+  },
+  sm: {
+    height: '32px',
+    padding: '12px'
+  },
+  md: {
+    height: '40px',
+    padding: '12px'
+  },
+  lg: {
+    height: '48px',
+    padding: '16px'
+  }
+};
+
 const InputGroupStyle = styled.div<{ props: InputGroupType }>`
   ${({ props }) => css`
+    box-sizing: border-box;
     display: flex;
     align-items: center;
+    height: ${InputSize[props.size]?.height};
+    padding-right:;
+    padding-left:;
     background-color: ${props.size === 'xs' ? 'red' : 'black'};
   `}
 `;
@@ -40,25 +68,36 @@ const InputGroup = ({ children, defaultValue }: { children: React.ReactNode; def
 };
 
 type InputType = {
-  type?: 'text' | 'email' | 'tel';
+  type?: 'text' | 'email' | 'tel' | 'password';
   name: string;
   id: string;
   placeholder?: string;
 };
-const InputStyle = styled.input<{ size: InputGroupSize; variant: VariantType }>`
-  ${({ size, variant }) => css`
+
+const InputStyle = styled.input<{ props: InputGroupType }>`
+  ${({ theme, props }) => css`
     flex: 1;
+    height: ${InputSize[props.size]};
     background-color: transparent;
     border: 0 none;
+    ${theme.typo.text[props.size]};
   `}
 `;
 
 // input
 const Input = ({ type = 'text', name, id, placeholder = 'Placeholder' }: InputType) => {
-  const { size, variant } = useInputGroupContext();
+  const defaultValue = useInputGroupContext();
   return (
     <>
-      <InputStyle type={type} name={name} id={id} size={size} variant={variant} placeholder={placeholder} />
+      <InputStyle
+        type={type}
+        name={name}
+        id={id}
+        props={{ ...defaultValue }}
+        disabled={defaultValue.isDisabled}
+        readOnly={defaultValue.isDisabled}
+        placeholder={placeholder}
+      />
     </>
   );
 };
