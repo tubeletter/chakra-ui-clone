@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Icon from './Icon';
 import { alertType } from './Alert.stories';
 
@@ -17,11 +17,12 @@ const Alert = ({ variant, color, title = demoTitle, text = demoText }: alertType
   );
 };
 
-const Container = styled.article<{ variant: alertType['variant'] }>`
+const Container = styled.article<alertType>`
   display: flex;
   align-items: center;
   width: 400px;
   height: 72px;
+  ${({ variant }) => css``}
 `;
 const TextBox = styled.div`
   display: flex;
