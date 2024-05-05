@@ -1,20 +1,27 @@
-import { createContext } from 'react';
 import styled from 'styled-components';
+import Icon from './Icon';
+import { alertType } from './Alert.stories';
 
-const Alert = () => {
+const demoTitle: alertType['title'] = 'Title';
+const demoText: alertType['text'] = 'This is a description.';
+
+const Alert = ({ variant, color, title = demoTitle, text = demoText }: alertType) => {
   return (
-    <Container>
+    <Container variant={variant}>
+      <Icon variant={variant} color={color} />
       <TextBox>
-        <h5>Title</h5>
-        <p>This is a description.</p>
+        <h5>{title}</h5>
+        <p>{text}</p>
       </TextBox>
     </Container>
   );
 };
 
-const Container = styled.article`
+const Container = styled.article<{ variant: alertType['variant'] }>`
   display: flex;
   align-items: center;
+  width: 400px;
+  height: 72px;
 `;
 const TextBox = styled.div`
   display: flex;
