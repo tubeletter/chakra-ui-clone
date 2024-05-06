@@ -106,7 +106,7 @@ const Tab = ({ size, styleType, active, text = 'Tabs' }: tabType) => {
       <div>
         {/*<TabBtn size="sm" style="unstyled">*/}
         <TabBtn size={size} styleType={styleType} active={active}>
-          <TextComponent value={size}>{text}</TextComponent>
+          {text}
         </TabBtn>
       </div>
       <div></div>

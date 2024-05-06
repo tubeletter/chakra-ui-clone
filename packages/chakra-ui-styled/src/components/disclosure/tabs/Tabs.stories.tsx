@@ -3,7 +3,7 @@ import { tabType } from './tab/tab.types';
 import styled from 'styled-components';
 
 export default {
-  title: 'chakra-ui-styled/components/tabs',
+  title: 'chakra-ui-styled/components/disclosure/tabs',
   component: Tabs,
   parameter: { controls: { expanded: true } },
   argTypes: {

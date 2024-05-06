@@ -1,25 +1,24 @@
-import Tabs from '../../disclosure/tabs/Tabs';
 import Alert from './Alert';
 
 export type alertType = {
-  style: 'vanilla' | 'solid' | 'top-border' | 'left-border';
+  alertStyle: 'vanilla' | 'solid' | 'top-border' | 'left-border';
   variant: 'info' | 'warning' | 'error' | 'success';
   title?: string;
   text?: string;
 };
 export default {
-  title: 'chakra-ui-styled/components/alert',
+  title: 'chakra-ui-styled/components/feedback/alert',
   component: Alert,
   parameter: { controls: { expanded: true } },
   argTypes: {
-    style: { control: { type: 'select' } },
+    alertStyle: { control: { type: 'select' } },
     variant: { control: { type: 'select' } },
     title: { control: { type: 'text' } },
     text: { control: { type: 'text' } }
   },
   arg: {
     variant: 'info',
-    style: 'vanilla',
+    alertStyle: 'vanilla',
     title: 'Title',
     text: 'This is a description.'
   }
@@ -34,31 +33,55 @@ export const AlertIndex = (args: alertType) => {
       </div>
       <div>
         <h3>Info</h3>
-        <Alert style="vanilla" variant="info" />
-        <Alert style="left-border" variant="info" />
-        <Alert style="top-border" variant="info" />
-        <Alert style="solid" variant="info" />
+        <Alert alertStyle="vanilla" variant="info" />
+        <br />
+
+        <Alert alertStyle="left-border" variant="info" />
+
+        <br />
+
+        <Alert alertStyle="top-border" variant="info" />
+        <br />
+
+        <Alert alertStyle="solid" variant="info" />
       </div>
       <div>
         <h3>warning</h3>
-        <Alert style="vanilla" variant="warning" />
-        <Alert style="left-border" variant="warning" />
-        <Alert style="top-border" variant="warning" />
-        <Alert style="solid" variant="warning" />
+        <Alert alertStyle="vanilla" variant="warning" />
+        <br />
+        <Alert alertStyle="left-border" variant="warning" />
+        <br />
+
+        <Alert alertStyle="top-border" variant="warning" />
+        <br />
+
+        <Alert alertStyle="solid" variant="warning" />
       </div>
       <div>
         <h3>error</h3>
-        <Alert style="vanilla" variant="error" />
-        <Alert style="left-border" variant="error" />
-        <Alert style="top-border" variant="error" />
-        <Alert style="solid" variant="error" />
+        <Alert alertStyle="vanilla" variant="error" />
+        <br />
+
+        <Alert alertStyle="left-border" variant="error" />
+        <br />
+
+        <Alert alertStyle="top-border" variant="error" />
+        <br />
+
+        <Alert alertStyle="solid" variant="error" />
       </div>
       <div>
         <h3>success</h3>
-        <Alert style="vanilla" variant="success" />
-        <Alert style="left-border" variant="success" />
-        <Alert style="top-border" variant="success" />
-        <Alert style="solid" variant="success" />
+        <Alert alertStyle="vanilla" variant="success" />
+        <br />
+
+        <Alert alertStyle="left-border" variant="success" />
+        <br />
+
+        <Alert alertStyle="top-border" variant="success" />
+        <br />
+
+        <Alert alertStyle="solid" variant="success" />
       </div>
     </>
   );
