@@ -1,0 +1,28 @@
+export default {
+  title: 'chakra-ui-styled/components/feedback/progress',
+  component: Progress,
+  parameter: { controls: { expanded: true } },
+  argTypes: {
+    progress: {
+      control: {
+        type: 'select'
+      }
+    },
+    size: {
+      control: {
+        type: 'select'
+      }
+    },
+    active: {
+      control: {
+        type: 'boolean'
+      }
+    },
+    arg: {
+      size: 'lg',
+      styleType: 'unstyled',
+      active: 'true',
+      text: 'Tabs'
+    }
+  }
+};
