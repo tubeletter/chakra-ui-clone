@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import InputGroup, { InputGroupType } from './InputGroup';
+import InputGroup, { InputAddon, InputGroupType } from './InputGroup';
 
 const IconDummy = () => {
   return (
@@ -54,16 +54,12 @@ export const InputGroupIndex = (args: InputGroupType) => {
             size: 'xs',
             variant: 'filled',
             isInvalid: false,
-            isDisabled: false,
-            leftAddon: true,
-            rightAddon: true
+            isDisabled: false
           }}
+          leftAddon={<InputAddon $color={'red'} $bg={'gray'} element={'asdasdad'} />}
+          rightAddon={<InputAddon $color={'red'} $bg={'gray'} element={<IconDummy />} />}
         >
-          <InputGroup.leftAddon>
-            <IconDummy />
-          </InputGroup.leftAddon>
           <InputGroup.input id="asd" name="asd" />
-          <InputGroup.rightAddon>$</InputGroup.rightAddon>
         </InputGroup>
       </div>
 
