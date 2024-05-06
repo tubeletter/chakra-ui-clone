@@ -10,7 +10,7 @@ export type accordionType = {
 };
 
 export default {
-  title: 'chakra-ui-styled/components/accordion',
+  title: 'chakra-ui-styled/components/disclosure/accordion',
   component: Accordion,
   parameter: { controls: { expanded: true } },
   argTypes: {

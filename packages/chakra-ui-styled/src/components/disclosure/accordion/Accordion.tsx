@@ -1,7 +1,6 @@
 import { accordionType } from './Accordion.stories';
 import { createContext, ReactNode, useContext, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { Containers } from '../../../foundation/containers/container';
 
 const AccordionContext = createContext({
   isOpen: false,
