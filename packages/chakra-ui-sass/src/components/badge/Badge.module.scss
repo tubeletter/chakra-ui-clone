@@ -1,0 +1,138 @@
+%badge-style {
+  display: inline-block;
+  min-height: 16px;
+  margin: 0 5px;
+  padding: 0 var(--spacing-1);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-txt-xs);
+  font-weight: var(--font-large);
+  line-height: 14px;
+  color: var(--color-white);
+}
+%badge-style:first-of-type {
+  margin-left: 0;
+}
+
+.outline {
+  background-color: transparent !important;
+}
+
+.badge {
+  @extend %badge-style;
+  background-color: var(--color-gray-500);
+
+  &.subtle {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-800);
+  }
+
+  &.outline {
+    color: var(--color-gray-600);
+    border: 1px solid var(--color-gray-500);
+  }
+
+  &-blue {
+    @extend %badge-style;
+    background-color: var(--color-blue-500);
+
+    &.outline {
+      color: var(--color-blue-600);
+      border: 1px solid var(--color-blue-500);
+    }
+
+    &.subtle {
+      background-color: var(--color-blue-100);
+      color: var(--color-blue-800);
+    }
+  }
+
+  &-teal {
+    @extend %badge-style;
+    background-color: var(--color-teal-500);
+
+    &.outline {
+      color: var(--color-teal-600);
+      border: 1px solid var(--color-teal-500);
+    }
+
+    &.subtle {
+      background-color: var(--color-teal-100);
+      color: var(--color-teal-800);
+    }
+  }
+
+  &-green {
+    @extend %badge-style;
+    background-color: var(--color-green-500);
+
+    &.outline {
+      color: var(--color-green-600);
+      border: 1px solid var(--color-green-500);
+    }
+
+    &.subtle {
+      background-color: var(--color-green-100);
+      color: var(--color-green-800);
+    }
+  }
+
+  &-red {
+    @extend %badge-style;
+    background-color: var(--color-red-500);
+
+    &.outline {
+      color: var(--color-red-600);
+      border: 1px solid var(--color-red-500);
+    }
+
+    &.subtle {
+      background-color: var(--color-red-100);
+      color: var(--color-red-800);
+    }
+  }
+
+  &-purple {
+    @extend %badge-style;
+    background-color: var(--color-purple-500);
+
+    &.outline {
+      color: var(--color-purple-600);
+      border: 1px solid var(--color-purple-500);
+    }
+
+    &.subtle {
+      background-color: var(--color-purple-100);
+      color: var(--color-purple-800);
+    }
+  }
+
+  &-pink {
+    @extend %badge-style;
+    background-color: var(--color-pink-500);
+
+    &.outline {
+      color: var(--color-pink-600);
+      border: 1px solid var(--color-pink-500);
+    }
+
+    &.subtle {
+      background-color: var(--color-pink-100);
+      color: var(--color-pink-800);
+    }
+  }
+
+  &-orange {
+    @extend %badge-style;
+    background-color: var(--color-orange-500);
+
+    &.outline {
+      color: var(--color-orange-600);
+      border: 1px solid var(--color-orange-500);
+    }
+
+    &.subtle {
+      background-color: var(--color-orange-100);
+      color: var(--color-orange-800);
+    }
+  }
+}
