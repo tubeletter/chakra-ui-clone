@@ -1,7 +1,7 @@
 import styled from './Badge.module.scss';
 import { IBadgeProps } from './Badge.types';
 
-export const Badge = ({ variant, color, children }: IBadgeProps) => {
+export const Badge = ({ variant = 'default', color = 'default', children }: IBadgeProps) => {
   return (
     <span
       className={`${color !== 'default' ? styled[`badge-${color}`] : styled.badge} ${

@@ -7,11 +7,7 @@ export default {
 };
 
 export const BadgeStory: StoryFn<IBadgeProps> = (props) => {
-  return (
-    <>
-      <Badge {...props}>BADGE</Badge>
-    </>
-  );
+  return <Badge {...props}>BADGE</Badge>;
 };
 
 BadgeStory.storyName = 'Badge';
