@@ -68,6 +68,7 @@ const InputGroupStyle = styled.div<{
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
+    width: 100%;
 
     & ${InputStyle} {
       padding-right: ${rightAddon ? InputStyleSize[$props.$size].padding : 0};
