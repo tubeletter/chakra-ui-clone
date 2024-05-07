@@ -73,8 +73,6 @@ const InputGroupStyle = styled.div<{
     & ${InputStyle} {
       padding-right: ${rightAddon ? InputStyleSize[$props.$size].padding : 0};
       padding-left: ${leftAddon ? InputStyleSize[$props.$size].padding : InputStyleSize[$props.$size].padding};
-      border-radius: 0;
-
       ${!rightAddon && leftAddon
         ? css`
             border-top-right-radius: ${InputStyleSize[$props.$size].radii};
