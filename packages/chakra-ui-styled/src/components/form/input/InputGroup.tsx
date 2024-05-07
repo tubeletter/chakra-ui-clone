@@ -1,52 +1,51 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { theme } from '../../../styles/ChakraThemeProvider';
 
-type InputGroupSize = 'xs' | 'sm' | 'md' | 'lg';
-type VariantType = 'outline' | 'filled' | 'flushed';
-type colorType = 'blue' | 'gray' | 'teal' | 'red' | 'orange' | 'yellow' | 'pink' | 'purple' | 'green';
+export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
+export type VariantType = 'outline' | 'filled' | 'flushed';
+export type colorType = 'blue' | 'gray' | 'teal' | 'red' | 'orange' | 'yellow' | 'pink' | 'purple' | 'green';
 
 export type InputGroupType = {
-  size: InputGroupSize;
-  variant: VariantType;
-  isInvalid: boolean;
-  isDisabled: boolean;
+  $size: InputSize;
+  $variant: VariantType;
+  $isInvalid: boolean;
+  disabled: boolean;
+  readOnly: boolean;
 };
 
-// Create context
-export const InputGroupContext = React.createContext<InputGroupType>({
-  size: 'xs',
-  variant: 'filled',
-  isInvalid: false,
-  isDisabled: false
-});
-
-// A util function to use context with simpler syntax
-export const useInputGroupContext = () => React.useContext(InputGroupContext);
-
-type inputstyletype = 'height' | 'padding' | 'iconSize';
-type inputSizeType = {
-  [key in InputGroupSize]: { [key in inputstyletype]: string };
-};
-const InputSize: inputSizeType = {
+export const InputStyleSize = {
   xs: {
     height: '24px',
     padding: '8px',
-    iconSize: '12px'
+    iconSize: '12px',
+    radii: css`
+      ${theme.radii.sm + 'rem'}
+    `
   },
   sm: {
     height: '32px',
     padding: '12px',
-    iconSize: '14px'
+    iconSize: '14px',
+    radii: css`
+      ${theme.radii.base + 'rem'}
+    `
   },
   md: {
     height: '40px',
     padding: '12px',
-    iconSize: '16px'
+    iconSize: '16px',
+    radii: css`
+      ${theme.radii.md + 'rem'}
+    `
   },
   lg: {
     height: '48px',
     padding: '16px',
-    iconSize: '18px'
+    iconSize: '18px',
+    radii: css`
+      ${theme.radii.lg + 'rem'}
+    `
   }
 };
 
@@ -65,20 +64,21 @@ const InputGroupStyle = styled.div<{
     border-radius: 5px;
 
     & ${InputStyle} {
-      padding-right: ${rightAddon ? InputSize[$props.size]?.padding : 0};
-      padding-left: ${leftAddon ? InputSize[$props.size]?.padding : InputSize[$props.size]?.padding};
+      /*   padding-right: ${rightAddon ? InputStyleSize[$props.size]?.padding : 0};
+      padding-left: ${leftAddon ? InputStyleSize[$props.size]?.padding : InputStyleSize[$props.size]?.padding}; */
     }
     & ${AddonStyle} {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: ${InputSize[$props.size]?.height};
-      height: ${InputSize[$props.size].height};
+
+      /*  min-width: ${InputStyleSize[$props.size]?.height};
+      height: ${InputStyleSize[$props.size].height};
       ${theme.typo.text[$props.size]};
-      padding: 0 ${InputSize[$props.size].padding};
+      padding: 0 ${InputStyleSize[$props.size].padding}; */
     }
     & ${AddonStyle} svg {
-      width: ${InputSize[$props.size]?.iconSize};
+      /* width: ${InputStyleSize[$props.size]?.iconSize}; */
     }
   `}
 `;
@@ -94,19 +94,21 @@ const InputStyle = styled.input<{ $props: InputGroupType }>`
   ${({ theme, $props }) => css`
     box-sizing: border-box;
     flex: 1;
-    height: ${InputSize[$props.size]?.height};
+
+    /*   height: ${InputStyleSize[$props.size]?.height};
+    padding: ${$props.isInvalid ? 0 : InputStyleSize[$props.size]?.padding};
     background-color: transparent;
     border: 0 none;
     ${theme.typo.text[$props.size]};
+    border: ${$props.isInvalid ? `1px solid ${theme.color.red[500]}` : `1px solid ${theme.color.gray[200]}`}; */
   `}
 `;
 
 // input
-const Input = ({ type = 'text', name, id, placeholder = 'Placeholder' }: InputType) => {
-  const defaultValue = useInputGroupContext();
+export const Input = ({ type = 'text', name, id, placeholder = 'Placeholder' }: InputType) => {
   return (
     <>
-      <InputStyle
+      {/*   <InputStyle
         type={type}
         name={name}
         id={id}
@@ -114,7 +116,7 @@ const Input = ({ type = 'text', name, id, placeholder = 'Placeholder' }: InputTy
         disabled={defaultValue.isDisabled}
         readOnly={defaultValue.isDisabled}
         placeholder={placeholder}
-      />
+      /> */}
     </>
   );
 };
@@ -126,7 +128,7 @@ interface InputAddonType {
 }
 
 // @@
-export const InputAddon = ({ $color, $bg, element }: InputAddonType, $size: InputGroupSize) => {
+export const InputAddon = ({ $color, $bg, element }: InputAddonType) => {
   const { size } = useInputGroupContext();
   return (
     <AddonStyle $color={$color} $bg={$bg}>
@@ -136,7 +138,7 @@ export const InputAddon = ({ $color, $bg, element }: InputAddonType, $size: Inpu
 };
 export const AddonStyle = styled.div<InputAddonType, { $size: inputSizeType }>`
   ${({ $color, $bg, theme }) => css`
-    color: ${$color};
+    color: ${$color ? theme.color[$color][500] : '#000'};
     background-color: ${$bg ? theme.color[$bg][100] : 'transparent'};
   `}
 `;
@@ -154,13 +156,11 @@ const InputGroup = ({
   rightAddon?: React.ReactNode;
 }) => {
   return (
-    <InputGroupContext.Provider value={defaultValue}>
       <InputGroupStyle $props={{ ...defaultValue }}>
         {leftAddon && leftAddon}
         {children}
         {rightAddon && rightAddon}
       </InputGroupStyle>
-    </InputGroupContext.Provider>
   );
 };
 
