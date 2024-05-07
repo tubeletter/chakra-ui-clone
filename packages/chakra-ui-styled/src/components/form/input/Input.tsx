@@ -14,7 +14,6 @@ const InputStyle = styled.input<InputType>`
     display: flex;
     flex: 1;
     height: ${InputStyleSize[$size]?.height};
-    border: 0 none;
     border-radius: ${InputStyleSize[$size].radii};
     ${theme.typo.text[$size]};
     ${(disabled || readOnly) && { opacity: '0.4', backgroundColor: `${theme.color.gray[100]}` }};
@@ -38,6 +37,7 @@ const InputStyle = styled.input<InputType>`
         `
       : $variant === 'filled'
         ? css`
+            border: 0 none;
             border-radius: 0;
 
             ${$isInvalid && !disabled && !readOnly

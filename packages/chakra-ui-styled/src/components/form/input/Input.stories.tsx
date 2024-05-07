@@ -51,8 +51,8 @@ export const InputIndex = (args: InputType) => {
             readOnly={false}
             $variant="outline"
             $isInvalid={false}
-            id={'outline' + size + idx}
-            name={'outline' + size + idx}
+            id={'outline-' + size + '-1'}
+            name={'outline-' + size + '-1'}
           />
           <Input
             $size={size}
@@ -60,8 +60,8 @@ export const InputIndex = (args: InputType) => {
             readOnly={false}
             $variant="outline"
             $isInvalid={true}
-            id={'outline' + size + idx}
-            name={'outline' + size + idx}
+            id={'outline-' + size + '-2'}
+            name={'outline-' + size + '-2'}
           />
           <Input
             $size={size}
@@ -69,8 +69,8 @@ export const InputIndex = (args: InputType) => {
             readOnly={false}
             $variant="outline"
             $isInvalid={false}
-            id={'outline' + size + idx}
-            name={'outline' + size + idx}
+            id={'outline-' + size + '-3'}
+            name={'outline-' + size + '-3'}
           />
         </BtnBox>
       ))}
@@ -83,8 +83,8 @@ export const InputIndex = (args: InputType) => {
             readOnly={false}
             $variant="flushed"
             $isInvalid={false}
-            id={'flushed' + size + idx}
-            name={'flushed' + size + idx}
+            id={'flushed-' + size + '-1'}
+            name={'flushed-' + size + '-1'}
           />
           <Input
             $size={size}
@@ -92,8 +92,8 @@ export const InputIndex = (args: InputType) => {
             readOnly={false}
             $variant="flushed"
             $isInvalid={true}
-            id={'flushed' + size + idx}
-            name={'flushed' + size + idx}
+            id={'flushed-' + size + '-2'}
+            name={'flushed-' + size + '-2'}
           />
           <Input
             $size={size}
@@ -101,13 +101,13 @@ export const InputIndex = (args: InputType) => {
             readOnly={false}
             $variant="flushed"
             $isInvalid={false}
-            id={'flushed' + size + idx}
-            name={'flushed' + size + idx}
+            id={'flushed-' + size + '-3'}
+            name={'flushed-' + size + '-3'}
           />
         </BtnBox>
       ))}
       <br /> <br /> <br />
-      {inputArr.map((size, idx) => (
+      {inputArr.map((size) => (
         <BtnBox>
           <Input
             $size={size}
@@ -115,8 +115,8 @@ export const InputIndex = (args: InputType) => {
             readOnly={false}
             $variant="filled"
             $isInvalid={false}
-            id={'filled' + size + idx}
-            name={'filled' + size + idx}
+            id={'filled-' + size + '-1'}
+            name={'filled-' + size + '-1'}
           />
           <Input
             $size={size}
@@ -124,8 +124,8 @@ export const InputIndex = (args: InputType) => {
             readOnly={false}
             $variant="filled"
             $isInvalid={true}
-            id={'filled' + size + idx}
-            name={'filled' + size + idx}
+            id={'filled-' + size + '-2'}
+            name={'filled-' + size + '-2'}
           />
           <Input
             $size={size}
@@ -133,8 +133,8 @@ export const InputIndex = (args: InputType) => {
             readOnly={false}
             $variant="filled"
             $isInvalid={false}
-            id={'filled' + size + idx}
-            name={'filled' + size + idx}
+            id={'filled-' + size + '-3'}
+            name={'filled-' + size + '-3'}
           />
         </BtnBox>
       ))}
