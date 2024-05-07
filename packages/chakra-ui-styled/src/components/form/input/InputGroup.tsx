@@ -1,18 +1,26 @@
 import React from 'react';
+
 import styled, { css } from 'styled-components';
 import { theme } from '../../../styles/ChakraThemeProvider';
+import Input, { InputType, InputStyle } from './Input';
 
 export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
 export type VariantType = 'outline' | 'filled' | 'flushed';
 export type colorType = 'blue' | 'gray' | 'teal' | 'red' | 'orange' | 'yellow' | 'pink' | 'purple' | 'green';
 
-export type InputGroupType = {
+export type CommonInputType = {
   $size: InputSize;
-  $variant: VariantType;
+  $variant?: VariantType;
   $isInvalid: boolean;
   disabled: boolean;
   readOnly: boolean;
 };
+
+export type InputGroupType = CommonInputType &
+  InputType & {
+    leftAddon?: React.ReactNode;
+    rightAddon?: React.ReactNode;
+  };
 
 export const InputStyleSize = {
   xs: {
@@ -50,120 +58,122 @@ export const InputStyleSize = {
 };
 
 const InputGroupStyle = styled.div<{
-  $props: InputGroupType;
-  rightAddon?: React.ReactNode;
-  leftAddon?: React.ReactNode;
+  $props: CommonInputType;
+  rightAddon?: boolean;
+  leftAddon?: boolean;
 }>`
-  ${({ $props, rightAddon, leftAddon, theme }) => css`
+  ${({ theme, $props, rightAddon, leftAddon }) => css`
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    isolation: isolate;
-    border-radius: 5px;
 
     & ${InputStyle} {
-      /*   padding-right: ${rightAddon ? InputStyleSize[$props.size]?.padding : 0};
-      padding-left: ${leftAddon ? InputStyleSize[$props.size]?.padding : InputStyleSize[$props.size]?.padding}; */
+      padding-right: ${rightAddon ? InputStyleSize[$props.$size].padding : 0};
+      padding-left: ${leftAddon ? InputStyleSize[$props.$size].padding : InputStyleSize[$props.$size].padding};
+      border-radius: 0;
+
+      ${!rightAddon && leftAddon
+        ? css`
+            border-top-right-radius: ${InputStyleSize[$props.$size].radii};
+            border-bottom-right-radius: ${InputStyleSize[$props.$size].radii};
+          `
+        : !leftAddon && rightAddon
+          ? css`
+              border-top-left-radius: ${InputStyleSize[$props.$size].radii};
+              border-bottom-left-radius: ${InputStyleSize[$props.$size].radii};
+            `
+          : !rightAddon && !leftAddon
+            ? css`
+                border-radius: ${InputStyleSize[$props.$size].radii};
+              `
+            : 'border-radius: 0px'}
     }
     & ${AddonStyle} {
       display: flex;
       align-items: center;
       justify-content: center;
+      min-width: ${InputStyleSize[$props.$size].height};
+      height: ${InputStyleSize[$props.$size].height};
+      ${theme.typo.text[$props.$size]};
+      padding: 0 ${InputStyleSize[$props.$size].padding};
+      border: 1px solid ${theme.color.gray[200]};
 
-      /*  min-width: ${InputStyleSize[$props.size]?.height};
-      height: ${InputStyleSize[$props.size].height};
-      ${theme.typo.text[$props.size]};
-      padding: 0 ${InputStyleSize[$props.size].padding}; */
+      &[dataPosition='left'] {
+        border-right: 0 none;
+        border-top-left-radius: ${InputStyleSize[$props.$size].radii};
+        border-bottom-left-radius: ${InputStyleSize[$props.$size].radii};
+      }
+
+      &[dataPosition='right'] {
+        border-left: 0 none;
+        border-top-right-radius: ${InputStyleSize[$props.$size].radii};
+        border-bottom-right-radius: ${InputStyleSize[$props.$size].radii};
+      }
     }
     & ${AddonStyle} svg {
-      /* width: ${InputStyleSize[$props.size]?.iconSize}; */
+      width: ${InputStyleSize[$props.$size].iconSize};
     }
   `}
 `;
 
-type InputType = {
-  type?: 'text' | 'email' | 'tel' | 'password';
-  name: string;
-  id: string;
-  placeholder?: string;
-};
-
-const InputStyle = styled.input<{ $props: InputGroupType }>`
-  ${({ theme, $props }) => css`
-    box-sizing: border-box;
-    flex: 1;
-
-    /*   height: ${InputStyleSize[$props.size]?.height};
-    padding: ${$props.isInvalid ? 0 : InputStyleSize[$props.size]?.padding};
-    background-color: transparent;
-    border: 0 none;
-    ${theme.typo.text[$props.size]};
-    border: ${$props.isInvalid ? `1px solid ${theme.color.red[500]}` : `1px solid ${theme.color.gray[200]}`}; */
-  `}
-`;
-
-// input
-export const Input = ({ type = 'text', name, id, placeholder = 'Placeholder' }: InputType) => {
+// Root Provider
+const InputGroup = ({
+  $size,
+  disabled,
+  readOnly,
+  $isInvalid,
+  leftAddon,
+  rightAddon,
+  type = 'text',
+  id,
+  name,
+  placeholder = 'placeholder'
+}: InputGroupType) => {
   return (
-    <>
-      {/*   <InputStyle
+    <InputGroupStyle
+      $props={{ $size, disabled, readOnly, $isInvalid }}
+      leftAddon={leftAddon ? true : false}
+      rightAddon={rightAddon ? true : false}
+    >
+      {leftAddon && <InputAddon dataPosition="left" $color="gray" $bg="gray" element={leftAddon} />}
+      <Input
         type={type}
-        name={name}
         id={id}
-        $props={{ ...defaultValue }}
-        disabled={defaultValue.isDisabled}
-        readOnly={defaultValue.isDisabled}
+        name={name}
         placeholder={placeholder}
-      /> */}
-    </>
+        disabled={disabled}
+        readOnly={readOnly}
+        $size={$size}
+        $variant={'outline'}
+        $isInvalid={$isInvalid}
+      />
+      {rightAddon && <InputAddon dataPosition="right" $color="gray" $bg="gray" element={rightAddon} />}
+    </InputGroupStyle>
   );
 };
 
 interface InputAddonType {
   $color?: colorType;
   $bg?: colorType;
+  dataPosition: 'left' | 'right';
   element?: React.ReactNode;
 }
 
 // @@
-export const InputAddon = ({ $color, $bg, element }: InputAddonType) => {
-  const { size } = useInputGroupContext();
+export const InputAddon = ({ $color, $bg, dataPosition, element }: InputAddonType) => {
   return (
-    <AddonStyle $color={$color} $bg={$bg}>
+    <AddonStyle dataPosition={dataPosition} $color={$color} $bg={$bg}>
       {element}
     </AddonStyle>
   );
 };
-export const AddonStyle = styled.div<InputAddonType, { $size: inputSizeType }>`
+export const AddonStyle = styled.div<InputAddonType>`
   ${({ $color, $bg, theme }) => css`
     color: ${$color ? theme.color[$color][500] : '#000'};
     background-color: ${$bg ? theme.color[$bg][100] : 'transparent'};
   `}
 `;
-
-// Root Provider
-const InputGroup = ({
-  children,
-  defaultValue,
-  leftAddon,
-  rightAddon
-}: {
-  children: React.ReactNode;
-  defaultValue: InputGroupType;
-  leftAddon?: React.ReactNode;
-  rightAddon?: React.ReactNode;
-}) => {
-  return (
-      <InputGroupStyle $props={{ ...defaultValue }}>
-        {leftAddon && leftAddon}
-        {children}
-        {rightAddon && rightAddon}
-      </InputGroupStyle>
-  );
-};
-
-InputGroup.input = Input;
 
 export default InputGroup;

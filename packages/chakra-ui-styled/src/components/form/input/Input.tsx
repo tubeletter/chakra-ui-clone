@@ -1,15 +1,17 @@
 import styled, { css } from 'styled-components';
-import { InputGroupType, InputStyleSize } from './InputGroup';
+import { CommonInputType, InputStyleSize } from './InputGroup';
 
-export type InputType = InputGroupType & {
+export type InputType = CommonInputType & {
   type?: 'text' | 'email' | 'tel' | 'password';
   name: string;
   id: string;
   placeholder?: string;
 };
 
-const InputStyle = styled.input<InputType>`
+export const InputStyle = styled.input<InputType>`
   ${({ theme, disabled, readOnly, $size, $variant, $isInvalid }) => css`
+    position: relative;
+    z-index: 1;
     box-sizing: border-box;
     display: flex;
     flex: 1;
@@ -22,17 +24,22 @@ const InputStyle = styled.input<InputType>`
       ? css`
           padding: 0 ${InputStyleSize[$size]?.padding};
           ${$isInvalid && !disabled && !readOnly
-            ? `border: 1px solid ${theme.color.red[500]};
-               box-shadow: ${theme.color.red[500]} 0 0 0 1px;`
-            : `border : 1px solid ${$variant === 'outline' ? theme.color.gray[200] : 'transparent'};
-          `};
+            ? css`
+                border: 1px solid ${theme.color.red[500]};
+                box-shadow: ${theme.color.red[500]} 0 0 0 1px;
+              `
+            : css`
+                border: 1px solid ${$variant === 'outline' ? theme.color.gray[200] : 'transparent'};
+              `};
 
           &:focus-visible {
             ${!$isInvalid &&
             !disabled &&
             !readOnly &&
-            `border-color:${theme.color.blue[500]};
-             box-shadow: ${theme.color.blue[500]} 0 0 0 1px;`};
+            css`
+              border-color: ${theme.color.blue[500]};
+              box-shadow: ${theme.color.blue[500]} 0 0 0 1px;
+            `};
           }
         `
       : $variant === 'filled'
@@ -41,15 +48,20 @@ const InputStyle = styled.input<InputType>`
             border-radius: 0;
 
             ${$isInvalid && !disabled && !readOnly
-              ? `border-bottom:1px solid ${theme.color.red[500]};
-                 box-shadow: ${theme.color.red[500]} 0 1px 0 0px;`
-              : `border-bottom:1px solid ${theme.color.gray[200]}`};
+              ? css`
+                  border-bottom: 1px solid ${theme.color.red[500]};
+                  box-shadow: ${theme.color.red[500]} 0 1px 0 0;
+                `
+              : css`
+                  border-bottom: 1px solid ${theme.color.gray[200]};
+                `};
             &:focus-visible {
               ${!$isInvalid &&
               !disabled &&
               !readOnly &&
-              `border-bottom:1px solid ${theme.color.blue[500]};
-               box-shadow: ${theme.color.blue[500]} 0 1px 0px 0px;
+              css`
+                border-bottom: 1px solid ${theme.color.blue[500]};
+                box-shadow: ${theme.color.blue[500]} 0 1px 0 0;
               `};
             }
           `
@@ -62,7 +74,7 @@ const InputStyle = styled.input<InputType>`
 `;
 
 // input
-export const Input = ({
+const Input = ({
   type = 'text',
   name,
   id,
@@ -89,3 +101,5 @@ export const Input = ({
     </>
   );
 };
+
+export default Input;

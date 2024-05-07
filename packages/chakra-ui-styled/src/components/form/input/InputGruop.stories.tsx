@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { InputSize } from './InputGroup';
-import { Input, InputType } from './Input';
+import InputGroup, { InputGroupType, InputSize } from './InputGroup';
 
 const IconDummy = () => {
   return (
@@ -15,22 +14,22 @@ const IconDummy = () => {
 
 export default {
   title: 'chakra-ui-styled/components/form/Input/InputGroup',
-  component: Input,
+  component: InputGroup,
   parameters: { controls: { expanded: true } },
 
   argTypes: {
     $size: { control: { type: 'select' } },
-    $variant: { control: { type: 'select' } },
     $isInvalid: { control: { type: 'boolean' } },
     disabled: { control: { type: 'boolean' } },
     readOnly: { control: { type: 'boolean' } }
   },
   args: {
-    $size: 'lg',
-    $variant: 'outline',
+    $size: 'xs',
     $isInvalid: false,
     disabled: false,
-    readOnly: true
+    readOnly: true,
+    leftAddon: '+02',
+    rightAddon: <IconDummy />
   }
 };
 const Wrapper = styled.div`
@@ -38,117 +37,83 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
+const InputBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+
+  & > div {
+    flex: 1;
+  }
+`;
 const BtnBox = styled.div`
   display: flex;
   gap: 16px;
-  align-items: center;
+  align-items: flex-start;
 `;
 
-export const InputGroupIndex = (args: InputType) => {
+export const InputGroupIndex = (args: InputGroupType) => {
   const inputArr: InputSize[] = ['xs', 'sm', 'md', 'lg'];
   return (
     <Wrapper>
-      <h1>InputIndex</h1>
-      <h2>InputIndex Demo</h2>
+      <h1>InputGroup</h1>
+      <h2>InputGroup Demo</h2>
       <div>
-        <Input {...args} />
+        <InputGroup {...args} />
       </div>
-      <h2>Input Index</h2>
-      {inputArr.map((size, idx) => (
-        <BtnBox>
-          <Input
-            $size={size}
-            disabled={false}
-            readOnly={false}
-            $variant="outline"
-            $isInvalid={false}
-            id={'outline' + size + idx}
-            name={'outline' + size + idx}
-          />
-          <Input
-            $size={size}
-            disabled={false}
-            readOnly={false}
-            $variant="outline"
-            $isInvalid={true}
-            id={'outline' + size + idx}
-            name={'outline' + size + idx}
-          />
-          <Input
-            $size={size}
-            disabled={true}
-            readOnly={false}
-            $variant="outline"
-            $isInvalid={false}
-            id={'outline' + size + idx}
-            name={'outline' + size + idx}
-          />
-        </BtnBox>
-      ))}
-      <br /> <br /> <br />
-      {inputArr.map((size, idx) => (
-        <BtnBox>
-          <Input
-            $size={size}
-            disabled={false}
-            readOnly={false}
-            $variant="flushed"
-            $isInvalid={false}
-            id={'flushed' + size + idx}
-            name={'flushed' + size + idx}
-          />
-          <Input
-            $size={size}
-            disabled={false}
-            readOnly={false}
-            $variant="flushed"
-            $isInvalid={true}
-            id={'flushed' + size + idx}
-            name={'flushed' + size + idx}
-          />
-          <Input
-            $size={size}
-            disabled={true}
-            readOnly={false}
-            $variant="flushed"
-            $isInvalid={false}
-            id={'flushed' + size + idx}
-            name={'flushed' + size + idx}
-          />
-        </BtnBox>
-      ))}
-      <br /> <br /> <br />
-      {inputArr.map((size, idx) => (
-        <BtnBox>
-          <Input
-            $size={size}
-            disabled={false}
-            readOnly={false}
-            $variant="filled"
-            $isInvalid={false}
-            id={'filled' + size + idx}
-            name={'filled' + size + idx}
-          />
-          <Input
-            $size={size}
-            disabled={false}
-            readOnly={false}
-            $variant="filled"
-            $isInvalid={true}
-            id={'filled' + size + idx}
-            name={'filled' + size + idx}
-          />
-          <Input
-            $size={size}
-            disabled={true}
-            readOnly={false}
-            $variant="filled"
-            $isInvalid={false}
-            id={'filled' + size + idx}
-            name={'filled' + size + idx}
-          />
-        </BtnBox>
-      ))}
+      <h2>InputGroup Index</h2>
+      <BtnBox>
+        {' '}
+        {inputArr.map((size) => (
+          <InputBox>
+            <InputGroup
+              type="text"
+              id="te"
+              name="das"
+              disabled={false}
+              readOnly={false}
+              $size={size}
+              $isInvalid={false}
+              placeholder="Placeholder"
+            />
+            <InputGroup
+              type="text"
+              id="te"
+              name="das"
+              disabled={false}
+              readOnly={false}
+              $size={size}
+              $isInvalid={false}
+              placeholder="Placeholder"
+              leftAddon={<IconDummy />}
+              rightAddon={<IconDummy />}
+            />
+            <InputGroup
+              type="text"
+              id="te"
+              name="das"
+              disabled={false}
+              readOnly={false}
+              $size={size}
+              $isInvalid={false}
+              placeholder="Placeholder"
+              leftAddon={<IconDummy />}
+            />
+            <InputGroup
+              type="text"
+              id="te"
+              name="das"
+              disabled={false}
+              readOnly={false}
+              $size={size}
+              $isInvalid={false}
+              placeholder="Placeholder"
+              rightAddon={<IconDummy />}
+            />
+          </InputBox>
+        ))}
+      </BtnBox>
     </Wrapper>
   );
 };

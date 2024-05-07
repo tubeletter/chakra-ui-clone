@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { InputSize } from './InputGroup';
-import { Input, InputType } from './Input';
+import Input, { InputType } from './Input';
 
 export default {
   title: 'chakra-ui-styled/components/form/Input/Input',
