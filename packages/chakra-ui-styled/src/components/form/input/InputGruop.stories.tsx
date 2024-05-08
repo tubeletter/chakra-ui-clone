@@ -27,9 +27,9 @@ export default {
     $size: 'xs',
     $isInvalid: false,
     disabled: false,
-    readOnly: true,
-    leftAddon: '+02',
-    rightAddon: <IconDummy />
+    readOnly: false,
+    leftAddon: <InputGroup.leftAddon dataPosition="left" $color="gray" $element={<IconDummy />} />,
+    rightAddon: <InputGroup.leftAddon dataPosition="right" $color="gray" $bg="gray" $element={<IconDummy />} />
   }
 };
 const Wrapper = styled.div`
@@ -64,7 +64,6 @@ export const InputGroupIndex = (args: InputGroupType) => {
       </div>
       <h2>InputGroup Index</h2>
       <BtnBox>
-        {' '}
         {inputArr.map((size) => (
           <InputBox>
             <InputGroup
@@ -86,8 +85,10 @@ export const InputGroupIndex = (args: InputGroupType) => {
               $size={size}
               $isInvalid={false}
               placeholder="Placeholder"
-              leftAddon={<IconDummy />}
-              rightAddon={<IconDummy />}
+              leftAddon={<InputGroup.leftAddon dataPosition="left" $color="gray" $bg="gray" $element={<IconDummy />} />}
+              rightAddon={
+                <InputGroup.rightAddon dataPosition="right" $color="gray" $bg="gray" $element={<IconDummy />} />
+              }
             />
             <InputGroup
               type="text"
@@ -98,7 +99,9 @@ export const InputGroupIndex = (args: InputGroupType) => {
               $size={size}
               $isInvalid={false}
               placeholder="Placeholder"
-              leftAddon={<IconDummy />}
+              rightAddon={
+                <InputGroup.rightAddon dataPosition="right" $color="gray" $bg="gray" $element={<IconDummy />} />
+              }
             />
             <InputGroup
               type="text"
@@ -109,7 +112,41 @@ export const InputGroupIndex = (args: InputGroupType) => {
               $size={size}
               $isInvalid={false}
               placeholder="Placeholder"
-              rightAddon={<IconDummy />}
+              leftAddon={<InputGroup.leftAddon dataPosition="left" $bg="gray" $color="gray" $element={<IconDummy />} />}
+            />
+            <InputGroup
+              type="text"
+              id="te"
+              name="das"
+              disabled={false}
+              readOnly={false}
+              $size={size}
+              $isInvalid={false}
+              placeholder="Placeholder"
+              leftAddon={<InputGroup.leftAddon dataPosition="left" $color="gray" $element={<IconDummy />} />}
+              rightAddon={<InputGroup.rightAddon dataPosition="right" $color="gray" $element={<IconDummy />} />}
+            />
+            <InputGroup
+              type="text"
+              id="te"
+              name="das"
+              disabled={false}
+              readOnly={false}
+              $size={size}
+              $isInvalid={false}
+              placeholder="Placeholder"
+              rightAddon={<InputGroup.rightAddon dataPosition="right" $color="gray" $element={<IconDummy />} />}
+            />
+            <InputGroup
+              type="text"
+              id="te"
+              name="das"
+              disabled={false}
+              readOnly={false}
+              $size={size}
+              $isInvalid={false}
+              placeholder="Placeholder"
+              leftAddon={<InputGroup.leftAddon dataPosition="left" $color="gray" $element={<IconDummy />} />}
             />
           </InputBox>
         ))}
