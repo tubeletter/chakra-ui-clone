@@ -1,35 +1,55 @@
-import styled from 'styled-components';
-import { createContext, useContext, useState } from 'react';
+import styled, { css } from 'styled-components';
+import { createContext, ReactNode, useContext, useState } from 'react';
+import { progressType } from './Progress.stories';
+
+export type contextType = progressType & {
+  children?: ReactNode;
+};
 
 const ProgressContext = createContext({
-  width: 0,
-  setWidth: (value: number) => {}
+  color: 'green',
+  size: 'sm',
+  percent: 0,
+  setPercent: (value) => {}
 });
-const Progress = ({ height, percent, children }) => {
-  const [width, setWidth] = useState(percent);
+
+const Progress = ({ color, size, progress, children }: contextType) => {
+  const [percent, setPercent] = useState(progress);
   const providerValue = {
-    width,
-    setWidth
+    color,
+    size,
+    percent,
+    setPercent
   };
   return (
     <ProgressContext.Provider value={providerValue}>
-      <Container>{children}</Container>
+      <Container size={size}>{children}</Container>
     </ProgressContext.Provider>
   );
 };
 
-const Inner = ({ size }) => {
-  const { width } = useContext(ProgressContext);
-  return <Bar size={} />;
+const Inner = () => {
+  const { size, color } = useContext(ProgressContext);
+  return <Bar size={size} color={color} />;
 };
 const Track = () => {
   return <div></div>;
 };
 // height 4 8 12 16 color blue,orange,pink,purple,red,green,teal
-const Container = styled.div`
+const Container = styled.div<{ size: string }>`
   width: 320px;
+  ${({ theme, size }) => {
+    if (size === 'sm') {
+      return css``;
+    } else if (size === 'md') {
+      return css``;
+    } else if (size === 'lg') {
+      return css``;
+    }
+  }}
 `;
 
+export default Progress;
 Progress.Inner = Inner;
 Progress.Track = Track;
 
