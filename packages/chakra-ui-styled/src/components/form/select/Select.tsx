@@ -1,4 +1,4 @@
-import { SelectStyle } from './Select.style';
+import { SelectStyle } from './Select.styled';
 
 export type colorSchemeType = 'whiteAlpha' | 'blackAlpha' | 'gray' | 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'cyan' | 'purple' | 'pink' ;
 export interface SelectProps {

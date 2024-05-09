@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import NumberInput, { NumberInputProps, colorSchemeType } from './NumberInput';
-import { IncrementStepperIconStyle, DecrementStepperIconStyle } from './NumberInputstyled';
+import { IncrementStepperIconStyle, DecrementStepperIconStyle } from './NumberInput.styled';
 
 export default {
   title: 'chakra-ui-styled/components/form/numberinput',
