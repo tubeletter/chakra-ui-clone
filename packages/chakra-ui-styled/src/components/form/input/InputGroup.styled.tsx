@@ -40,8 +40,6 @@ export const InputStyleSize = {
   }
 };
 
-let radiiPosition = 'left';
-
 const getInputRadii = ($props: InputGroupType) => {
   //leftAddon만있을경우
   if (!$props.rightAddon && $props.leftAddon) {
@@ -51,7 +49,7 @@ const getInputRadii = ($props: InputGroupType) => {
     `;
   }
   //rightAddon만있을경우
-  if (!$props.rightAddon && $props.leftAddon) {
+  if ($props.rightAddon && !$props.leftAddon) {
     return css`
       border-top-left-radius: ${InputStyleSize[$props.$size].radii};
       border-bottom-left-radius: ${InputStyleSize[$props.$size].radii};
@@ -61,6 +59,11 @@ const getInputRadii = ($props: InputGroupType) => {
   if (!$props.rightAddon && !$props.leftAddon) {
     return css`
       border-radius: ${InputStyleSize[$props.$size].radii};
+    `;
+  }
+  if ($props.rightAddon && $props.leftAddon) {
+    return css`
+      border-radius: 0;
     `;
   }
   return null;
@@ -84,19 +87,16 @@ export const InputGroupStyle = styled.div<{
       ${getInputRadii($props)};
 
       // 왼쪽 요소만있고, 왼쪽요소의 백그라운드가 투명일때
-      ${!$props.rightAddon &&
-      $props.leftAddon &&
+      ${$props.leftAddon &&
       !$props.leftAddon.props.$bg &&
       css`
-        &:not(:focus-visible),
-        &::placeholder {
-          padding-left: 0;
+        &:not(:focus-visible) {
           border-left-color: transparent;
         }
+        padding-left: 0;
       `}
       // 오른쪽 요소만있고, 오른쪽요소의 백그라운드가 투명일때
-      ${!$props.leftAddon &&
-      $props.rightAddon &&
+      ${$props.rightAddon &&
       !$props.rightAddon.props.$bg &&
       css`
         &:not(:focus-visible) {
