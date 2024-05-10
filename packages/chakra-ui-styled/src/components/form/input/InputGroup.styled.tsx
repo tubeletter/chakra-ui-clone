@@ -11,7 +11,7 @@ export const InputStyleSize = {
     padding: '8px',
     iconSize: '12px',
     radii: css`
-      ${theme.radii.sm + 'rem'}
+      ${({ theme }) => theme.radii.sm + 'rem'}
     `
   },
   sm: {
@@ -19,7 +19,7 @@ export const InputStyleSize = {
     padding: '12px',
     iconSize: '14px',
     radii: css`
-      ${theme.radii.base + 'rem'}
+      ${({ theme }) => theme.radii.base + 'rem'}
     `
   },
   md: {
@@ -27,7 +27,7 @@ export const InputStyleSize = {
     padding: '12px',
     iconSize: '16px',
     radii: css`
-      ${theme.radii.md + 'rem'}
+      ${({ theme }) => theme.radii.md + 'rem'}
     `
   },
   lg: {
@@ -35,9 +35,35 @@ export const InputStyleSize = {
     padding: '16px',
     iconSize: '18px',
     radii: css`
-      ${theme.radii.lg + 'rem'}
+      ${({ theme }) => theme.radii.lg + 'rem'}
     `
   }
+};
+
+let radiiPosition = 'left';
+
+const getInputRadii = ($props: InputGroupType) => {
+  //leftAddon만있을경우
+  if (!$props.rightAddon && $props.leftAddon) {
+    return css`
+      border-top-right-radius: ${InputStyleSize[$props.$size].radii};
+      border-bottom-right-radius: ${InputStyleSize[$props.$size].radii};
+    `;
+  }
+  //rightAddon만있을경우
+  if (!$props.rightAddon && $props.leftAddon) {
+    return css`
+      border-top-left-radius: ${InputStyleSize[$props.$size].radii};
+      border-bottom-left-radius: ${InputStyleSize[$props.$size].radii};
+    `;
+  }
+  //다 없을경우
+  if (!$props.rightAddon && !$props.leftAddon) {
+    return css`
+      border-radius: ${InputStyleSize[$props.$size].radii};
+    `;
+  }
+  return null;
 };
 
 export const InputGroupStyle = styled.div<{
@@ -55,49 +81,28 @@ export const InputGroupStyle = styled.div<{
       padding-right: ${$props.rightAddon ? InputStyleSize[$props.$size].padding : 0};
       padding-left: ${$props.leftAddon ? InputStyleSize[$props.$size].padding : InputStyleSize[$props.$size].padding};
       border-radius: 0;
+      ${getInputRadii($props)};
 
-      ${!$props.rightAddon && $props.leftAddon
-        ? css`
-            ${!$props.leftAddon.props.$bg &&
-            css`
-              &:not(:focus-visible) {
-                border-left-color: transparent;
-              }
-
-              padding-left: 0;
-            `}
-            /* border-left-color: transparent; */
-            border-top-right-radius: ${InputStyleSize[$props.$size].radii};
-            border-bottom-right-radius: ${InputStyleSize[$props.$size].radii};
-          `
-        : !$props.leftAddon && $props.rightAddon
-          ? css`
-              ${!$props.rightAddon.props.$bg &&
-              css`
-                &:not(:focus-visible) {
-                  border-right-color: transparent;
-                }
-              `}
-              border-top-left-radius: ${InputStyleSize[$props.$size].radii};
-              border-bottom-left-radius: ${InputStyleSize[$props.$size].radii};
-            `
-          : !$props.rightAddon && !$props.leftAddon
-            ? css`
-                border-radius: ${InputStyleSize[$props.$size].radii};
-              `
-            : css`
-                border-radius: 0;
-                ${!$props.rightAddon?.props.$bg &&
-                !$props.leftAddon?.props.$bg &&
-                css`
-                  &:not(:focus-visible) {
-                    border-right-color: transparent;
-                    border-left-color: transparent;
-                  }
-
-                  padding-left: 0;
-                `}
-              `}
+      // 왼쪽 요소만있고, 왼쪽요소의 백그라운드가 투명일때
+      ${!$props.rightAddon &&
+      $props.leftAddon &&
+      !$props.leftAddon.props.$bg &&
+      css`
+        &:not(:focus-visible),
+        &::placeholder {
+          padding-left: 0;
+          border-left-color: transparent;
+        }
+      `}
+      // 오른쪽 요소만있고, 오른쪽요소의 백그라운드가 투명일때
+      ${!$props.leftAddon &&
+      $props.rightAddon &&
+      !$props.rightAddon.props.$bg &&
+      css`
+        &:not(:focus-visible) {
+          border-right-color: transparent;
+        }
+      `}
     }
     & ${AddonStyle} {
       display: flex;
@@ -121,6 +126,8 @@ export const InputGroupStyle = styled.div<{
         border-top-right-radius: ${InputStyleSize[$props.$size].radii};
         border-bottom-right-radius: ${InputStyleSize[$props.$size].radii};
       }
+
+      ${$props.rightAddon?.props.dataPosition}
     }
     & ${AddonStyle} svg {
       width: ${InputStyleSize[$props.$size].iconSize};

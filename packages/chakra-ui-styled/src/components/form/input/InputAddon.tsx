@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { colorType } from './InputGroup';
 
-type InputAddonType = {
+export type InputAddonType = {
   $color?: colorType;
   $bg?: colorType;
   dataPosition?: 'left' | 'right';

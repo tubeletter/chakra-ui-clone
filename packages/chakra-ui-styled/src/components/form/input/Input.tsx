@@ -1,5 +1,5 @@
-import { InputStyle } from './Input.styled';
 import { CommonInputType } from './InputGroup';
+import { InputStyle } from './Input.styled';
 
 export type InputType = CommonInputType & {
   type?: 'text' | 'email' | 'tel' | 'password';
@@ -10,30 +10,20 @@ export type InputType = CommonInputType & {
 
 // input
 const Input = ({
-  type = 'text',
-  name,
-  id,
-  placeholder = 'Placeholder',
   $size = 'xs',
-  disabled = false,
-  readOnly = false,
   $isInvalid = false,
-  $variant = 'filled'
+  $variant = 'filled',
+  readOnly = false,
+  disabled = false,
+  ...rest
 }: InputType) => {
   return (
-    <>
-      <InputStyle
-        type={type}
-        name={name}
-        id={id}
-        disabled={disabled}
-        readOnly={readOnly}
-        placeholder={placeholder}
-        $size={$size}
-        $variant={$variant}
-        $isInvalid={$isInvalid}
-      />
-    </>
+    <InputStyle
+      $props={{ $variant, $isInvalid, $size, readOnly, disabled }}
+      disabled={disabled}
+      readOnly={readOnly}
+      {...rest}
+    />
   );
 };
 
