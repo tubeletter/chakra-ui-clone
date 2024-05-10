@@ -15,6 +15,7 @@ const Input = ({
   $variant = 'filled',
   readOnly = false,
   disabled = false,
+  placeholder = 'placeholder',
   ...rest
 }: InputType) => {
   return (
@@ -22,6 +23,7 @@ const Input = ({
       $props={{ $variant, $isInvalid, $size, readOnly, disabled }}
       disabled={disabled}
       readOnly={readOnly}
+      placeholder={placeholder}
       {...rest}
     />
   );

@@ -36,10 +36,7 @@ export const InputGroup = ({
     <InputGroupStyle $props={{ $size, disabled, readOnly, $isInvalid, leftAddon, rightAddon, ...rest }}>
       {leftAddon && leftAddon}
       <Input
-        type={rest.type}
-        id={rest.id}
-        name={rest.name}
-        placeholder={rest.placeholder}
+        {...rest}
         disabled={disabled}
         readOnly={readOnly}
         $size={$size}
@@ -50,7 +47,6 @@ export const InputGroup = ({
     </InputGroupStyle>
   );
 };
-
 
 InputGroup.leftAddon = InputAddon;
 InputGroup.rightAddon = InputAddon;
