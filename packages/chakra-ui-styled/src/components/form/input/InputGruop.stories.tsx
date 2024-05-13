@@ -68,8 +68,8 @@ export const InputGroupIndex = (args: InputGroupType) => {
           <InputBox>
             <InputGroup
               type="text"
-              id="te"
-              name="das"
+              id={'input' + size + '1'}
+              name={'input' + size + '1'}
               disabled={false}
               readOnly={false}
               $size={size}
@@ -78,8 +78,8 @@ export const InputGroupIndex = (args: InputGroupType) => {
             />
             <InputGroup
               type="text"
-              id="te"
-              name="das"
+              id={'input' + size + '2'}
+              name={'input' + size + '2'}
               disabled={false}
               readOnly={false}
               $size={size}
@@ -90,8 +90,8 @@ export const InputGroupIndex = (args: InputGroupType) => {
             />
             <InputGroup
               type="text"
-              id="te"
-              name="das"
+              id={'input' + size + '3'}
+              name={'input' + size + '3'}
               disabled={false}
               readOnly={false}
               $size={size}
@@ -101,8 +101,8 @@ export const InputGroupIndex = (args: InputGroupType) => {
             />
             <InputGroup
               type="text"
-              id="te"
-              name="das"
+              id={'input' + size + '4'}
+              name={'input' + size + '4'}
               disabled={false}
               readOnly={false}
               $size={size}
@@ -112,8 +112,8 @@ export const InputGroupIndex = (args: InputGroupType) => {
             />
             <InputGroup
               type="text"
-              id="te"
-              name="das"
+              id={'input' + size + '5'}
+              name={'input' + size + '5'}
               disabled={false}
               readOnly={false}
               $size={size}
@@ -124,8 +124,8 @@ export const InputGroupIndex = (args: InputGroupType) => {
             />
             <InputGroup
               type="text"
-              id="te"
-              name="das"
+              id={'input' + size + '6'}
+              name={'input' + size + '6'}
               disabled={false}
               readOnly={false}
               $size={size}
@@ -135,8 +135,8 @@ export const InputGroupIndex = (args: InputGroupType) => {
             />
             <InputGroup
               type="text"
-              id="te"
-              name="das"
+              id={'input' + size + '7'}
+              name={'input' + size + '7'}
               disabled={false}
               readOnly={false}
               $size={size}
