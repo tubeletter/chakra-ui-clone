@@ -86,4 +86,4 @@ export const AlertIndex = (args: alertType) => {
     </>
   );
 };
-AlertIndex.storyname = 'Alert';
+AlertIndex.storyName = 'Alert';
