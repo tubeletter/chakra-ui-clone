@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Input, { InputType } from './Input';
-import { InputAddon } from './InputAddon';
+import { AddonStyle, InputAddonType } from './InputAddon';
 import { InputGroupStyle } from './InputGroup.styled';
 
 export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
@@ -21,6 +21,14 @@ export type InputGroupType = CommonInputType &
     leftAddon?: React.ReactElement;
     rightAddon?: React.ReactElement;
   };
+
+export const InputAddon = ({ $color, $bg, $element, dataPosition }: InputAddonType) => {
+  return (
+    <AddonStyle dataPosition={dataPosition} $color={$color} $bg={$bg} $element={$element}>
+      {$element}
+    </AddonStyle>
+  );
+};
 
 // Root Provider
 export const InputGroup = ({
@@ -47,8 +55,5 @@ export const InputGroup = ({
     </InputGroupStyle>
   );
 };
-
-InputGroup.leftAddon = InputAddon;
-InputGroup.rightAddon = InputAddon;
 
 export default InputGroup;

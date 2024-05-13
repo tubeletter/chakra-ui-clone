@@ -13,11 +13,3 @@ export const AddonStyle = styled.figure<InputAddonType>`
     background-color: ${$bg ? theme.color[$bg][100] : 'transparent'};
   `}
 `;
-
-export const InputAddon = ({ $color, $bg, dataPosition, $element }: InputAddonType) => {
-  return (
-    <AddonStyle dataPosition={dataPosition} $color={$color} $bg={$bg} $element={$element}>
-      {$element}
-    </AddonStyle>
-  );
-};

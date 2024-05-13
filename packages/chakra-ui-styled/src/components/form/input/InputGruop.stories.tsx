@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import InputGroup, { InputGroupType, InputSize } from './InputGroup';
+import InputGroup, { InputAddon, InputGroupType, InputSize } from './InputGroup';
 
 const IconDummy = () => {
   return (
@@ -28,8 +28,8 @@ export default {
     $isInvalid: false,
     disabled: false,
     readOnly: false,
-    leftAddon: <InputGroup.leftAddon dataPosition="left" $color="gray" $element={<IconDummy />} />,
-    rightAddon: <InputGroup.leftAddon dataPosition="right" $color="gray" $bg="gray" $element={<IconDummy />} />
+    leftAddon: <InputAddon dataPosition="left" $color="gray" $element={<IconDummy />} />,
+    rightAddon: <InputAddon dataPosition="right" $color="gray" $bg="gray" $element={<IconDummy />} />
   }
 };
 const Wrapper = styled.div`
@@ -85,10 +85,8 @@ export const InputGroupIndex = (args: InputGroupType) => {
               $size={size}
               $isInvalid={false}
               placeholder="Placeholder"
-              leftAddon={<InputGroup.leftAddon dataPosition="left" $color="gray" $bg="gray" $element={<IconDummy />} />}
-              rightAddon={
-                <InputGroup.rightAddon dataPosition="right" $color="gray" $bg="gray" $element={<IconDummy />} />
-              }
+              leftAddon={<InputAddon dataPosition="left" $color="gray" $bg="gray" $element={<IconDummy />} />}
+              rightAddon={<InputAddon dataPosition="right" $color="gray" $bg="gray" $element={<IconDummy />} />}
             />
             <InputGroup
               type="text"
@@ -99,9 +97,7 @@ export const InputGroupIndex = (args: InputGroupType) => {
               $size={size}
               $isInvalid={false}
               placeholder="Placeholder"
-              rightAddon={
-                <InputGroup.rightAddon dataPosition="right" $color="gray" $bg="gray" $element={<IconDummy />} />
-              }
+              rightAddon={<InputAddon dataPosition="right" $color="gray" $bg="gray" $element={<IconDummy />} />}
             />
             <InputGroup
               type="text"
@@ -112,7 +108,7 @@ export const InputGroupIndex = (args: InputGroupType) => {
               $size={size}
               $isInvalid={false}
               placeholder="Placeholder"
-              leftAddon={<InputGroup.leftAddon dataPosition="left" $bg="gray" $color="gray" $element={<IconDummy />} />}
+              leftAddon={<InputAddon dataPosition="left" $bg="gray" $color="gray" $element={<IconDummy />} />}
             />
             <InputGroup
               type="text"
@@ -123,8 +119,8 @@ export const InputGroupIndex = (args: InputGroupType) => {
               $size={size}
               $isInvalid={false}
               placeholder="Placeholder"
-              leftAddon={<InputGroup.leftAddon dataPosition="left" $color="gray" $element={<IconDummy />} />}
-              rightAddon={<InputGroup.rightAddon dataPosition="right" $color="gray" $element={<IconDummy />} />}
+              leftAddon={<InputAddon dataPosition="left" $color="gray" $element={<IconDummy />} />}
+              rightAddon={<InputAddon dataPosition="right" $color="gray" $element={<IconDummy />} />}
             />
             <InputGroup
               type="text"
@@ -135,7 +131,7 @@ export const InputGroupIndex = (args: InputGroupType) => {
               $size={size}
               $isInvalid={false}
               placeholder="Placeholder"
-              rightAddon={<InputGroup.rightAddon dataPosition="right" $color="gray" $element={<IconDummy />} />}
+              rightAddon={<InputAddon dataPosition="right" $color="gray" $element={<IconDummy />} />}
             />
             <InputGroup
               type="text"
@@ -146,7 +142,7 @@ export const InputGroupIndex = (args: InputGroupType) => {
               $size={size}
               $isInvalid={false}
               placeholder="Placeholder"
-              leftAddon={<InputGroup.leftAddon dataPosition="left" $color="gray" $element={<IconDummy />} />}
+              leftAddon={<InputAddon dataPosition="left" $color="gray" $element={<IconDummy />} />}
             />
           </InputBox>
         ))}

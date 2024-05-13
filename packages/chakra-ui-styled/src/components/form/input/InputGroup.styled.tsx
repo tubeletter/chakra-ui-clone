@@ -69,6 +69,22 @@ const getInputRadii = ($props: InputGroupType) => {
   return null;
 };
 
+const getAddonBorder = ($position: string) => {
+  let AddonPosition;
+  let borderPosition;
+  switch ($position) {
+    case 'left':
+      break;
+    case 'right':
+      css`
+        border-left: 0 none;
+        border-top-right-radius: ${InputStyleSize[$props.$size].radii};
+        border-bottom-right-radius: ${InputStyleSize[$props.$size].radii};
+      `;
+      break;
+  }
+};
+
 export const InputGroupStyle = styled.div<{
   $props: InputGroupType;
 }>`
@@ -114,7 +130,12 @@ export const InputGroupStyle = styled.div<{
       ${theme.typo.text[$props.$size]};
       padding: 0 ${InputStyleSize[$props.$size].padding};
       border: 1px solid ${theme.color.gray[200]};
-
+      ${InputStyleSize[$props.$size].padding};
+      ${($props.readOnly || $props.disabled) &&
+      css`
+        background-color: ${theme.color.gray[100]};
+        opacity: 0.4;
+      `}
       &[dataPosition='left'] {
         border-right: 0 none;
         border-top-left-radius: ${InputStyleSize[$props.$size].radii};
@@ -126,8 +147,6 @@ export const InputGroupStyle = styled.div<{
         border-top-right-radius: ${InputStyleSize[$props.$size].radii};
         border-bottom-right-radius: ${InputStyleSize[$props.$size].radii};
       }
-
-      ${$props.rightAddon?.props.dataPosition}
     }
     & ${AddonStyle} svg {
       width: ${InputStyleSize[$props.$size].iconSize};
