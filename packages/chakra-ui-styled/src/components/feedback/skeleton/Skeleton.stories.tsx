@@ -28,17 +28,21 @@ export const SkeletonIndex = (args: skeletonType) => {
       <Skeleton {...args}>
         <div className="skeleton-circle" />
         <div className="skeleton-image" />
-        <div className="skeleton-text" />
-        <div className="skeleton-text" />
-        <div className="skeleton-text" />
+        <p className="skeleton-text" />
+        <p className="skeleton-text" />
+        <p className="skeleton-text" />
       </Skeleton>
       <br />
-      <Skeleton isLoading={false}>
+      <Skeleton isLoading={true}>
         <h2>.skeleton-text</h2>
-        <div className="skeleton-circle" />
+        <div className="skeleton-text" />
+        <div className="skeleton-text" />
+        <div className="skeleton-text" />
         <h2>.skeleton-image</h2>
+        <div className="skeleton-image" />
 
         <h2>.skeleton-circle</h2>
+        <div className="skeleton-circle" />
       </Skeleton>
     </>
   );
