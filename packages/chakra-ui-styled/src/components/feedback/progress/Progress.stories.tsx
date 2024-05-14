@@ -52,21 +52,21 @@ export const ProgressIndex = (args: progressType) => {
           <Progress.Inner />
           <Progress.Track />
         </Progress>
-      </div>{' '}
+      </div>
       <br />
       <div>
         <Progress size="sm" progress={100} color="pink">
           <Progress.Inner />
           <Progress.Track />
         </Progress>
-      </div>{' '}
+      </div>
       <br />
       <div>
         <Progress size="md" progress={100} color="teal">
           <Progress.Inner />
           <Progress.Track />
         </Progress>
-      </div>{' '}
+      </div>
       <br />
       <div>
         <Progress size="lg" progress={100} color="orange">

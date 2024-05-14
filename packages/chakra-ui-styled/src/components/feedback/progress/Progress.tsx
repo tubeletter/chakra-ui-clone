@@ -277,10 +277,6 @@ const Container = styled.div<{ size: string }>`
   overflow: hidden;
 `;
 
-export default Progress;
-Progress.Inner = Inner;
-Progress.Track = Track;
-
 const Bar = styled.div<{ percent: number; color: string }>`
   flex-shrink: 0;
   position: relative;
@@ -298,3 +294,6 @@ const Background = styled.div`
   background-color: #edf2f7;
   flex: 1;
 `;
+export default Progress;
+Progress.Inner = Inner;
+Progress.Track = Track;
