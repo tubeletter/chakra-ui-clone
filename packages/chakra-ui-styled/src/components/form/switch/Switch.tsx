@@ -1,5 +1,5 @@
 import { StyleText } from '../../../foundation/typography/Text.styled';
-import { SwitchForm, Label } from './Switch.style';
+import { SwitchForm, Label } from './Switch.styled';
 
 export type colorSchemeType = 'blue' | 'teal' | 'green' | 'cyan' | 'purple' | 'pink';
 export interface SwitchProps {

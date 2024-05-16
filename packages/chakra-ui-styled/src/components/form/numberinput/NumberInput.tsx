@@ -1,4 +1,4 @@
-import { StyleNumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper } from './NumberInputstyled';
+import { StyleNumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper } from './NumberInput.styled';
 import { useState } from 'react'
 
 export type colorSchemeType = 'whiteAlpha' | 'blackAlpha' | 'gray' | 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'cyan' | 'purple' | 'pink' ;
@@ -11,7 +11,6 @@ export interface NumberInputProps {
   value: number;
   incrementIcon?: React.ReactNode;
   decrementIcon?: React.ReactNode;
-  // tabindex: "-1" | '0' | '1';
 }
 
 const setIcon = (incrementIcon: React.ReactNode) => {

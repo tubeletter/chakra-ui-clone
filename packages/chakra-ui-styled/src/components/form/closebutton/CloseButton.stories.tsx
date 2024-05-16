@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import CloseButton, { CloseButtonProps } from './CloseButton';
-import { CloseIconStyle } from './CloseButtonstyled';
+import { CloseIconStyle } from './CloseButton.styled';
 
 export default {
   title: 'chakra-ui-styled/components/form/closebutton',

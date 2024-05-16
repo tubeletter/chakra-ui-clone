@@ -1,4 +1,4 @@
-import { TextareaStyle } from "./Textarea.style";
+import { TextareaStyle } from "./Textarea.styled";
 
 export type colorSchemeType = 'whiteAlpha' | 'blackAlpha' | 'gray' | 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'cyan' | 'purple' | 'pink' ;
 export interface TextareaProps {
