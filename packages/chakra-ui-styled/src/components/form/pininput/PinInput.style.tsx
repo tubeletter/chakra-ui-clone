@@ -21,18 +21,21 @@ const PinInputSize = {
     width: ${({ theme }) => theme.spacing[12]};
     border-radius: 6px;
     ${({ theme }) => theme.typo.text.lg}
-  `,
+  `
 };
 export const StylePinInput = styled.div.attrs({ autoFocus: true })<PinInputProps>`
   display: flex;
   gap: 6px;
-  & input{
+
+  & input {
     ${({ size }) => PinInputSize[size]}
     ${({ colorScheme, theme }) => css`
       border: 1px solid ${theme.color.gray[200]};
+
       &:focus {
         outline: 2px solid ${theme.color[colorScheme][500]};
       }
+
       &:placeholder-shown {
         color: ${theme.color.gray[400]};
       }
@@ -40,11 +43,11 @@ export const StylePinInput = styled.div.attrs({ autoFocus: true })<PinInputProps
   }
 `;
 
-export const PinInputField = styled.input.attrs({ type: "text",  maxlength: 1, placeholder: "○" })`
-  text-align: center;
+export const PinInputField = styled.input.attrs({ type: 'text', maxlength: 1, placeholder: '○' })`
   aspect-ratio: 1;
+  text-align: center;
+
   &:focus {
-      outline: 0;
+    outline: 0;
   }
-  
- `;
+`;
