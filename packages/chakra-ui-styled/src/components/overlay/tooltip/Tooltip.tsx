@@ -7,13 +7,21 @@ export interface TooltipProps {
   colorScheme?: colorSchemeType;
   placement: placementType;
   label: string;
-  children: React.ReactNode;
+  arrowIcon?: React.ReactNode;
 }
-const ToolTip = ({ label, placement }: TooltipProps) => {
+const setIcon = (arrowIcon: React.ReactNode) => {
+  return <figure>{arrowIcon}</figure>;
+};
+const ToolTip = ({ label, placement, arrowIcon }: TooltipProps) => {
   return(
   <StyleTooltip label={label} placement={placement}>
     {<Button size={'lg'} colorScheme={'gray'}>Button</Button>}
-    {<StyleText>{label}</StyleText>}
+    {
+      <StyleText>
+        {label}
+        {arrowIcon && setIcon(arrowIcon)}
+      </StyleText>
+    }
   </StyleTooltip>
   )
 }
