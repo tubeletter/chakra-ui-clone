@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { progressType } from './Progress.stories';
 
 export type contextType = progressType & {
@@ -10,19 +10,21 @@ const ProgressContext = createContext({
   color: 'green',
   size: 'lg',
   percent: 0,
-  setPercent: (value) => {}
+  setPercent: (value: number) => {}
 });
 
 const Progress = ({ color, size, progress, children }: contextType) => {
-  const [percent, setPercent] = useState(progress);
-  const [height, setHeight] = useState(0);
+  const [percent, setPercent] = useState(0);
   const providerValue = {
     color,
     size,
     percent,
-    setPercent,
-    height
+    setPercent
   };
+
+  useEffect(() => {
+    setPercent(progress);
+  }, [progress]);
   return (
     <ProgressContext.Provider value={providerValue}>
       <Container size={size}>{children}</Container>
@@ -32,6 +34,7 @@ const Progress = ({ color, size, progress, children }: contextType) => {
 
 const Inner = () => {
   const { percent, size, color } = useContext(ProgressContext);
+  console.log('Inner context:', { percent, size, color });
   const height = size === 'xs' ? 4 : size === 'sm' ? 8 : size === 'md' ? 16 : 20;
   return (
     <Bar percent={percent} color={color}>
