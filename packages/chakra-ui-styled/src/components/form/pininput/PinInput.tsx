@@ -1,46 +1,45 @@
-import { StylePinInput, PinInputField  } from './PinInput.style';
-import { useState, createRef, useEffect } from "react"
+import { StylePinInput, PinInputField } from './PinInput.style';
 
-export type colorSchemeType = 'whiteAlpha' | 'blackAlpha' | 'gray' | 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'cyan' | 'purple' | 'pink' ;
+export type colorSchemeType =
+  | 'whiteAlpha'
+  | 'blackAlpha'
+  | 'gray'
+  | 'red'
+  | 'orange'
+  | 'yellow'
+  | 'green'
+  | 'teal'
+  | 'blue'
+  | 'cyan'
+  | 'purple'
+  | 'pink';
 export interface PinInputProps {
-  size: "xs" | 'sm' | 'md' | 'lg';
+  size: 'xs' | 'sm' | 'md' | 'lg';
   colorScheme: colorSchemeType;
   numOfInputs: number;
 }
 
-const PinInput = ({ size = "md", colorScheme, numOfInputs = 4 }: PinInputProps) => {
-  const numberOfInputs = numOfInputs;
-  const [inputRefsArray] = useState(() =>
-    Array.from({ length: numberOfInputs }, () => createRef())
-  );
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const handleKeyPress = () => {
-    setCurrentIndex((prevIndex) => {
-      const nextIndex = prevIndex < numberOfInputs - 1 ? prevIndex + 1 : 0;
-      const nextInput = inputRefsArray?.[nextIndex]?.current; //선택적 체이닝 문법 사용
-      nextInput.focus();
-      return nextIndex;
-    });
-  };
-  useEffect(() => {
-    if (inputRefsArray?.[0]?.current) {
-      inputRefsArray?.[0]?.current?.focus();
-    }
+const PinInput = ({ size = 'md', colorScheme, numOfInputs = 4 }: PinInputProps) => {
+  const inputArray = Array.from({ length: numOfInputs });
+  const onFocusInput = (e: React.KeyboardEvent) => {
+    const pinInput = e.target as HTMLInputElement;
+    const value = pinInput.value;
+    const maxLength = Number(pinInput.getAttribute('maxlength'));
 
-    window.addEventListener("keyup", handleKeyPress, false);
-    return () => {
-      window.removeEventListener("keyup", handleKeyPress);
-    };
-  }, []);
+    if (e.code === 'Backspace') {
+      if (!pinInput.previousSibling) return;
+      !value ? (pinInput.previousSibling as HTMLInputElement).focus() : pinInput.focus();
+    }
+    if (value.length === maxLength && e.code !== 'Backspace') {
+      if (!pinInput.nextSibling) return;
+      (pinInput.nextSibling as HTMLInputElement).focus();
+    }
+  };
 
   return (
-    <StylePinInput size={size} colorScheme={colorScheme}>
-      {inputRefsArray.map((ref, index) => {
-        return(
-          <PinInputField ref={ref}
-            onClick={ () => setCurrentIndex(index) }
-          />
-        )
+    <StylePinInput size={size} colorScheme={colorScheme} numOfInputs={numOfInputs}>
+      {inputArray.map((_, index) => {
+        return <PinInputField className="pin-input" key={'pin-input' + index} onKeyUp={onFocusInput} />;
       })}
     </StylePinInput>
   );
