@@ -1,6 +1,8 @@
 import Table from './Table';
 
-const columnDefs = [
+export type ColumnType = { field: string };
+export type RowType = { [key: string]: string };
+const columnDefs: ColumnType[] = [
   {
     field: 'one'
   },
@@ -11,7 +13,7 @@ const columnDefs = [
     field: 'name'
   }
 ];
-const rowDatas = [
+const rowDatas: RowType[] = [
   {
     field: 'one',
     name: 'one',

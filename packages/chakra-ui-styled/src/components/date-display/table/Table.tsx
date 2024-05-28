@@ -1,26 +1,31 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-
-type tableProps = {
-  variant: 'simple' | 'striped' | 'unstyled';
-};
+import { ColumnType, RowType } from './Table.stories';
 
 export type TableType = {
-  rD: { [key: string]: string }[];
-  cD: { [key: string]: string }[];
+  rD: RowType[];
+  cD: ColumnType[];
 };
 const Table = ({ rD, cD }: TableType) => {
-  const [columnDefs, setColumnDefs] = useState<[]>();
-  const [rowData, setRowData] = useState<[]>([]);
+  const [columnDefs, setColumnDefs] = useState<ColumnType[]>(cD || []);
+  const [rowDatas, setRowData] = useState<RowType[]>(rD || []);
+
+  const titles: string[] = columnDefs.map((columnDef) => columnDef.field);
   return (
     <>
       <Container>
         <HeadingRow>
-          <TitleColumn></TitleColumn>
+          {titles.map((title, index) => (
+            <TitleColumn key={index}>{title}</TitleColumn>
+          ))}
         </HeadingRow>
-        <TableRow>
-          <ContentsColumn></ContentsColumn>
-        </TableRow>
+        {rowDatas.map((rowData, rIndex) => (
+          <TableRow key={rIndex}>
+            {titles.map((title, cIndex) => (
+              <ContentsColumn key={cIndex}>{rowData[title]}</ContentsColumn>
+            ))}
+          </TableRow>
+        ))}
       </Container>
     </>
   );
