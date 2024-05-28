@@ -1,9 +1,17 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 
 type tableProps = {
   variant: 'simple' | 'striped' | 'unstyled';
 };
-const Table = ({ variant, color }) => {
+
+export type TableType = {
+  rD: { [key: string]: string }[];
+  cD: { [key: string]: string }[];
+};
+const Table = ({ rD, cD }: TableType) => {
+  const [columnDefs, setColumnDefs] = useState<[]>();
+  const [rowData, setRowData] = useState<[]>([]);
   return (
     <>
       <Container>
