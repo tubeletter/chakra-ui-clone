@@ -15,17 +15,17 @@ const columnDefs: ColumnType[] = [
 ];
 const rowDatas: RowType[] = [
   {
-    field: 'one',
+    one: 'one',
     name: 'one',
     kName: '하나'
   },
   {
-    field: 'two',
+    one: 'two',
     name: 'two',
     kName: '두'
   },
   {
-    field: 'three',
+    one: 'three',
     name: 'three',
     kName: '셋'
   }
