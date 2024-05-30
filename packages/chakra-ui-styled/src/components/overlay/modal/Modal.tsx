@@ -1,5 +1,5 @@
-import { StyleModal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton, ModalBody, ModalFooter } from './Modal.styled';
-import { ReactNode } from 'react';
+import { StyleModal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from './Modal.styled';
+import { useState } from 'react';
 import Button from '../../form/button/Button';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLImageElement> {
@@ -13,36 +13,35 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLImageElement> {
   onClick?: () => void;
 }
 export interface ModalProps {
-  // isOpen: boolean;
-  children?: ReactNode;
+  title?: string;
+  contents?: string;
 }
 
-const Modal = ({ children }: ModalProps) => {
-// const Modal = ({ isOpen, children }: ModalProps) => {
+const Modal = ({ title, contents }: ModalProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const onOpen = ()=> {setIsOpen(true)};
+  const onClose = ()=> {setIsOpen(false)};
   
   
-  const onOpen = ()=>{}
-  const onClose = ()=>{}
   const ExtendButton: React.FunctionComponent<ButtonProps> = ({...rest}) => {
     return <Button {...rest} />;
   };
+
   return (
     <>
-      <ExtendButton size={'md'} colorScheme={'gray'} onClick={onOpen}>Open Modal</ExtendButton>
-
-      <StyleModal>
-      {/* <StyleModal isOpen={isOpen} onClose={onClose}> */}
+      <ExtendButton size={'md'} colorScheme={'gray'} onClick={onOpen}> Open Modal </ExtendButton>
+      
+      <StyleModal isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader> {children} </ModalHeader>
-          <ModalCloseButton />
+          <ModalHeader> {title} </ModalHeader>
+          <ModalCloseButton size={'md'} onClick={onClose}/>
           
-          <ModalBody> {children} </ModalBody>
+          <ModalBody> {contents} </ModalBody>
 
           <ModalFooter>
-            <ExtendButton size={'md'} colorScheme={'blue'} onClick={onClose}>
-              Close
-            </ExtendButton>
+            <ExtendButton size={'md'} colorScheme={'blue'} onClick={onClose}> Close </ExtendButton>
+            <ExtendButton size={'md'} colorScheme={'gray'} > Cancel </ExtendButton>
           </ModalFooter>
         </ModalContent>
       </StyleModal>

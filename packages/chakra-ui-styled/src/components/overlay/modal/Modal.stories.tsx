@@ -8,8 +8,12 @@ export default {
   parameters: { controls: { expanded: true } },
 
   argTypes: {
+    title: { control: { type: 'text' } },
+    contents: { control: { type: 'text' } },
   },
   args: {
+    title: 'Modal Title',
+    contents: 'Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.',
   }
 };
 const Wrapper = styled.div`
@@ -31,8 +35,6 @@ export const ModalIndex = (args: ModalProps) => {
       <Wrap>
         <Modal {...args} />
       </Wrap>
-
-      <h2>Modal Index</h2>
     </Wrapper>
   );
 };
