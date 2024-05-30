@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import { ColumnType, RowType } from './Table.stories';
+import { ColumnType, RowType, TableType } from './Table.stories';
 
-export type TableType = {
-  rD: RowType[];
-  cD: ColumnType[];
-};
-const Table = ({ rD, cD }: TableType) => {
+const Table = ({ rD, cD, variant }: TableType) => {
   const [columnDefs, setColumnDefs] = useState<ColumnType[]>(cD || []);
   const [rowDatas, setRowData] = useState<RowType[]>(rD || []);
 
