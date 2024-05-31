@@ -4,6 +4,7 @@ export interface CloseButtonProps {
   size: 'sm' | 'md' | 'lg';
   icon?: React.ReactNode;
   onClick?: () => void;
+  className?: string;
 }
 const ViewBoxSize = { sm: 24, md: 32, lg: 40 };
 const setIcon = (icon: React.ReactNode) => {
@@ -15,9 +16,9 @@ const CloseButtonStyle = styled.div<CloseButtonProps>`
   aspect-ratio: 1;
   cursor: pointer;
 `;
-const CloseButton = ({ size = 'sm', icon, onClick }: CloseButtonProps) => {
+const CloseButton = ({ size = 'sm', icon, className, onClick }: CloseButtonProps) => {
   return (
-  <CloseButtonStyle size={size} onClick={onClick}>
+  <CloseButtonStyle size={size} onClick={onClick} className={className}>
     {icon && setIcon(icon)}
   </CloseButtonStyle>
   )
