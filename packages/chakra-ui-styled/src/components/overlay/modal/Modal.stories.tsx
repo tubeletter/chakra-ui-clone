@@ -10,10 +10,12 @@ export default {
   argTypes: {
     title: { control: { type: 'text' } },
     contents: { control: { type: 'text' } },
+    isOpen: { control: { type: 'boolean' } }
   },
   args: {
     title: 'Modal Title',
     contents: 'Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.',
+    isOpen: false
   }
 };
 const Wrapper = styled.div`

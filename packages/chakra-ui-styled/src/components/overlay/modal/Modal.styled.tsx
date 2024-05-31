@@ -1,14 +1,8 @@
-import styled, { css } from 'styled-components';
-import CloseButton, { CloseButtonProps } from '../../form/closebutton/CloseButton';
-
+import styled from 'styled-components';
+import CloseButton from '../../form/closebutton/CloseButton';
 
 export const StyleModal = styled.div<{ isOpen: boolean }>`
-  display: none;
-  ${({ isOpen }) =>
-    isOpen &&
-    css`
-        display: block;
-    `}
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
 `;
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -29,6 +23,7 @@ export const ModalContent = styled.div`
   box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.05), 0px 10px 15px -3px rgba(0,0,0,0.1);
   min-width: 448px;
   z-index: 110;
+  
 `;
 export const ModalHeader = styled.div`
   display: flex;
@@ -36,16 +31,6 @@ export const ModalHeader = styled.div`
   padding: 16px 24px;
   width: 100%;
   ${({ theme }) => theme.typo.text.lg};
-`;
-const ExternalButton = ({ onClick }: CloseButtonProps) => (
-    <CloseButton size={'md'} onClick={onClick}/>
-  );
-export const ModalCloseButton = styled(ExternalButton)`
-  cursor: pointer;
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  z-index: 120;
 `;
 export const ModalBody = styled.div`
   padding: 8px 24px;
@@ -57,3 +42,8 @@ export const ModalFooter = styled.div`
   justify-content: flex-end;
   gap: 10px;
 `;
+export const StyledCloseButton = styled(CloseButton)`
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  `
