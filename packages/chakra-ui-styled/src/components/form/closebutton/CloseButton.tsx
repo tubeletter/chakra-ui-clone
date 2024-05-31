@@ -10,9 +10,6 @@ const setIcon = (icon: React.ReactNode) => {
   return <figure className="icon">{icon}</figure>;
 };
 const CloseButtonStyle = styled.div<CloseButtonProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: ${({ size }) => ViewBoxSize[size]}px;
   height: ${({ size }) => ViewBoxSize[size]}px;
   aspect-ratio: 1;
