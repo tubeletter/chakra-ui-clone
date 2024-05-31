@@ -36,6 +36,7 @@ export default {
 };
 
 export const ProgressIndex = (args: progressType) => {
+  console.log(args);
   return (
     <>
       <div>
@@ -48,21 +49,21 @@ export const ProgressIndex = (args: progressType) => {
       </div>
       <br />
       <div>
-        <Progress size="xs" progress={100} color="green">
+        <Progress size="xs" progress={25} color="green">
           <Progress.Inner />
           <Progress.Track />
         </Progress>
       </div>
       <br />
       <div>
-        <Progress size="sm" progress={100} color="pink">
+        <Progress size="sm" progress={50} color="pink">
           <Progress.Inner />
           <Progress.Track />
         </Progress>
       </div>
       <br />
       <div>
-        <Progress size="md" progress={100} color="teal">
+        <Progress size="md" progress={75} color="teal">
           <Progress.Inner />
           <Progress.Track />
         </Progress>
