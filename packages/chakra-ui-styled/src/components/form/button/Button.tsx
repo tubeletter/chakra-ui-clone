@@ -9,6 +9,7 @@ export interface ButtonProps {
   children?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  onClick?: () => void;
 }
 const setIcon = (icon: React.ReactNode) => {
   return <figure className="icon">{icon}</figure>;
@@ -21,10 +22,11 @@ const Button = ({
   colorScheme,
   leftIcon,
   rightIcon,
-  children
+  children,
+  onClick
 }: ButtonProps) => {
   return (
-    <StyleButton as={as} size={size} colorScheme={colorScheme} variant={variant}>
+    <StyleButton as={as} size={size} colorScheme={colorScheme} variant={variant} onClick={onClick}>
       {leftIcon && setIcon(leftIcon)}
       {children && (
         <StyleText size={size} weight="semibold">
