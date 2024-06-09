@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
+import { colorSchemeType } from './BreadCrumbs';
 
-export const StyleBreadCrumb = styled.div`
+export const StyleBreadCrumb = styled.div<{ $color: colorSchemeType }>`
   display: flex;
   align-items: center;
 
@@ -9,18 +10,18 @@ export const StyleBreadCrumb = styled.div`
     align-items: center;
     justify-content: center;
     width: 24px;
-    color: ${({ theme }) => theme.color.gray[800]};
+    color: ${({ theme, $color }) => theme.color[$color][800]};
   }
 `;
 
-export const StyleBreadCrumbLink = styled.span<{ as: HTMLElementTagNameMap }>`
-  ${({ theme, as }) => css`
+export const StyleBreadCrumbLink = styled.span<{ as: HTMLElementTagNameMap; $color: colorSchemeType }>`
+  ${({ theme, as, $color }) => css`
     ${theme.typo.text.md};
-    color: ${({ theme }) => theme.color.gray[700]};
+    color: ${theme.color[$color][700]};
     ${as === 'a' &&
     css`
       &:hover {
-        color: ${theme.color.blue[500]};
+        color: ${theme.color[$color][500]};
         text-decoration: underline;
       }
     `};

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BreadCrumbs, { BreadCrumbsType } from './BreadCrumbs';
+import BreadCrumbs, { BreadCrumbsType, colorSchemeType } from './BreadCrumbs';
 
 export default {
   title: 'chakra-ui-styled/components/navigation/BreadCrumb',
@@ -7,7 +7,11 @@ export default {
   parameters: { controls: { expanded: true } },
 
   argTypes: {
-    variant: { control: { type: 'select' }, options: ['slash', 'arrow', 'dash'] }
+    variant: { control: { type: 'select' }, options: ['slash', 'arrow', 'dash'] },
+    $colorScheme: {
+      control: { type: 'select' },
+      options: ['blue', 'gray', 'teal', 'red', 'orange', 'yellow', 'pink', 'purple', 'green']
+    }
   },
   args: {
     variant: 'arrow',

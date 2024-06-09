@@ -6,10 +6,12 @@ type BreadCrumbsPageType = {
   current: boolean;
 };
 type BreadCrumbsVariantType = 'dash' | 'arrow' | 'slash';
+export type colorSchemeType = 'blue' | 'gray' | 'teal' | 'red' | 'orange' | 'yellow' | 'pink' | 'purple' | 'green';
 
 export type BreadCrumbsType = {
-  variant: BreadCrumbsVariantType;
+  variant?: BreadCrumbsVariantType;
   pages: BreadCrumbsPageType[];
+  $colorScheme?: colorSchemeType;
 };
 
 const getVariant = {
@@ -18,21 +20,21 @@ const getVariant = {
   arrow: '›'
 };
 
-const BreadCrumb = ({ pages, variant = 'dash' }: BreadCrumbsType) => {
+const BreadCrumb = ({ pages, variant = 'dash', $colorScheme = 'gray' }: BreadCrumbsType) => {
   return (
-    <StyleBreadCrumb>
+    <StyleBreadCrumb $color={$colorScheme}>
       {pages.map((item) => (
         <>
           {item.current === false ? (
             <>
-              <StyleBreadCrumbLink as="a" href={item.href} title={item.title}>
+              <StyleBreadCrumbLink as="a" href={item.href} title={item.title} $color={$colorScheme}>
                 {item.title}
               </StyleBreadCrumbLink>
               <span data-separator="true">{getVariant[variant]}</span>
             </>
           ) : (
             <>
-              <StyleBreadCrumbLink>{item.title}</StyleBreadCrumbLink>
+              <StyleBreadCrumbLink $color={$colorScheme}>{item.title}</StyleBreadCrumbLink>
             </>
           )}
         </>
