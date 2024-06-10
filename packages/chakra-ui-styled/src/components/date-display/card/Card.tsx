@@ -10,6 +10,7 @@ const Card = ({ children, variant }: CardType) => {
 };
 
 const Container = styled.article<CardType>`
+  min-width: 350px;
   padding: 20px;
   border-radius: 8px;
   ${({ variant }) => {

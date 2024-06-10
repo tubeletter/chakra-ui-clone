@@ -7,7 +7,7 @@ export type StatsType = {
   type: 'increase' | 'decrease' | 'none';
 };
 export default {
-  title: 'chakra-ui-styled/components/feedback/stat',
+  title: 'chakra-ui-styled/components/date-display/stat',
   component: Stats,
   parameter: { controls: { expanded: true } },
   argTypes: {},

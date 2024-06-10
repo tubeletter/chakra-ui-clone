@@ -6,7 +6,7 @@ export type CardType = {
   children?: ReactNode;
 };
 export default {
-  title: 'chakra-ui-styled/components/feedback/card',
+  title: 'chakra-ui-styled/components/date-display/card',
   component: Card,
   parameter: { controls: { expanded: true } },
   argTypes: {},
@@ -19,7 +19,7 @@ export const TableIndex = (args: CardType) => {
   return (
     <>
       <h2>Demo</h2>
-      <Card {...args}> </Card>
+      <Card {...args}> Demo test</Card>
       <div>
         <Card variant="elevated"> </Card>
         <Card variant={'filled'}> </Card>

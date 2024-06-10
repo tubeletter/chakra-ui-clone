@@ -35,20 +35,28 @@ const Container = styled.div`
 `;
 const StatLabel = styled.p`
   ${({ theme }) => css`
+    color: ${theme.color.gray['700']};
+
     font-size: ${theme.typo.text['sm'].fontSize};
     font-weight: ${theme.typo.text['sm'].fontWeight};
   `}
 `;
 const StatNumber = styled.p`
   ${({ theme }) => css`
+    color: ${theme.color.gray['700']};
+
     font-size: ${theme.typo.text['2xl'].fontSize};
     font-weight: ${theme.typo.fontWeight.semibold};
   `}
 `;
 const StatText = styled.p`
   ${({ theme }) => css`
+    display: flex;
+    align-items: center;
     font-size: ${theme.typo.text['sm'].fontSize};
     font-weight: ${theme.typo.text['sm'].fontWeight};
+    color: ${theme.color.gray['700']};
+    opacity: 0.8;
   `}
 `;
 
