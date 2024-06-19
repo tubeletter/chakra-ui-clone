@@ -1,23 +1,34 @@
 import { accordionType } from './Accordion.stories';
-import { createContext, ReactNode, useContext, useReducer, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useReducer, useState } from 'react';
 import styled, { css } from 'styled-components';
+import { BaseText } from '../../../foundation/typography/Text';
+import { text } from '../../../foundation/typography/typography';
 
 const AccordionContext = createContext({
   isOpen: false,
-  setIsOpen: () => {}
+  setIsOpen: () => {},
+  title: '',
+  text: '',
+  size: 'md'
 });
 
-const Accordion = ({ state, children }: accordionType) => {
+const Accordion = ({ state, children, size, title, text }: accordionType) => {
   // const [isOpen, setIsOpen] = useState(state);
-  // boolean useReducer 이요
-  const [isOpen, setIsOpen] = useReducer((state) => {
-    return !state;
-  }, state);
-
+  // boolean useReducer 이용하여 관리,
+  const [isOpen, setIsOpen] = useReducer((state) => !state, state);
   const providerValue = {
     isOpen,
-    setIsOpen
+    setIsOpen,
+    title,
+    size,
+    text
   };
+
+  // 스토리북 arg 작동을 위한 useEffect
+  useEffect(() => {
+    setIsOpen();
+  }, [state]);
+
   return (
     <AccordionContext.Provider value={providerValue}>
       <Container>{children}</Container>
@@ -25,27 +36,27 @@ const Accordion = ({ state, children }: accordionType) => {
   );
 };
 
-const Toggle = ({ title, children }: { title: string; children?: ReactNode }) => {
-  const { isOpen, setIsOpen } = useContext(AccordionContext);
+const Toggle = ({ children }: { children?: ReactNode }) => {
+  const { isOpen, setIsOpen, title, size } = useContext(AccordionContext);
   return (
     <div onClick={setIsOpen}>
       {/*isOpen 통해 svg 방향 바꿈*/}
       <TitleBox isOpen={isOpen}>
         <h5>{title}</h5>
         <div>
-          {/* icon*/}
+          {/* 아이콘 */}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="black" />
           </svg>
         </div>
       </TitleBox>
-      <p>{children}</p>
+      <BaseText size={size}>{children}</BaseText>
     </div>
   );
 };
 
-const Panel = ({ text }: { text: string }) => {
-  const { isOpen } = useContext(AccordionContext);
+const Panel = () => {
+  const { isOpen, text } = useContext(AccordionContext);
 
   return isOpen && <TextBox>{text}</TextBox>;
 };

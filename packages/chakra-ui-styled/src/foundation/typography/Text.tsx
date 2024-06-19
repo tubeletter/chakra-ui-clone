@@ -7,7 +7,7 @@ export interface TextProps {
   lineHeight?: '150' | '130' | '120' | '100';
 }
 
-export const TextComponent = ({ size, weight, lineHeight, children }: TextProps) => {
+export const BaseText = ({ size, weight, lineHeight, children }: TextProps) => {
   return (
     <>
       <S.StyleText size={size} weight={weight} lineHeight={lineHeight}>

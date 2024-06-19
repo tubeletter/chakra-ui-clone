@@ -1,25 +1,31 @@
 import Accordion from './Accordion';
 import styled from 'styled-components';
 import { ReactNode } from 'react';
+import { TextProps } from '../../../foundation/typography/Text';
 
 export type accordionType = {
   state: boolean;
-  title?: string;
-  text?: string;
+  title: string;
+  text: string;
   children?: ReactNode;
+  size: TextProps['size'];
 };
 
 export default {
   title: 'chakra-ui-styled/components/disclosure/accordion',
   component: Accordion,
   parameter: { controls: { expanded: true } },
+
   argTypes: {
-    state: {
-      control: {
-        type: 'boolean',
-        title: 'Accordion Button',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-      }
+    size: { control: { type: 'select' } },
+    state: { control: { type: 'boolean' } },
+    title: { control: { type: 'text' } },
+    text: { control: { type: 'text' } },
+    arg: {
+      size: 'md',
+      state: false,
+      title: 'title',
+      text: 'text'
     }
   }
 };
@@ -31,31 +37,22 @@ export const AccordionComponent = (args: accordionType) => {
       <Container>
         <h2>Accordion Demo</h2>
         <Accordion {...args}>
-          <Accordion.Toggle title={args.title ?? 'Accordion Button'}>
-            <Accordion.Panel
-              text={
-                args.text ??
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-              }
-            />
+          <Accordion.Toggle>
+            <Accordion.Panel />
           </Accordion.Toggle>
         </Accordion>
         <br />
         <hr />
         <br />
-        <Accordion state={false}>
-          <Accordion.Toggle title={'Accordion Button'} />
+        <Accordion state={false} title="just Sample state false" size="md" text="text">
+          <Accordion.Toggle />
         </Accordion>
-        <Accordion state={true}>
-          <Accordion.Toggle title={'Accordion Button'} />
+        <Accordion state={true} title="just Sample state true" size="md" text="text">
+          <Accordion.Toggle />
         </Accordion>
-        <Accordion state={true}>
-          <Accordion.Toggle title={'Accordion Button'}>
-            <Accordion.Panel
-              text={
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-              }
-            />
+        <Accordion state={false} title="u can click to expand" size="md" text="text">
+          <Accordion.Toggle>
+            <Accordion.Panel />
           </Accordion.Toggle>
         </Accordion>
       </Container>
