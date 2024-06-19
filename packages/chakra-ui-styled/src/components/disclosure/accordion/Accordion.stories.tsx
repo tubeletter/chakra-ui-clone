@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { ReactNode } from 'react';
 import { TextProps } from '../../../foundation/typography/Text';
 
-export type accordionType = {
+export type AccordionType = {
   state: boolean;
   title: string;
   text: string;
+  size: '6xl' | '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
   children?: ReactNode;
-  size: TextProps['size'];
 };
 
 export default {
@@ -17,12 +17,12 @@ export default {
   parameter: { controls: { expanded: true } },
 
   argTypes: {
-    size: { control: { type: 'select' } },
+    size: { control: { type: 'select', options: ['6xl', '5xl', '4xl', '3xl', '2xl', 'xl', 'lg', 'md', 'sm', 'xs'] } },
     state: { control: { type: 'boolean' } },
     title: { control: { type: 'text' } },
     text: { control: { type: 'text' } },
     arg: {
-      size: 'md',
+      size: '',
       state: false,
       title: 'title',
       text: 'text'
@@ -30,8 +30,7 @@ export default {
   }
 };
 
-const Container = styled.div``;
-export const AccordionComponent = (args: accordionType) => {
+export const AccordionComponent = (args: AccordionType) => {
   return (
     <>
       <Container>
@@ -59,4 +58,6 @@ export const AccordionComponent = (args: accordionType) => {
     </>
   );
 };
+const Container = styled.div``;
+
 AccordionComponent.storyName = 'Accordion';

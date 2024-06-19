@@ -1,7 +1,7 @@
-import { accordionType } from './Accordion.stories';
+import { AccordionType } from './Accordion.stories';
 import { createContext, ReactNode, useContext, useEffect, useReducer, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { BaseText } from '../../../foundation/typography/Text';
+import { BaseText, TextProps } from '../../../foundation/typography/Text';
 import { text } from '../../../foundation/typography/typography';
 
 const AccordionContext = createContext({
@@ -12,7 +12,7 @@ const AccordionContext = createContext({
   size: 'md'
 });
 
-const Accordion = ({ state, children, size, title, text }: accordionType) => {
+const Accordion = ({ state, children, size, title, text }: AccordionType) => {
   // const [isOpen, setIsOpen] = useState(state);
   // boolean useReducer 이용하여 관리,
   const [isOpen, setIsOpen] = useReducer((state) => !state, state);
@@ -50,7 +50,7 @@ const Toggle = ({ children }: { children?: ReactNode }) => {
           </svg>
         </div>
       </TitleBox>
-      <BaseText size={size}>{children}</BaseText>
+      <BaseText size={size as TextProps['size']}>{children}</BaseText>
     </div>
   );
 };
