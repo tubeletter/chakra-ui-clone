@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { TextComponent, TextProps } from './Text';
+import { BaseText, TextProps } from './Text';
 
 export default {
   title: 'chakra-ui-styled/foundation/typography/Text',
-  component: TextComponent,
+  component: Text,
   parameters: { controls: { expanded: true } },
   argTypes: {
     children: { control: { type: 'text' } },
@@ -30,20 +30,20 @@ export const Texts = (args: TextProps) => {
 
       <h2>1. Texts Demo</h2>
       <div>
-        <TextComponent {...args} />
+        <BaseText {...args} />
       </div>
-      <h2>2. Texts Size Demo</h2>
+      <h2>2.Texts Size Demo</h2>
       <div>
-        <TextComponent size="6xl">{text}</TextComponent>
-        <TextComponent size="5xl">{text}</TextComponent>
-        <TextComponent size="4xl">{text}</TextComponent>
-        <TextComponent size="3xl">{text}</TextComponent>
-        <TextComponent size="2xl">{text}</TextComponent>
-        <TextComponent size="xl">{text}</TextComponent>
-        <TextComponent size="lg">{text}</TextComponent>
-        <TextComponent size="md">{text}</TextComponent>
-        <TextComponent size="sm">{text}</TextComponent>
-        <TextComponent size="xs">{text}</TextComponent>
+        <BaseText size="6xl">{text}</BaseText>
+        <BaseText size="5xl">{text}</BaseText>
+        <BaseText size="4xl">{text}</BaseText>
+        <BaseText size="3xl">{text}</BaseText>
+        <BaseText size="2xl">{text}</BaseText>
+        <BaseText size="xl">{text}</BaseText>
+        <BaseText size="lg">{text}</BaseText>
+        <BaseText size="md">{text}</BaseText>
+        <BaseText size="sm">{text}</BaseText>
+        <BaseText size="xs">{text}</BaseText>
       </div>
     </Wrapper>
   );
