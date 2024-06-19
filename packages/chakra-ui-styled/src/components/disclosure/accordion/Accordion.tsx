@@ -1,14 +1,19 @@
 import { accordionType } from './Accordion.stories';
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useReducer, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 const AccordionContext = createContext({
   isOpen: false,
-  setIsOpen: (value: boolean) => {}
+  setIsOpen: () => {}
 });
 
 const Accordion = ({ state, children }: accordionType) => {
-  const [isOpen, setIsOpen] = useState(state);
+  // const [isOpen, setIsOpen] = useState(state);
+  // boolean useReducer 이요
+  const [isOpen, setIsOpen] = useReducer((state) => {
+    return !state;
+  }, state);
+
   const providerValue = {
     isOpen,
     setIsOpen
@@ -22,12 +27,13 @@ const Accordion = ({ state, children }: accordionType) => {
 
 const Toggle = ({ title, children }: { title: string; children?: ReactNode }) => {
   const { isOpen, setIsOpen } = useContext(AccordionContext);
-
   return (
-    <div onClick={() => setIsOpen(!isOpen)}>
+    <div onClick={setIsOpen}>
+      {/*isOpen 통해 svg 방향 바꿈*/}
       <TitleBox isOpen={isOpen}>
         <h5>{title}</h5>
         <div>
+          {/* icon*/}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.59 8.59L12 13.17L7.41 8.59L6 10L12 16L18 10L16.59 8.59Z" fill="black" />
           </svg>
