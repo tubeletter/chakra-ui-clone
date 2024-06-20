@@ -18,4 +18,7 @@ export interface TypographyType {
   text: TypographyProps;
   fontFamily: TypoProps;
   fontWeight: TypoProps;
+  lineHeight: TypoProps;
 }
+
+export type sStylingProps = { [key: string]: string };

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { HeadingProps } from './Heading';
 
 export const StyleHeading = styled.h1<HeadingProps>`
-  ${({ theme, size, weight }) => css`
+  ${({ theme, size, weight, lineHeight }) => css`
     ${theme.typo.fontFamily};
     ${theme.breakpoint.base} {
       font-size: ${theme.typo.small[size].fontSize};
@@ -12,7 +12,7 @@ export const StyleHeading = styled.h1<HeadingProps>`
     ${theme.breakpoint.lg} {
       font-size: ${theme.typo.large[size].fontSize};
       font-weight: ${weight ? theme.typo.fontWeight[weight] : theme.typo.large[size].fontWeight};
-      line-height: ${theme.typo.large[size].lineHeight};
+      line-height: ${lineHeight ? theme.typo.lineHeight[lineHeight] : theme.typo.large[size].lineHeight};
     }
   `};
 `;
