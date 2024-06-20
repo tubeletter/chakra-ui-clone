@@ -9,7 +9,6 @@ type AccordionContextType = AccordionType & {
 };
 const AccordionContext = createContext<AccordionContextType>({
   isOpen: true,
-
   setIsOpen: () => {},
   title: '',
   text: '',
