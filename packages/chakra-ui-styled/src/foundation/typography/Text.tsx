@@ -1,13 +1,14 @@
 import * as S from './Text.styled';
+import { ReactNode } from 'react';
 
 export interface TextProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
   size: '6xl' | '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
   weight?: 'bold' | 'semibold' | 'medium' | 'normal';
   lineHeight?: '150' | '130' | '120' | '100';
 }
 
-export const TextComponent = ({ size, weight, lineHeight, children }: TextProps) => {
+export const BaseText = ({ size, weight, lineHeight, children }: TextProps) => {
   return (
     <>
       <S.StyleText size={size} weight={weight} lineHeight={lineHeight}>

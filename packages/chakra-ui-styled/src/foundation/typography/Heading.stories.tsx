@@ -28,7 +28,6 @@ export const Large = (args: HeadingProps) => {
   return (
     <Wrapper>
       <h1>Heading Large</h1>
-
       <h2>1. Heading Demo</h2>
       <div>
         <Heading {...args} />
