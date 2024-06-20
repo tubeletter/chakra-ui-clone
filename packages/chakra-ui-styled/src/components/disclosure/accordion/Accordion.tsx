@@ -1,8 +1,7 @@
 import { AccordionType } from './Accordion.stories';
-import { createContext, ReactNode, useContext, useEffect, useReducer, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useReducer } from 'react';
 import styled, { css } from 'styled-components';
-import { BaseText, TextProps } from '../../../foundation/typography/Text';
-import { text } from '../../../foundation/typography/typography';
+import { BaseText } from '../../../foundation/typography/Text';
 
 type AccordionContextType = AccordionType & {
   isOpen: boolean;
@@ -10,6 +9,7 @@ type AccordionContextType = AccordionType & {
 };
 const AccordionContext = createContext<AccordionContextType>({
   isOpen: true,
+
   setIsOpen: () => {},
   title: '',
   text: '',
@@ -42,6 +42,7 @@ const Accordion = ({ state = true, children, size, title, text }: AccordionType)
 
 const Toggle = ({ children }: { children?: ReactNode }) => {
   const { isOpen, setIsOpen, title, size = 'md' } = useContext(AccordionContext);
+
   return (
     <div onClick={setIsOpen}>
       {/*isOpen 통해 svg 방향 바꿈*/}
@@ -54,6 +55,7 @@ const Toggle = ({ children }: { children?: ReactNode }) => {
           </svg>
         </div>
       </TitleBox>
+
       <BaseText size={size}>{children}</BaseText>
     </div>
   );
