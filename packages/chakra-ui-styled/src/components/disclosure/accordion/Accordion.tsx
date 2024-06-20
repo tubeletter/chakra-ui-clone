@@ -4,15 +4,19 @@ import styled, { css } from 'styled-components';
 import { BaseText, TextProps } from '../../../foundation/typography/Text';
 import { text } from '../../../foundation/typography/typography';
 
-const AccordionContext = createContext({
-  isOpen: false,
+type AccordionContextType = AccordionType & {
+  isOpen: boolean;
+  setIsOpen: () => void;
+};
+const AccordionContext = createContext<AccordionContextType>({
+  isOpen: true,
   setIsOpen: () => {},
   title: '',
   text: '',
   size: 'md'
 });
 
-const Accordion = ({ state, children, size, title, text }: AccordionType) => {
+const Accordion = ({ state = true, children, size, title, text }: AccordionType) => {
   // const [isOpen, setIsOpen] = useState(state);
   // boolean useReducer 이용하여 관리,
   const [isOpen, setIsOpen] = useReducer((state) => !state, state);
@@ -37,7 +41,7 @@ const Accordion = ({ state, children, size, title, text }: AccordionType) => {
 };
 
 const Toggle = ({ children }: { children?: ReactNode }) => {
-  const { isOpen, setIsOpen, title, size } = useContext(AccordionContext);
+  const { isOpen, setIsOpen, title, size = 'md' } = useContext(AccordionContext);
   return (
     <div onClick={setIsOpen}>
       {/*isOpen 통해 svg 방향 바꿈*/}
@@ -50,15 +54,15 @@ const Toggle = ({ children }: { children?: ReactNode }) => {
           </svg>
         </div>
       </TitleBox>
-      <BaseText size={size as TextProps['size']}>{children}</BaseText>
+      <BaseText size={size}>{children}</BaseText>
     </div>
   );
 };
 
 const Panel = () => {
-  const { isOpen, text } = useContext(AccordionContext);
+  const { isOpen, text, size } = useContext(AccordionContext);
 
-  return isOpen && <TextBox>{text}</TextBox>;
+  return !isOpen && <BaseText size={size}>{text}</BaseText>;
 };
 
 Accordion.Toggle = Toggle;
@@ -71,31 +75,30 @@ const TitleBox = styled.div<{ isOpen: boolean }>`
   justify-content: space-between;
   flex: 1;
   width: inherit;
-  max-width: 345px;
+  //max-width: 345px;
   user-select: none;
   ${({ isOpen }) =>
-    isOpen &&
+    !isOpen &&
     css`
       div {
         transform: rotate(180deg);
       }
     `}
 `;
-const TextBox = styled.div`
-  font-size: 16px;
-  font-weight: 400;
-`;
+// const TextBox = styled.div`
+//   font-size: 16px;
+//   font-weight: 400;
+// `;
 
 const Container = styled.article`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 403px;
-  border-block: 1px solid #d0d0d0;
+  //width: 403px;
+  border-block: ${({ theme }) => theme.spacing.px} solid ${({ theme }) => theme.color.gray[300]};
   padding: 10px 12px;
   h5 {
-    font-size: 16px;
-    font-weight: 400;
+    ${({ theme }) => theme.typo.text.md}
   }
   > div {
     display: flex;

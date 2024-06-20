@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import { TextProps } from '../../../foundation/typography/Text';
 
 export type AccordionType = {
-  state: boolean;
+  state?: boolean;
   title: string;
   text: string;
   size: '6xl' | '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
@@ -23,7 +23,7 @@ export default {
     text: { control: { type: 'text' } },
     arg: {
       size: '',
-      state: false,
+      state: true,
       title: 'title',
       text: 'text'
     }
